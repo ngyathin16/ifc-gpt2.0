@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ifc-gpt-v2"
+version = "2.0.0"
+requires-python = ">=3.11"
+dependencies = [
+    # IFC authoring and validation
+    "ifcopenshell",
+    "ifctester",
+    # AI / orchestration
+    "langchain>=0.3.0",
+    "langchain-core>=0.3.90",
+    "langchain-openai>=0.1.0",
+    "langgraph>=0.2.0",
+    "openai>=1.30.0",
+    # HTTP server
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "python-multipart>=0.0.9",     # for audio file uploads
+    "sse-starlette>=2.0.0",        # for SSE streaming
+    # Database
+    "supabase>=2.0.0",
+    "python-jose[cryptography]>=3.3.0",  # Supabase JWT verification
+    # Utilities
+    "pydantic>=2.7.0",
+    "python-dotenv>=1.0.0",
+    "rich>=13.0.0",
+    "httpx>=0.27.0",               # async HTTP for bSDD API calls
+    "numpy>=1.26.0",
+    "shapely>=2.0.0",
+    # Floor plan processing
+    "PyMuPDF>=1.24.0",
+    "Pillow>=10.0.0",
+    "opencv-python-headless>=4.9.0",
+    "easyocr>=1.7.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.4", "mypy>=1.10"]
+
+[tool.setuptools.packages.find]
+include = ["building_blocks*", "api*", "agent*", "validation*", "floorplan*"]
+exclude = ["web*", "workspace*", "supabase*", "tests*"]
+
+[project.scripts]
+ifc-gpt = "api.server:main"

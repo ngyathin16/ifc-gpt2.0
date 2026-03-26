@@ -1,0 +1,53 @@
+The IFC file generated from the BuildingPlan failed validation.
+
+Validation errors:
+{validation_results}
+
+Original BuildingPlan:
+{building_plan}
+
+Fix the BuildingPlan to address EVERY validation error. Apply these repair strategies:
+
+WALL ENCLOSURE errors (walls don't form closed loop):
+- Exterior walls MUST form a closed polygon: W1 end → W2 start → W3 start → W4 start → W1 start.
+- Add missing walls so all endpoints connect. Example for a 6×4 m room:
+  W1: [0,0]→[6,0], W2: [6,0]→[6,4], W3: [6,4]→[0,4], W4: [0,4]→[0,0]
+- Include wall_junctions for each pair of connected walls.
+
+SLAB COVERAGE errors (slab doesn't match wall footprint):
+- Slab boundary_points MUST match the wall outline exactly.
+- For the example above: [[0,0],[6,0],[6,4],[0,4]]
+
+ROOF COVERAGE errors (roof doesn't cover building):
+- Roof boundary_points should match or slightly exceed the wall footprint.
+- For the example above: [[-0.2,-0.2],[6.2,-0.2],[6.2,4.2],[-0.2,4.2]] (with overhang)
+
+OPENING BOUNDS errors (door/window outside wall):
+- distance_along_wall must place the opening entirely within the wall length.
+- Left edge = distance_along_wall - width/2 must be >= 0.
+- Right edge = distance_along_wall + width/2 must be <= wall length.
+- sill_height + height must be <= wall height.
+
+STOREY REF errors:
+- Every element's storey_ref must match a storey in the storeys list.
+
+TOP STOREY BEAM errors (beams on top storey with roof):
+- Remove ALL beam elements whose storey_ref matches the topmost storey.
+- The roof slab already provides structural spanning; perimeter beams at the roof level
+  are redundant and their profile depth causes them to protrude above the roof.
+
+BEAM WIDER THAN WALL errors (beam protrudes beyond wall face):
+- Reduce the beam "width" to be ≤ the host wall's "thickness".
+- In real construction, perimeter beams are hidden within the wall thickness.
+  A beam wider than the wall is exposed on the exterior facade.
+
+BEAM WINDOW CLASH errors (beam vertical range overlaps window):
+- Either raise the beam elevation so beam_bottom (elevation − depth/2) > window top (sill_height + height),
+  or lower the window so its top is below the beam bottom.
+- Alternatively, reduce beam depth to eliminate the vertical overlap.
+
+SCHEMA / SEMANTIC errors:
+- Ensure all walls have is_external set.
+- Ensure all elements have valid storey_ref.
+
+Return ONLY the corrected BuildingPlan JSON. No explanation, no markdown fences.

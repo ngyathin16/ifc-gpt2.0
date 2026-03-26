@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 0.5rem;
+}
+
+* {
+  border-color: hsl(225, 10%, 22%);
+}
+
+body {
+  background-color: hsl(230, 15%, 8%);
+  color: hsl(0, 0%, 95%);
+}
+
+/* Scrollbar styling for dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(225, 12%, 11%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(225, 10%, 25%);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(225, 10%, 35%);
+}

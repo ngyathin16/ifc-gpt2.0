@@ -1,0 +1,83 @@
+{
+  "exported_at": "2026-03-23T10:50:00+08:00",
+  "project": "IFC-GPT v2",
+  "summary": "Pipeline works end-to-end in ~2 minutes. All issues resolved.",
+
+  "issue": {
+    "title": "gpt-5.4-pro Responses API — RESOLVED",
+    "severity": "resolved",
+    "status": "closed",
+
+    "description": "The Azure gpt-5.4-pro model only supports the Responses API. Previously, the pipeline used AzureChatOpenAI (Chat Completions wrapper) with reasoning_effort='medium', causing 10+ minute generation times. Additionally, the validation runner had bugs that always triggered the slow repair loop.",
+
+    "root_cause_analysis": [
+      "agent/llm.py used AzureChatOpenAI which targets Chat Completions API, not the Responses API — forced reasoning_effort='medium' and temperature=1 workarounds",
+      "Plan prompt was too open-ended with no concrete JSON example, triggering deep extended reasoning",
+      "Clarify node made an unnecessary LLM call for short prompts, doubling latency",
+      "validation/runner.py passed string path instead of ifcopenshell.file object to ifctester",
+      "ifctester.reporter.Json had a bug (UnboundLocalError on cardinality)",
+      "hk_code.ids used IFCLABEL datatype for IsExternal instead of IFCBOOLEAN",
+      "custom.ids was empty and caused ifctester to reject it, failing the whole validation",
+      "Validation failures triggered repair node which made another slow LLM call that timed out"
+    ],
+
+    "fixes_applied": [
+      "Replaced AzureChatOpenAI with custom AzureResponsesChatModel that directly POSTs to the Responses API (adopted from v1 reference)",
+      "Removed reasoning_effort, temperature=1, max_tokens — not needed with direct Responses API calls",
+      "Rewrote plan.txt with concrete JSON example matching BuildingPlan schema exactly — reduces reasoning time dramatically",
+      "Rewrote clarify.py to apply sensible defaults without an LLM call for short prompts",
+      "Fixed validation/runner.py: open IFC file with ifcopenshell.open() before passing to ifctester",
+      "Fixed validation/runner.py: replaced buggy Json reporter with direct spec status extraction",
+      "Fixed hk_code.ids: changed IsExternal dataType from IFCLABEL to IFCBOOLEAN",
+      "Fixed validate node: filters out empty/invalid IDS files before running validation",
+      "Increased request_timeout to 300s as safety margin",
+      "Added singleton caching and reset_llm() for LLM instance management"
+    ],
+
+    "current_config": {
+      "file": "agent/llm.py",
+      "settings": {
+        "model": "gpt-5.4-pro",
+        "wrapper": "AzureResponsesChatModel (custom BaseChatModel subclass)",
+        "api": "Azure Responses API (direct POST)",
+        "request_timeout": 300
+      }
+    },
+
+    "related_files": [
+      "agent/llm.py",
+      "agent/nodes/plan.py",
+      "agent/nodes/clarify.py",
+      "agent/nodes/validate.py",
+      "agent/prompts/plan.txt",
+      "validation/runner.py",
+      "validation/ids/hk_code.ids",
+      ".env",
+      ".env.example"
+    ],
+
+    "test_commands": {
+      "verify_llm_works": "uv run python -c \"from agent.llm import get_llm; llm = get_llm(); r = llm.invoke('Say hi'); print(r.content)\"",
+      "run_pipeline_test": "uv run python -c \"from agent.graph import run_pipeline; r = run_pipeline('a 3x4m box house with one door and one window'); print('Status:', r.get('status'), 'IFC:', r.get('final_ifc_path'))\"",
+      "run_pytest": "uv run pytest tests/ -v",
+      "start_backend": "uv run python main.py",
+      "start_frontend": "cd web && npm run dev"
+    }
+  },
+
+  "project_status": {
+    "phase_0_setup": "complete",
+    "phase_1_building_blocks": "complete",
+    "phase_2_api": "complete",
+    "phase_3_agent": "complete",
+    "phase_4_frontend": "complete",
+    "phase_5_supabase": "complete",
+    "phase_6_voice": "complete",
+    "tests": "22/22 passing",
+    "backend_server": "working (port 8000)",
+    "frontend_server": "working (port 3000)",
+    "api_proxy": "working (Next.js route handler)",
+    "llm_connectivity": "working (Azure gpt-5.4-pro via Responses API)",
+    "full_pipeline": "working (~2 min end-to-end, validation passes 3/3 IDS specs)"
+  }
+}

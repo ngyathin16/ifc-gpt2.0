@@ -1,0 +1,132 @@
+Produce a complete BuildingPlan JSON object for the building described below.
+Output ONLY valid JSON — no markdown fences, no commentary, no trailing commas.
+
+The JSON MUST match this EXACT schema. Here is a complete example for a 4×3 m box house:
+
+{{
+  "description": "Simple 4x3m single-storey box house with one door and one window",
+  "site": {{"name": "Default Site"}},
+  "building": {{"name": "Box House", "building_type": "Residential"}},
+  "storeys": [
+    {{"storey_ref": "GF", "name": "Ground Floor", "elevation": 0.0, "floor_to_floor_height": 3.0}}
+  ],
+  "types": [],
+  "elements": [
+    {{"element_type": "wall", "wall_ref": "W1", "storey_ref": "GF", "start_point": [0, 0], "end_point": [4, 0], "height": 3.0, "thickness": 0.2, "is_external": true}},
+    {{"element_type": "wall", "wall_ref": "W2", "storey_ref": "GF", "start_point": [4, 0], "end_point": [4, 3], "height": 3.0, "thickness": 0.2, "is_external": true}},
+    {{"element_type": "wall", "wall_ref": "W3", "storey_ref": "GF", "start_point": [4, 3], "end_point": [0, 3], "height": 3.0, "thickness": 0.2, "is_external": true}},
+    {{"element_type": "wall", "wall_ref": "W4", "storey_ref": "GF", "start_point": [0, 3], "end_point": [0, 0], "height": 3.0, "thickness": 0.2, "is_external": true}},
+    {{"element_type": "slab", "storey_ref": "GF", "boundary_points": [[0,0],[4,0],[4,3],[0,3]], "depth": 0.2, "elevation": 0.0, "slab_type": "FLOOR"}},
+    {{"element_type": "door", "storey_ref": "GF", "host_wall_ref": "W1", "distance_along_wall": 2.0, "sill_height": 0.0, "width": 0.9, "height": 2.1}},
+    {{"element_type": "window", "storey_ref": "GF", "host_wall_ref": "W2", "distance_along_wall": 1.5, "sill_height": 0.9, "width": 1.2, "height": 1.5}},
+    {{"element_type": "roof", "storey_ref": "GF", "boundary_points": [[0,0],[4,0],[4,3],[0,3]], "roof_type": "FLAT", "thickness": 0.25, "ridge_height": 0.0}}
+  ],
+  "wall_junctions": [
+    {{"wall_ref_1": "W1", "wall_ref_2": "W2"}},
+    {{"wall_ref_1": "W2", "wall_ref_2": "W3"}},
+    {{"wall_ref_1": "W3", "wall_ref_2": "W4"}},
+    {{"wall_ref_1": "W4", "wall_ref_2": "W1"}}
+  ],
+  "rooms": []
+}}
+
+═══════════════════════════════════════════════════════════
+SCHEMA RULES
+═══════════════════════════════════════════════════════════
+  - "storey_ref" is the key name — NOT "id", NOT "ref".
+  - "elements" is a FLAT top-level list — do NOT nest inside storeys.
+  - Every element's "storey_ref" must match a storey in the storeys list.
+  - Wall "start_point" and "end_point" are 2D [x, y] only.
+  - Roof and slab "boundary_points" are 2D [x, y].
+  - List storeys in ascending elevation order (ground first).
+
+═══════════════════════════════════════════════════════════
+ELEVATION RULES  (CRITICAL — violating these doubles element height)
+═══════════════════════════════════════════════════════════
+  - All element elevations MUST be storey-relative, NOT absolute world Z.
+    The storey ObjectPlacement already applies the Z offset automatically.
+  - Column base_elevation: 0.0 (starts at floor level).
+  - Slab elevation: 0.0 (sits at floor level).
+  - Beam elevation: floor_to_floor_height − beam_depth / 2
+    (beam soffit aligns with top of walls). Example: ftf=3.5, depth=0.5 → elevation=3.25.
+  - Stair elevation is handled automatically; just place on the correct storey.
+  - Railing path_points Z values are storey-relative (0.0 at floor, ftf at top).
+
+═══════════════════════════════════════════════════════════
+WALL & ENCLOSURE RULES
+═══════════════════════════════════════════════════════════
+  - Exterior walls MUST form closed counter-clockwise loops.
+    Adjacent walls share exact endpoints: W1 end = W2 start, etc.
+  - Include a wall_junction for every pair of connected walls at corners.
+  - Exterior wall thickness: 0.2–0.25 m.  Interior partitions: 0.1–0.15 m.
+  - Interior partitions MUST set "is_external": false.
+  - Wall height equals floor_to_floor_height.
+
+═══════════════════════════════════════════════════════════
+COLUMN RULES
+═══════════════════════════════════════════════════════════
+  - Place perimeter columns at wall corners and at regular intervals ≤ 12.5 m.
+  - For large floor plates, add interior columns at ~quarter-points.
+  - Typical column size: 0.4–0.5 m × 0.4–0.5 m rectangular, or 0.15–0.25 m radius circular.
+  - Column height equals floor_to_floor_height.
+
+═══════════════════════════════════════════════════════════
+BEAM RULES
+═══════════════════════════════════════════════════════════
+  - Beam span MUST be ≤ 12.5 m. If a wall edge is longer, segment it into
+    multiple beam spans that align with column positions.
+  - Beam width MUST be ≤ the co-linear wall thickness so the beam hides
+    within the wall. E.g. wall 0.25 m → beam width ≤ 0.2 m.
+  - Do NOT place beams on the top storey when a roof exists — the roof
+    already spans that level and beams would protrude above the roof.
+  - Typical beam depth: 0.4–0.5 m.
+  - Offset beam centreline inward by wall_thickness / 2 from the wall
+    reference line so the beam sits centred within the wall.
+
+═══════════════════════════════════════════════════════════
+OPENING RULES  (doors & windows)
+═══════════════════════════════════════════════════════════
+  - distance_along_wall = metres from wall start to opening centre.
+  - Opening-to-opening edge spacing: ≥ 0.5 m.
+  - Opening-to-wall-corner edge clearance: ≥ 0.3 m.
+  - Do NOT place windows where a perimeter column sits; skip that position
+    (window centre must be ≥ column_width/2 + 0.5 m from any column centre).
+  - Distribute openings across all walls; do not crowd one wall.
+  - If a wall is too short for its openings, move some to another wall.
+  - Standard door: 0.9 m × 2.1 m, sill_height 0.0.
+  - Entrance door: 1.2–1.5 m × 2.1 m.
+  - Standard window: 1.2–1.5 m × 1.5 m, sill_height 0.9 m.
+  - Curtain-wall glazing: 2.0–2.5 m × 2.5–2.8 m, sill_height 0.1 m.
+
+═══════════════════════════════════════════════════════════
+SLAB & ROOF RULES
+═══════════════════════════════════════════════════════════
+  - Every storey MUST have a floor slab whose boundary matches the wall footprint.
+  - Slab depth: 0.2–0.25 m,  slab_type: "FLOOR".
+  - Roof goes on the TOP storey only.  boundary_points match building footprint.
+  - Flat roof thickness: 0.25–0.30 m.
+  - Pitched roof: ridge_height 2.0–4.0 m.
+
+═══════════════════════════════════════════════════════════
+VERTICAL CIRCULATION RULES
+═══════════════════════════════════════════════════════════
+  - Multi-storey buildings MUST have stairs on every floor EXCEPT the top floor.
+  - Buildings with > 4 storeys MUST include elevator shafts.
+  - Stairs: place near building corners, away from the main usable area.
+    Typical width 1.2–1.5 m, riser_height ≈ ftf / num_risers (≤ 0.18 m),
+    tread_depth 0.25–0.30 m.
+  - Stair-access doors on walls near stair positions.
+  - Railings along every staircase (path_points matching stair geometry).
+
+═══════════════════════════════════════════════════════════
+DIMENSIONAL DEFAULTS
+═══════════════════════════════════════════════════════════
+  - Floor-to-floor height: 3.0 m residential, 3.5 m commercial / highrise.
+  - Beam: 0.2 m wide × 0.5 m deep.
+  - Column: 0.5 m × 0.5 m.
+  - Column / beam spacing: ≤ 12.5 m.
+  - Railing: 1.0 m height, 0.05 m diameter.
+  - Elevator shaft: 2.0 m × 2.0 m.
+
+User description:
+{user_message}
