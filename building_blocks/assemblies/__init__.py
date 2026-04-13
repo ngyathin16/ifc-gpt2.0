@@ -7,6 +7,7 @@ from building_blocks.assemblies.toilet_core import create_toilet_core
 from building_blocks.assemblies.apartment_unit import create_apartment_unit
 from building_blocks.assemblies.facade_bay import create_facade_bay
 from building_blocks.assemblies.roof_assembly import create_roof_assembly
+from building_blocks.assemblies.mic_module import create_mic_module, list_mic_types
 
 __all__ = [
     "create_structural_grid",
@@ -15,4 +16,6 @@ __all__ = [
     "create_apartment_unit",
     "create_facade_bay",
     "create_roof_assembly",
+    "create_mic_module",
+    "list_mic_types",
 ]

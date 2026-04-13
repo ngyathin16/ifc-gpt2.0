@@ -63,10 +63,6 @@ def validate_ids(ifc_path: str | Path, ids_paths: list[str | Path]) -> dict[str,
     }
 
 
-# Keep old name as alias for backward compatibility
-validate = validate_ids
-
-
 def validate_all(
     ifc_path: str | Path,
     ids_paths: list[str | Path] | None = None,
@@ -89,7 +85,24 @@ def validate_all(
             "all_errors": [str, ...],   # flat list of error messages for repair prompt
         }
     """
+    import ifcopenshell
+
     all_errors: list[str] = []
+
+    # Open IFC file ONCE and share across all validation layers
+    ifc_file: ifcopenshell.file | None = None
+    try:
+        ifc_file = ifcopenshell.open(str(ifc_path))
+    except Exception as e:
+        logger.error(f"[validate_all] Could not open IFC file: {e}")
+        return {
+            "passed": False,
+            "plan": None,
+            "schema": {"valid": False, "error_count": 1, "error": str(e)},
+            "ids": None,
+            "semantic": {"valid": False, "error_count": 1, "error": str(e)},
+            "all_errors": [f"[file] Could not open IFC: {e}"],
+        }
 
     # 1. Plan-level validation (if plan_dict provided)
     plan_result: dict[str, Any] | None = None
@@ -109,11 +122,11 @@ def validate_all(
             plan_result = {"valid": False, "error_count": 1, "issues": [], "error": str(e)}
             all_errors.append(f"[plan] Validation crashed: {e}")
 
-    # 2. Schema validation
+    # 2. Schema validation (reuse ifc_file)
     schema_result: dict[str, Any] = {"valid": True, "error_count": 0, "warning_count": 0}
     try:
         from validation.schema_check import validate_schema
-        schema_result = validate_schema(str(ifc_path))
+        schema_result = validate_schema(str(ifc_path), ifc_file=ifc_file)
         for err in schema_result.get("errors", []):
             msg = err.get("message", str(err))
             all_errors.append(f"[schema] {msg}")
@@ -126,7 +139,7 @@ def validate_all(
         schema_result = {"valid": False, "error_count": 1, "error": str(e)}
         all_errors.append(f"[schema] Validation crashed: {e}")
 
-    # 3. IDS validation
+    # 3. IDS validation (reuse ifc_file)
     ids_result: dict[str, Any] | None = None
     if ids_paths:
         try:
@@ -144,11 +157,11 @@ def validate_all(
             ids_result = {"passed": False, "total": 0, "failed": 0, "error": str(e)}
             all_errors.append(f"[ids] Validation crashed: {e}")
 
-    # 4. Semantic checks
+    # 4. Semantic checks (reuse ifc_file)
     semantic_result: dict[str, Any] = {"valid": True, "error_count": 0, "warning_count": 0}
     try:
         from validation.semantic_checks import run_all_checks
-        semantic_result = run_all_checks(str(ifc_path))
+        semantic_result = run_all_checks(str(ifc_path), ifc_file=ifc_file)
         for issue in semantic_result.get("issues", []):
             if issue["severity"] == "error":
                 all_errors.append(f"[semantic] {issue['message']}")

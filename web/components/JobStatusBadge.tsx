@@ -48,12 +48,12 @@ export default function JobStatusBadge({ status, error }: JobStatusBadgeProps) {
       animate={{ opacity: 1, scale: 1 }}
       className="px-4 py-2"
     >
-      <div className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-xs font-medium ${config.className}`}>
+      <div data-testid={`job-status-${status}`} className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-xs font-medium ${config.className}`}>
         {config.icon}
         <span>{config.label}</span>
       </div>
       {error && status === "error" && (
-        <p className="mt-1 px-1 text-xs text-danger/80 truncate">{error}</p>
+        <p data-testid="job-error-message" className="mt-1 px-1 text-xs text-danger/80 truncate">{error}</p>
       )}
     </motion.div>
   );

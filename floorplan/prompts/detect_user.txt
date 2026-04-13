@@ -1,0 +1,10 @@
+Analyse the attached floor plan image ({{W}} x {{H}} pixels).
+
+Identify and return all of the following:
+1. Walls — exterior and interior, centreline endpoints and thickness in pixels.
+2. Door openings — host wall ID, pixel position, width in pixels.
+3. Window openings — host wall ID, pixel position, width in pixels.
+4. Rooms — enclosed areas with label and centroid.
+5. Columns — centre and dimensions in pixels.
+
+Return valid JSON matching the provided schema only. No prose.

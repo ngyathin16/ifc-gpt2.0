@@ -67,7 +67,7 @@ export default function FloorPlanUpload({ onUpload, isLoading }: FloorPlanUpload
   }, []);
 
   return (
-    <div className="p-4 space-y-3">
+    <div className="p-4 space-y-3" data-testid="floorplan-upload">
       {/* Drop zone */}
       <div
         onDragEnter={handleDrag}
@@ -197,6 +197,7 @@ export default function FloorPlanUpload({ onUpload, isLoading }: FloorPlanUpload
 
           {/* Submit button */}
           <button
+            data-testid="floorplan-submit"
             onClick={handleSubmit}
             disabled={isLoading}
             className="w-full flex items-center justify-center gap-2 rounded-lg bg-accent hover:bg-accent/90 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-2.5 text-sm font-medium text-white transition-all"

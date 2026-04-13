@@ -1,0 +1,1197 @@
+{
+  "description": "12-unit residential floor plan, L-shaped building, 60m \u00d7 48m footprint with north wing, single storey",
+  "site": {
+    "name": "Residential Estate"
+  },
+  "building": {
+    "name": "Block A",
+    "building_type": "Residential"
+  },
+  "storeys": [
+    {
+      "storey_ref": "GF",
+      "name": "Ground Floor",
+      "elevation": 0.0,
+      "floor_to_floor_height": 3.0
+    }
+  ],
+  "types": [
+    {
+      "type_ref": "ext_wall_200",
+      "ifc_class": "IfcWallType",
+      "preset": "exterior_wall_200"
+    },
+    {
+      "type_ref": "int_wall_150",
+      "ifc_class": "IfcWallType",
+      "preset": "interior_wall_100"
+    }
+  ],
+  "elements": [
+    {
+      "element_type": "wall",
+      "wall_ref": "W1_GF",
+      "component_id": "exterior_wall",
+      "storey_ref": "GF",
+      "start_point": [
+        0.0,
+        0.0
+      ],
+      "end_point": [
+        60.0,
+        0.0
+      ],
+      "height": 3.0,
+      "thickness": 0.2,
+      "is_external": true,
+      "wall_type_ref": "ext_wall_200"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W2_GF",
+      "component_id": "exterior_wall",
+      "storey_ref": "GF",
+      "start_point": [
+        60.0,
+        0.0
+      ],
+      "end_point": [
+        60.0,
+        24.0
+      ],
+      "height": 3.0,
+      "thickness": 0.2,
+      "is_external": true,
+      "wall_type_ref": "ext_wall_200"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W3_GF",
+      "component_id": "exterior_wall",
+      "storey_ref": "GF",
+      "start_point": [
+        60.0,
+        24.0
+      ],
+      "end_point": [
+        56.0,
+        24.0
+      ],
+      "height": 3.0,
+      "thickness": 0.2,
+      "is_external": true,
+      "wall_type_ref": "ext_wall_200"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W4_GF",
+      "component_id": "exterior_wall",
+      "storey_ref": "GF",
+      "start_point": [
+        56.0,
+        24.0
+      ],
+      "end_point": [
+        56.0,
+        48.0
+      ],
+      "height": 3.0,
+      "thickness": 0.2,
+      "is_external": true,
+      "wall_type_ref": "ext_wall_200"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W5_GF",
+      "component_id": "exterior_wall",
+      "storey_ref": "GF",
+      "start_point": [
+        56.0,
+        48.0
+      ],
+      "end_point": [
+        30.0,
+        48.0
+      ],
+      "height": 3.0,
+      "thickness": 0.2,
+      "is_external": true,
+      "wall_type_ref": "ext_wall_200"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W6_GF",
+      "component_id": "exterior_wall",
+      "storey_ref": "GF",
+      "start_point": [
+        30.0,
+        48.0
+      ],
+      "end_point": [
+        30.0,
+        24.0
+      ],
+      "height": 3.0,
+      "thickness": 0.2,
+      "is_external": true,
+      "wall_type_ref": "ext_wall_200"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W7_GF",
+      "component_id": "exterior_wall",
+      "storey_ref": "GF",
+      "start_point": [
+        30.0,
+        24.0
+      ],
+      "end_point": [
+        0.0,
+        24.0
+      ],
+      "height": 3.0,
+      "thickness": 0.2,
+      "is_external": true,
+      "wall_type_ref": "ext_wall_200"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W8_GF",
+      "component_id": "exterior_wall",
+      "storey_ref": "GF",
+      "start_point": [
+        0.0,
+        24.0
+      ],
+      "end_point": [
+        0.0,
+        0.0
+      ],
+      "height": 3.0,
+      "thickness": 0.2,
+      "is_external": true,
+      "wall_type_ref": "ext_wall_200"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W9_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        0.0,
+        11.0
+      ],
+      "end_point": [
+        60.0,
+        11.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false,
+      "wall_type_ref": "int_wall_150"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W10_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        0.0,
+        13.0
+      ],
+      "end_point": [
+        42.0,
+        13.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false,
+      "wall_type_ref": "int_wall_150"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W11_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        52.0,
+        13.0
+      ],
+      "end_point": [
+        60.0,
+        13.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false,
+      "wall_type_ref": "int_wall_150"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W12_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        42.0,
+        13.0
+      ],
+      "end_point": [
+        42.0,
+        24.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W13_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        52.0,
+        13.0
+      ],
+      "end_point": [
+        52.0,
+        24.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W14_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        42.0,
+        24.0
+      ],
+      "end_point": [
+        42.0,
+        48.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W15_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        44.0,
+        24.0
+      ],
+      "end_point": [
+        44.0,
+        48.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W16_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        44.0,
+        24.0
+      ],
+      "end_point": [
+        52.0,
+        24.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W17_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        15.0,
+        0.0
+      ],
+      "end_point": [
+        15.0,
+        11.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false,
+      "wall_type_ref": "int_wall_150"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W18_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        30.0,
+        0.0
+      ],
+      "end_point": [
+        30.0,
+        11.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false,
+      "wall_type_ref": "int_wall_150"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W19_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        45.0,
+        0.0
+      ],
+      "end_point": [
+        45.0,
+        11.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false,
+      "wall_type_ref": "int_wall_150"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W20_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        14.0,
+        13.0
+      ],
+      "end_point": [
+        14.0,
+        24.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false,
+      "wall_type_ref": "int_wall_150"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W21_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        28.0,
+        13.0
+      ],
+      "end_point": [
+        28.0,
+        24.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false,
+      "wall_type_ref": "int_wall_150"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W22_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        30.0,
+        37.0
+      ],
+      "end_point": [
+        42.0,
+        37.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false,
+      "wall_type_ref": "int_wall_150"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W23_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        44.0,
+        37.0
+      ],
+      "end_point": [
+        56.0,
+        37.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false,
+      "wall_type_ref": "int_wall_150"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W24_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        30.0,
+        26.0
+      ],
+      "end_point": [
+        42.0,
+        26.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false,
+      "wall_type_ref": "int_wall_150"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "W25_GF",
+      "component_id": "interior_partition",
+      "storey_ref": "GF",
+      "start_point": [
+        44.0,
+        26.0
+      ],
+      "end_point": [
+        56.0,
+        26.0
+      ],
+      "height": 3.0,
+      "thickness": 0.15,
+      "is_external": false,
+      "wall_type_ref": "int_wall_150"
+    },
+    {
+      "element_type": "door",
+      "storey_ref": "GF",
+      "host_wall_ref": "W9_GF",
+      "distance_along_wall": 7.5,
+      "sill_height": 0.0,
+      "width": 0.9,
+      "height": 2.1,
+      "operation_type": "SINGLE_SWING_LEFT"
+    },
+    {
+      "element_type": "door",
+      "storey_ref": "GF",
+      "host_wall_ref": "W9_GF",
+      "distance_along_wall": 22.5,
+      "sill_height": 0.0,
+      "width": 0.9,
+      "height": 2.1,
+      "operation_type": "SINGLE_SWING_LEFT"
+    },
+    {
+      "element_type": "door",
+      "storey_ref": "GF",
+      "host_wall_ref": "W9_GF",
+      "distance_along_wall": 37.5,
+      "sill_height": 0.0,
+      "width": 0.9,
+      "height": 2.1,
+      "operation_type": "SINGLE_SWING_LEFT"
+    },
+    {
+      "element_type": "door",
+      "storey_ref": "GF",
+      "host_wall_ref": "W9_GF",
+      "distance_along_wall": 52.5,
+      "sill_height": 0.0,
+      "width": 0.9,
+      "height": 2.1,
+      "operation_type": "SINGLE_SWING_LEFT"
+    },
+    {
+      "element_type": "door",
+      "storey_ref": "GF",
+      "host_wall_ref": "W10_GF",
+      "distance_along_wall": 7.0,
+      "sill_height": 0.0,
+      "width": 0.9,
+      "height": 2.1,
+      "operation_type": "SINGLE_SWING_LEFT"
+    },
+    {
+      "element_type": "door",
+      "storey_ref": "GF",
+      "host_wall_ref": "W10_GF",
+      "distance_along_wall": 21.0,
+      "sill_height": 0.0,
+      "width": 0.9,
+      "height": 2.1,
+      "operation_type": "SINGLE_SWING_LEFT"
+    },
+    {
+      "element_type": "door",
+      "storey_ref": "GF",
+      "host_wall_ref": "W10_GF",
+      "distance_along_wall": 35.0,
+      "sill_height": 0.0,
+      "width": 0.9,
+      "height": 2.1,
+      "operation_type": "SINGLE_SWING_LEFT"
+    },
+    {
+      "element_type": "door",
+      "storey_ref": "GF",
+      "host_wall_ref": "W11_GF",
+      "distance_along_wall": 4.0,
+      "sill_height": 0.0,
+      "width": 0.9,
+      "height": 2.1,
+      "operation_type": "SINGLE_SWING_LEFT"
+    },
+    {
+      "element_type": "door",
+      "storey_ref": "GF",
+      "host_wall_ref": "W14_GF",
+      "distance_along_wall": 7.5,
+      "sill_height": 0.0,
+      "width": 0.9,
+      "height": 2.1,
+      "operation_type": "SINGLE_SWING_RIGHT"
+    },
+    {
+      "element_type": "door",
+      "storey_ref": "GF",
+      "host_wall_ref": "W14_GF",
+      "distance_along_wall": 18.5,
+      "sill_height": 0.0,
+      "width": 0.9,
+      "height": 2.1,
+      "operation_type": "SINGLE_SWING_RIGHT"
+    },
+    {
+      "element_type": "door",
+      "storey_ref": "GF",
+      "host_wall_ref": "W15_GF",
+      "distance_along_wall": 7.5,
+      "sill_height": 0.0,
+      "width": 0.9,
+      "height": 2.1,
+      "operation_type": "SINGLE_SWING_LEFT"
+    },
+    {
+      "element_type": "door",
+      "storey_ref": "GF",
+      "host_wall_ref": "W15_GF",
+      "distance_along_wall": 18.5,
+      "sill_height": 0.0,
+      "width": 0.9,
+      "height": 2.1,
+      "operation_type": "SINGLE_SWING_LEFT"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W1_GF",
+      "distance_along_wall": 3.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W1_GF",
+      "distance_along_wall": 7.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W1_GF",
+      "distance_along_wall": 11.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W1_GF",
+      "distance_along_wall": 15.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W1_GF",
+      "distance_along_wall": 19.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W1_GF",
+      "distance_along_wall": 23.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W1_GF",
+      "distance_along_wall": 27.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W1_GF",
+      "distance_along_wall": 31.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W1_GF",
+      "distance_along_wall": 35.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W1_GF",
+      "distance_along_wall": 39.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W1_GF",
+      "distance_along_wall": 43.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W1_GF",
+      "distance_along_wall": 47.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W1_GF",
+      "distance_along_wall": 51.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W1_GF",
+      "distance_along_wall": 55.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W2_GF",
+      "distance_along_wall": 3.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W2_GF",
+      "distance_along_wall": 8.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W2_GF",
+      "distance_along_wall": 13.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W2_GF",
+      "distance_along_wall": 18.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W4_GF",
+      "distance_along_wall": 3.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W4_GF",
+      "distance_along_wall": 8.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W4_GF",
+      "distance_along_wall": 13.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W4_GF",
+      "distance_along_wall": 18.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W5_GF",
+      "distance_along_wall": 3.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W5_GF",
+      "distance_along_wall": 7.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W5_GF",
+      "distance_along_wall": 11.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W5_GF",
+      "distance_along_wall": 15.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W5_GF",
+      "distance_along_wall": 19.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W5_GF",
+      "distance_along_wall": 23.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W6_GF",
+      "distance_along_wall": 3.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W6_GF",
+      "distance_along_wall": 8.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W6_GF",
+      "distance_along_wall": 13.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W6_GF",
+      "distance_along_wall": 18.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W7_GF",
+      "distance_along_wall": 3.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W7_GF",
+      "distance_along_wall": 7.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W7_GF",
+      "distance_along_wall": 11.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W7_GF",
+      "distance_along_wall": 15.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W7_GF",
+      "distance_along_wall": 19.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W7_GF",
+      "distance_along_wall": 23.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W7_GF",
+      "distance_along_wall": 27.2,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W8_GF",
+      "distance_along_wall": 3.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W8_GF",
+      "distance_along_wall": 8.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W8_GF",
+      "distance_along_wall": 13.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "window",
+      "storey_ref": "GF",
+      "host_wall_ref": "W8_GF",
+      "distance_along_wall": 18.7,
+      "sill_height": 0.9,
+      "width": 1.4,
+      "height": 1.4,
+      "partition_type": "SINGLE_PANEL"
+    },
+    {
+      "element_type": "door",
+      "storey_ref": "GF",
+      "host_wall_ref": "W1_GF",
+      "distance_along_wall": 30.0,
+      "sill_height": 0.0,
+      "width": 1.2,
+      "height": 2.1,
+      "operation_type": "DOUBLE_DOOR_SINGLE_SWING"
+    },
+    {
+      "element_type": "slab",
+      "storey_ref": "GF",
+      "boundary_points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          60.0,
+          0.0
+        ],
+        [
+          60.0,
+          24.0
+        ],
+        [
+          56.0,
+          24.0
+        ],
+        [
+          56.0,
+          48.0
+        ],
+        [
+          30.0,
+          48.0
+        ],
+        [
+          30.0,
+          24.0
+        ],
+        [
+          0.0,
+          24.0
+        ]
+      ],
+      "depth": 0.2,
+      "elevation": 0.0,
+      "slab_type": "FLOOR"
+    },
+    {
+      "element_type": "roof",
+      "storey_ref": "GF",
+      "boundary_points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          60.0,
+          0.0
+        ],
+        [
+          60.0,
+          24.0
+        ],
+        [
+          56.0,
+          24.0
+        ],
+        [
+          56.0,
+          48.0
+        ],
+        [
+          30.0,
+          48.0
+        ],
+        [
+          30.0,
+          24.0
+        ],
+        [
+          0.0,
+          24.0
+        ]
+      ],
+      "roof_type": "FLAT",
+      "thickness": 0.25,
+      "ridge_height": 0.0
+    },
+    {
+      "element_type": "stair",
+      "storey_ref": "GF",
+      "start_point": [
+        44.0,
+        14.0
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ],
+      "width": 1.2,
+      "num_risers": 17,
+      "riser_height": 0.176,
+      "tread_depth": 0.25
+    },
+    {
+      "element_type": "stair",
+      "storey_ref": "GF",
+      "start_point": [
+        48.0,
+        14.0
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ],
+      "width": 1.2,
+      "num_risers": 17,
+      "riser_height": 0.176,
+      "tread_depth": 0.25
+    },
+    {
+      "element_type": "elevator",
+      "storey_ref": "GF",
+      "position": [
+        46.0,
+        20.0
+      ],
+      "width": 2.0,
+      "depth": 2.0,
+      "name": "Elevator_A"
+    }
+  ],
+  "wall_junctions": [
+    {
+      "wall_ref_1": "W1_GF",
+      "wall_ref_2": "W2_GF"
+    },
+    {
+      "wall_ref_1": "W2_GF",
+      "wall_ref_2": "W3_GF"
+    },
+    {
+      "wall_ref_1": "W3_GF",
+      "wall_ref_2": "W4_GF"
+    },
+    {
+      "wall_ref_1": "W4_GF",
+      "wall_ref_2": "W5_GF"
+    },
+    {
+      "wall_ref_1": "W5_GF",
+      "wall_ref_2": "W6_GF"
+    },
+    {
+      "wall_ref_1": "W6_GF",
+      "wall_ref_2": "W7_GF"
+    },
+    {
+      "wall_ref_1": "W7_GF",
+      "wall_ref_2": "W8_GF"
+    },
+    {
+      "wall_ref_1": "W8_GF",
+      "wall_ref_2": "W1_GF"
+    }
+  ],
+  "rooms": []
+}

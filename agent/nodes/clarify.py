@@ -12,7 +12,11 @@ import logging
 import re
 from typing import Any
 
-from building_blocks.bsdd import get_pset_summary_for_features
+from building_blocks.bsdd import (
+    COMMON_PSET_MAP,
+    FALLBACK_PSET_PROPERTIES,
+    _FEATURE_TO_IFC_CLASSES,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -140,6 +144,68 @@ BUILDING_FEATURES: list[dict[str, Any]] = [
         "description": "Concrete floor slabs on every storey.",
         "default_for": ["residential", "commercial", "mixed-use", "highrise"],
     },
+    {
+        "id": "footings",
+        "category": "Structure",
+        "label": "Foundation footings",
+        "description": "Concrete pad footings under each column at ground level.",
+        "default_for": ["highrise"],
+    },
+    # ── Facade extras ──
+    {
+        "id": "balconies",
+        "category": "Facade",
+        "label": "Balconies",
+        "description": "Cantilevered concrete slab balconies with safety railings on every residential floor.",
+        "default_for": ["residential", "highrise"],
+    },
+    {
+        "id": "parapets",
+        "category": "Roof",
+        "label": "Roof parapets",
+        "description": "Low perimeter walls around the roof edge for safety and weather protection.",
+        "default_for": ["commercial", "highrise", "mixed-use"],
+    },
+    # ── Finishes (derived from MiC material analysis) ──
+    {
+        "id": "suspended_ceilings",
+        "category": "Finishes",
+        "label": "Suspended ceilings",
+        "description": "Aluminium tile suspended ceilings in bathrooms and wet areas (from MiC bathroom modules).",
+        "default_for": [],
+    },
+    {
+        "id": "floor_finishes",
+        "category": "Finishes",
+        "label": "Floor finishes",
+        "description": "Homogeneous tile floor finishes in habitable rooms (from MiC module specifications).",
+        "default_for": [],
+    },
+    # ── Accessibility ──
+    {
+        "id": "accessibility_ramps",
+        "category": "Ground Floor",
+        "label": "Accessibility ramps",
+        "description": "Wheelchair-accessible ramps at building entrances (1:12 gradient).",
+        "default_for": ["commercial", "highrise", "mixed-use"],
+    },
+    # ── MiC / Prefabrication ──
+    {
+        "id": "bathroom_pods",
+        "category": "Interior",
+        "label": "Bathroom pods",
+        "description": "Pre-fabricated MiC bathroom modules (~2.4 m × 5.8 m) with walls, door, ceiling, and floor finishes.",
+        "default_for": ["residential", "highrise"],
+        "conflicts_with": ["open_plan"],
+    },
+    {
+        "id": "service_rooms",
+        "category": "Interior",
+        "label": "Service / utility rooms",
+        "description": "Dedicated E&M, refuse, and water-meter rooms per floor (from MiC TYPE 7–10 modules).",
+        "default_for": [],
+        "conflicts_with": ["open_plan"],
+    },
 ]
 
 
@@ -225,6 +291,49 @@ def _infer_defaults(message: str) -> dict[str, Any]:
 
 
 # ---------------------------------------------------------------------------
+# Local pset enrichment (no HTTP — uses hardcoded fallbacks)
+# ---------------------------------------------------------------------------
+
+def _get_pset_summary_local(selected_features: list[str]) -> str:
+    """Build a text summary of standard Pset properties using local data only.
+
+    Zero-latency alternative to ``get_pset_summary_for_features`` which
+    attempts HTTP calls to the bSDD API.
+    """
+    ifc_classes: set[str] = set()
+    for fid in selected_features:
+        for cls in _FEATURE_TO_IFC_CLASSES.get(fid, []):
+            ifc_classes.add(cls)
+
+    if not ifc_classes:
+        return ""
+
+    lines: list[str] = []
+    seen_psets: set[str] = set()
+    for cls in sorted(ifc_classes):
+        pset_name = COMMON_PSET_MAP.get(cls)
+        if not pset_name or pset_name in seen_psets:
+            continue
+        seen_psets.add(pset_name)
+        prop_names = FALLBACK_PSET_PROPERTIES.get(pset_name, [])
+        if not prop_names:
+            continue
+        props_str = ", ".join(prop_names[:12])
+        if len(prop_names) > 12:
+            props_str += f", … (+{len(prop_names) - 12} more)"
+        lines.append(f"  - {pset_name} ({cls}): {props_str}")
+
+    if not lines:
+        return ""
+
+    return (
+        "\nSTANDARD PROPERTY SETS (IFC4):\n"
+        + "\n".join(lines)
+        + "\n  Use these exact property names when applying Pset_*Common property sets.\n"
+    )
+
+
+# ---------------------------------------------------------------------------
 # Node
 # ---------------------------------------------------------------------------
 
@@ -246,6 +355,11 @@ def clarify(state: dict[str, Any]) -> dict[str, Any]:
     """
     message = state.get("user_message", "")
     defaults = _infer_defaults(message)
+
+    # Override floor-to-floor height if explicitly provided by the user
+    user_ftf: float | None = state.get("floor_to_floor_height")
+    if user_ftf is not None:
+        defaults["floor_to_floor_height"] = user_ftf
 
     # Use explicitly selected features if provided, otherwise use inferred defaults
     user_selected: list[str] | None = state.get("selected_features")
@@ -289,13 +403,13 @@ def clarify(state: dict[str, Any]) -> dict[str, Any]:
         f"- Interior partitions: is_external=false, thickness 0.1–0.15 m."
     )
 
-    # Enrich with bSDD standard property sets (best-effort)
+    # Enrich with standard property set names (local fallback — no HTTP)
     try:
-        pset_summary = get_pset_summary_for_features(selected)
+        pset_summary = _get_pset_summary_local(selected)
         if pset_summary:
             detailed += "\n" + pset_summary
     except Exception as e:
-        logger.warning("bSDD pset enrichment failed (non-fatal): %s", e)
+        logger.warning("Pset enrichment failed (non-fatal): %s", e)
 
     return {
         **state,

@@ -2,7 +2,7 @@
 
 > AI-powered BIM generation — turn plain English into standards-compliant IFC4 building models, entirely in the browser.
 
-[![Tests](https://img.shields.io/badge/tests-187%2F187%20passing-brightgreen)]()
+[![Tests](https://img.shields.io/badge/tests-249%2F249%20passing-brightgreen)]()
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue)]()
 [![Next.js](https://img.shields.io/badge/Next.js-15-black)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
@@ -20,7 +20,8 @@ IFC-GPT v2 is a full-stack web application that generates IFC4 building informat
 - **Text-to-BIM** — Describe a building in plain English, get a standards-compliant IFC file
 - **Voice input** — Speak your building description (OpenAI Whisper)
 - **Visual editor** — Draw floor plans on a canvas, convert to BIM
-- **Floor plan upload** — Upload a PDF/image floor plan, AI extracts geometry
+- **Floor plan upload** — Upload a PDF/image floor plan, two-branch AI detection (VLM + OpenCV), review & confirm before build
+- **MiC room catalog** — 19 real Hong Kong MiC module types for room classification and dimension validation
 - **In-browser 3D viewer** — ThatOpen Components (Three.js + web-ifc WASM)
 - **Element modification** — Click elements in the viewer, modify via natural language
 - **4-layer validation** — Plan checks, IFC4 schema, IDS specs, semantic analysis
@@ -42,8 +43,9 @@ Browser (Next.js 15)                    Python Backend (FastAPI)
                                                    │
                                        ┌───────────▼──────────────┐
                                        │ IfcOpenShell Authoring   │
-                                       │ 17 primitives · 6 kits  │
-                                       │ 5 type libs · 20+ checks│
+                                       │ 17 primitives · 7 kits  │
+                                       │ MiC room catalog · VLM  │
+                                       │ 5 type libs · 30+ checks│
                                        └──────────────────────────┘
 ```
 
@@ -103,14 +105,15 @@ Open [http://localhost:3000](http://localhost:3000) and start building.
 │   └── prompts/            # System, plan, and repair prompts
 │
 ├── api/                    # FastAPI HTTP server
-│   ├── routes/             # 8 endpoints (generate, build, modify, voice, etc.)
+│   ├── routes/             # 8 route modules, 13 endpoints (generate, build, modify, voice, etc.)
 │   ├── deps.py             # Supabase JWT verification
 │   └── storage.py          # Supabase Storage upload
 │
 ├── building_blocks/        # IFC authoring engine (pure Python, no Blender)
 │   ├── primitives/         # 17 element types (wall, column, beam, slab, door, ...)
 │   ├── types/              # 5 type libraries (IfcWallType, IfcColumnType, ...)
-│   ├── assemblies/         # 6 assembly kits (apartment, stair core, facade, ...)
+│   ├── assemblies/         # 7 assembly kits (apartment, stair core, facade, mic_module, ...)
+│   ├── mic_catalog.py      # MiC room dimension catalog (33 module types)
 │   ├── psets.py            # Standard property set helpers
 │   ├── bsdd.py             # bSDD API client with fallback cache
 │   └── context.py          # IFC project/site/building/storey setup
@@ -123,14 +126,20 @@ Open [http://localhost:3000](http://localhost:3000) and start building.
 │   └── ids/                # IDS specification files
 │
 ├── web/                    # Next.js 15 frontend
-│   ├── components/         # 7 main + 6 shadcn/ui components
+│   ├── components/         # 9 main + 6 shadcn/ui components
 │   ├── hooks/              # useJob, usePascalEditor, useVoice
 │   ├── lib/                # API client, Supabase, plan converter
 │   └── types/              # TypeScript BuildingPlan types
 │
-├── tests/                  # 187 tests across 26 files
+├── tests/                  # 249 tests across 26 test files
 ├── supabase/               # Database schema with RLS
 └── floorplan/              # Floor plan image → BIM pipeline
+    ├── detect.py           # Two-branch: VLM (gpt-5.4-pro) + OpenCV (HoughLinesP)
+    ├── prompts/            # VLM detection prompts
+    ├── ingest.py           # PDF/image normalisation
+    ├── scale.py            # OCR + scale bar detection
+    ├── vectorise.py        # Pixel → metre conversion with Y-flip
+    └── plan_builder.py     # Detections → BuildingPlan JSON (MiC-enriched)
 ```
 
 ---
@@ -143,7 +152,10 @@ Open [http://localhost:3000](http://localhost:3000) and start building.
 | `POST` | `/api/build-from-plan` | BuildingPlan JSON → IFC |
 | `POST` | `/api/modify` | GUID + instruction → modified IFC |
 | `POST` | `/api/voice` | Audio upload → Whisper → IFC generation |
-| `POST` | `/api/floorplan` | Floor plan image/PDF → IFC |
+| `POST` | `/api/floorplan/upload` | Floor plan image/PDF → detection (new) |
+| `GET`  | `/api/floorplan/{id}/plan` | Get detected plan for review (new) |
+| `POST` | `/api/floorplan/{id}/confirm` | Confirm plan → trigger IFC build (new) |
+| `POST` | `/api/floorplan` | Floor plan image/PDF → IFC (legacy) |
 | `GET`  | `/api/status/{id}/stream` | SSE job status stream |
 | `GET`  | `/api/features` | Building feature catalog |
 | `GET`  | `/api/bsdd/*` | bSDD property lookups |
@@ -154,15 +166,19 @@ Open [http://localhost:3000](http://localhost:3000) and start building.
 
 ### Primitives (17)
 
-`wall` · `column` · `beam` · `slab` · `door` · `window` · `opening` · `roof` · `stair` · `railing` · `ramp` · `curtain_wall` · `covering` · `member` · `footing` · `elevator`
+`wall` · `column` · `beam` · `slab` · `door` · `window` · `opening` · `roof` · `stair` · `railing` · `ramp` · `curtain_wall` · `covering` · `member` · `footing` · `elevator` (16 modules + shared `__init__`)
 
 ### Type Libraries (5)
 
 `wall_types` (exterior/interior with material layers) · `column_types` (concrete/circular with profile sets) · `beam_types` (concrete/steel) · `door_types` (single swing/fire) · `window_types` (standard/double-glazed)
 
-### Assemblies (6)
+### Assemblies (7)
 
-`structural_grid` · `stair_core` · `toilet_core` · `apartment_unit` · `facade_bay` · `roof_assembly`
+`structural_grid` · `stair_core` · `toilet_core` · `apartment_unit` · `facade_bay` · `roof_assembly` · `mic_module`
+
+### MiC Room Catalog
+
+33 module types derived from 49 real Hong Kong MiC IFC files (HSK project): master bedrooms (MB), bathrooms (BT), living/kitchen (LK), living/dining (LD), kitchen (KT), bedrooms (BR), toilets (TL), E&M rooms (EMR), refuse rooms (RMSRR), water meter closets (WMC). Used for room classification, dimension validation, parametric module generation, and expected opening counts.
 
 ---
 
@@ -185,7 +201,7 @@ If validation fails, the repair node feeds errors back to the LLM for automatic 
 uv run pytest tests/ -v
 ```
 
-187 tests covering all primitives, types, assemblies, validation layers, build node dispatch, bSDD integration, storage, and floor plan processing.
+249 tests across 26 test files covering all primitives, types, assemblies, validation layers, build node dispatch, bSDD integration, storage, floor plan processing, VLM detection helpers, MiC room catalog, and MiC module assembly.
 
 ---
 

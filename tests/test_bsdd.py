@@ -1,7 +1,7 @@
 """Tests for building_blocks/bsdd.py — cache, fallbacks, enrichment, and validation."""
 from __future__ import annotations
 
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
 
 import pytest
 
@@ -199,6 +199,149 @@ class TestClarifyBsddIntegration:
 # ---------------------------------------------------------------------------
 # Semantic check integration
 # ---------------------------------------------------------------------------
+
+class TestSearchClassesSync:
+    @patch("building_blocks.bsdd.httpx.Client")
+    def test_success_returns_classes(self, mock_client_cls):
+        """Cover search_classes_sync success path (lines 195-217)."""
+        from building_blocks.bsdd import search_classes_sync
+
+        mock_resp = MagicMock()
+        mock_resp.json.return_value = {"Classes": [{"name": "IfcWall"}]}
+        mock_resp.raise_for_status = MagicMock()
+
+        mock_client = MagicMock()
+        mock_client.get.return_value = mock_resp
+        mock_client.__enter__ = MagicMock(return_value=mock_client)
+        mock_client.__exit__ = MagicMock(return_value=False)
+        mock_client_cls.return_value = mock_client
+
+        result = search_classes_sync("wall")
+        assert len(result) == 1
+        assert result[0]["name"] == "IfcWall"
+
+    @patch("building_blocks.bsdd.httpx.Client")
+    def test_failure_returns_empty(self, mock_client_cls):
+        """Cover search_classes_sync exception path (lines 215-217)."""
+        from building_blocks.bsdd import search_classes_sync
+
+        mock_client_cls.side_effect = Exception("connection error")
+        result = search_classes_sync("wall")
+        assert result == []
+
+
+class TestGetClassPropertiesSync:
+    @patch("building_blocks.bsdd.httpx.Client")
+    def test_success_returns_data(self, mock_client_cls):
+        """Cover get_class_properties_sync success path (lines 228-244)."""
+        from building_blocks.bsdd import get_class_properties_sync
+
+        mock_resp = MagicMock()
+        mock_resp.json.return_value = {"classProperties": [{"name": "Prop1"}]}
+        mock_resp.raise_for_status = MagicMock()
+
+        mock_client = MagicMock()
+        mock_client.get.return_value = mock_resp
+        mock_client.__enter__ = MagicMock(return_value=mock_client)
+        mock_client.__exit__ = MagicMock(return_value=False)
+        mock_client_cls.return_value = mock_client
+
+        result = get_class_properties_sync("http://example.com/class")
+        assert "classProperties" in result
+
+    @patch("building_blocks.bsdd.httpx.Client")
+    def test_failure_returns_empty_dict(self, mock_client_cls):
+        """Cover get_class_properties_sync exception path (lines 245-247)."""
+        from building_blocks.bsdd import get_class_properties_sync
+
+        mock_client_cls.side_effect = Exception("timeout")
+        result = get_class_properties_sync("http://example.com/class")
+        assert result == {}
+
+
+class TestAsyncFunctions:
+    @pytest.mark.asyncio
+    async def test_search_classes_async(self):
+        """Cover async search_classes (lines 135-153)."""
+        from unittest.mock import AsyncMock
+        from building_blocks.bsdd import search_classes
+
+        mock_resp = MagicMock()
+        mock_resp.json.return_value = {"Classes": [{"name": "IfcBeam"}]}
+        mock_resp.raise_for_status = MagicMock()
+
+        mock_client = AsyncMock()
+        mock_client.get.return_value = mock_resp
+
+        with patch("building_blocks.bsdd.httpx.AsyncClient") as mock_cls:
+            mock_cls.return_value.__aenter__.return_value = mock_client
+            mock_cls.return_value.__aexit__.return_value = False
+            result = await search_classes("beam")
+        assert len(result) == 1
+
+    @pytest.mark.asyncio
+    async def test_get_class_properties_async(self):
+        """Cover async get_class_properties (lines 161-179)."""
+        from unittest.mock import AsyncMock
+        from building_blocks.bsdd import get_class_properties
+
+        mock_resp = MagicMock()
+        mock_resp.json.return_value = {"classProperties": []}
+        mock_resp.raise_for_status = MagicMock()
+
+        mock_client = AsyncMock()
+        mock_client.get.return_value = mock_resp
+
+        with patch("building_blocks.bsdd.httpx.AsyncClient") as mock_cls:
+            mock_cls.return_value.__aenter__.return_value = mock_client
+            mock_cls.return_value.__aexit__.return_value = False
+            result = await get_class_properties("http://example.com/class")
+        assert "classProperties" in result
+
+    @pytest.mark.asyncio
+    async def test_get_pset_properties_for_element_async(self):
+        """Cover async get_pset_properties_for_element (lines 184-186)."""
+        from unittest.mock import AsyncMock
+        from building_blocks.bsdd import get_pset_properties_for_element
+
+        mock_resp = MagicMock()
+        mock_resp.json.return_value = {"classProperties": [{"name": "IsExternal"}]}
+        mock_resp.raise_for_status = MagicMock()
+
+        mock_client = AsyncMock()
+        mock_client.get.return_value = mock_resp
+
+        with patch("building_blocks.bsdd.httpx.AsyncClient") as mock_cls:
+            mock_cls.return_value.__aenter__.return_value = mock_client
+            mock_cls.return_value.__aexit__.return_value = False
+            result = await get_pset_properties_for_element("IfcWall")
+        assert len(result) == 1
+
+
+class TestPsetSummaryTruncation:
+    @patch("building_blocks.bsdd.get_pset_properties_for_element_sync", return_value=[])
+    def test_truncation_with_many_properties(self, _mock):
+        """Cover the >12 properties truncation branch (lines 363, 366-367)."""
+        from building_blocks.bsdd import get_pset_summary_for_features
+
+        # Pset_StairCommon has 12 properties — check it shows all
+        summary = get_pset_summary_for_features(["stairs"])
+        assert "Pset_StairCommon" in summary
+
+    @patch("building_blocks.bsdd.get_pset_properties_for_element_sync", return_value=[])
+    def test_empty_features_list(self, _mock):
+        """Cover empty ifc_classes → early return (line 354-355)."""
+        from building_blocks.bsdd import get_pset_summary_for_features
+        result = get_pset_summary_for_features([])
+        assert result == ""
+
+    @patch("building_blocks.bsdd.get_standard_psets_sync", return_value={})
+    def test_no_psets_found_returns_empty(self, _mock):
+        """Cover the no-lines early return (line 370-371)."""
+        from building_blocks.bsdd import get_pset_summary_for_features
+        result = get_pset_summary_for_features(["exterior_walls"])
+        assert result == ""
+
 
 class TestPsetPropertyNameCheck:
     def test_valid_properties_pass(self, ifc_setup):

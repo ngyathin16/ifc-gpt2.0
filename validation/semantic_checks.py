@@ -6,7 +6,6 @@ checking for common modelling errors in LLM-generated IFC files.
 """
 from __future__ import annotations
 
-import math
 from typing import Any
 
 import ifcopenshell
@@ -75,24 +74,6 @@ def check_element_geometry(ifc_file: ifcopenshell.file) -> list[dict[str, Any]]:
                 "message": (
                     f"{elem.Name or elem.GlobalId} ({elem.is_a()}) "
                     "has no geometric representation"
-                ),
-            })
-    return issues
-
-
-def check_zero_thickness_slabs(ifc_file: ifcopenshell.file) -> list[dict[str, Any]]:
-    """Check slabs have geometry (non-zero thickness)."""
-    issues: list[dict[str, Any]] = []
-    for slab in ifc_file.by_type("IfcSlab"):
-        has_rep = bool(slab.Representation and slab.Representation.Representations)
-        if not has_rep:
-            issues.append({
-                "severity": "error",
-                "check": "zero_thickness_slab",
-                "element": slab.GlobalId,
-                "element_type": "IfcSlab",
-                "message": (
-                    f"Slab '{slab.Name or slab.GlobalId}' has no geometric representation"
                 ),
             })
     return issues
@@ -456,14 +437,22 @@ def check_pset_property_names(ifc_file: ifcopenshell.file) -> list[dict[str, Any
 # Main entry point
 # ---------------------------------------------------------------------------
 
-def run_all_checks(ifc_path: str) -> dict[str, Any]:
-    """Run all semantic checks and return combined results."""
-    ifc_file = ifcopenshell.open(ifc_path)
+def run_all_checks(
+    ifc_path: str,
+    ifc_file: ifcopenshell.file | None = None,
+) -> dict[str, Any]:
+    """Run all semantic checks and return combined results.
+
+    Args:
+        ifc_path: Path to IFC file (used only if ifc_file is None).
+        ifc_file: Pre-opened IFC file object to avoid redundant I/O.
+    """
+    if ifc_file is None:
+        ifc_file = ifcopenshell.open(ifc_path)
     all_issues: list[dict[str, Any]] = []
     all_issues.extend(check_spatial_containment(ifc_file))
     all_issues.extend(check_floating_openings(ifc_file))
     all_issues.extend(check_element_geometry(ifc_file))
-    all_issues.extend(check_zero_thickness_slabs(ifc_file))
     all_issues.extend(check_disconnected_storeys(ifc_file))
     all_issues.extend(check_wall_count(ifc_file))
     all_issues.extend(check_roof_exists(ifc_file))

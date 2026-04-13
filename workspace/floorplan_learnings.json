@@ -1,0 +1,215 @@
+{
+  "task": "Generate IFC from floor plan image",
+  "status": "partially_completed",
+  "attempts": 2,
+
+  "what_went_wrong": {
+    "attempt_1": {
+      "description": "Grossly oversimplified the floor plan into a basic L-shaped box with 25 walls and no internal room layouts",
+      "failures": [
+        "No internal room walls — each unit was a single empty box",
+        "Building perimeter was a crude 8-point L-shape, missing all protrusions, setbacks, and balconies",
+        "Window placement was uniform spacing (every 4m) instead of per-room positioning",
+        "Only 13 doors (corridor entries only) — no internal doors between rooms",
+        "Unit proportions were guessed, not measured from the image",
+        "No attempt to trace the actual geometry from the floor plan image",
+        "The result looked nothing like the original floor plan"
+      ]
+    },
+    "attempt_2": {
+      "description": "Added internal room partitions (3 per unit) and internal doors, but still based on template layouts rather than actual image geometry",
+      "improvements": [
+        "60 walls (was 25) — each unit now has 3 internal partition walls creating 4 rooms",
+        "48 doors (was 13) — entrance door + 3 internal doors per unit",
+        "33 windows placed per-room on correct exterior walls",
+        "Corridor topology modeled correctly (main corridor + wing corridor + core)",
+        "Unit boundary walls separating adjacent units"
+      ],
+      "remaining_failures": [
+        "Internal room layouts use a generic template (55%/28% splits) rather than tracing actual room shapes from the image",
+        "Building perimeter still simplified — no balcony protrusions or irregular edges",
+        "Room types not differentiated (can't tell kitchen from bathroom from bedroom)",
+        "Exact wall positions are estimated, not measured from the image",
+        "No furniture, fixtures, or room annotations",
+        "Wing unit sizes and positions are approximate"
+      ]
+    }
+  },
+
+  "fundamental_limitations": {
+    "core_problem": "I am a Large Language Model (LLM). I cannot extract precise pixel-level geometry from raster images. I can describe what I see qualitatively, but I cannot measure wall positions, trace contours, or determine exact coordinates from an image.",
+    "specific_limitations": [
+      {
+        "limitation": "No pixel-level coordinate extraction",
+        "explanation": "I can see 'there is a wall here' but cannot determine its exact pixel coordinates or length in the image. All dimensions in my model are estimates based on typical residential building proportions."
+      },
+      {
+        "limitation": "No scale detection",
+        "explanation": "The floor plan image has no visible scale bar or dimension annotations. Without a scale reference, I cannot convert pixel measurements to real-world metres even if I could measure pixels."
+      },
+      {
+        "limitation": "Cannot save chat-uploaded images to disk",
+        "explanation": "The codebase has a full OpenCV-based floor plan detection pipeline (floorplan/detect.py, floorplan/pipeline.py) that can detect walls via HoughLinesP, detect rooms via contour analysis, and convert pixel coordinates to metres. However, I cannot programmatically save the chat-uploaded image to a file on disk to feed into this pipeline."
+      },
+      {
+        "limitation": "Low image resolution",
+        "explanation": "At the provided resolution, individual wall lines are only 2-4 pixels thick. This makes it extremely difficult to distinguish internal partitions from furniture lines, wall intersections from door openings, etc."
+      },
+      {
+        "limitation": "No room label OCR",
+        "explanation": "Even if I could process the image, the room labels (bedroom, kitchen, bathroom, living room) in the floor plan are too small and require OCR to read accurately."
+      }
+    ]
+  },
+
+  "what_exists_in_codebase": {
+    "cv_pipeline": {
+      "location": "floorplan/",
+      "components": [
+        "floorplan/ingest.py — Image loading (PDF/PNG/JPEG), normalisation to RGB numpy array",
+        "floorplan/scale.py — Scale detection via OCR annotation ('1:100') or scale bar measurement",
+        "floorplan/detect.py — OpenCV wall detection (Canny + HoughLinesP), room contour detection, collinear wall merging",
+        "floorplan/vectorise.py — Pixel-to-metre conversion with Y-axis flip, coordinate snapping to 5cm grid",
+        "floorplan/plan_builder.py — Converts vectorised geometry to BuildingPlan JSON dict compatible with the build pipeline"
+      ],
+      "status": "Functional but needs image as file on disk. VLM branch is a no-op placeholder. No YOLO model trained yet.",
+      "dependencies_available": true,
+      "note": "cv2 4.13.0, PIL, numpy all installed and importable"
+    },
+    "build_pipeline": {
+      "location": "agent/nodes/build.py",
+      "status": "Fully functional — can take a BuildingPlan dict and produce a valid IFC4 file",
+      "components_used": [
+        "building_blocks/context.py — IFC project setup, storey creation",
+        "building_blocks/primitives/wall.py — Wall creation with 2-point geometry",
+        "building_blocks/primitives/door.py — Door creation with wall opening",
+        "building_blocks/primitives/window.py — Window creation with wall opening",
+        "building_blocks/primitives/slab.py — Floor slab from polyline boundary",
+        "building_blocks/primitives/roof.py — Flat/pitched roof",
+        "building_blocks/primitives/stair.py — Stair flight as stepped mesh",
+        "building_blocks/primitives/elevator.py — Elevator shaft as extruded profile"
+      ]
+    }
+  },
+
+  "what_would_be_needed_to_do_this_properly": [
+    {
+      "requirement": "Image file on disk",
+      "priority": "critical",
+      "explanation": "Save the floor plan image as a PNG/JPEG file in the workspace directory so the CV pipeline can process it. Then run: floorplan.pipeline.floorplan_to_plan_from_path('path/to/image.png')"
+    },
+    {
+      "requirement": "Scale reference",
+      "priority": "critical",
+      "explanation": "Either a scale annotation in the image (e.g. '1:100'), a scale bar, or known real-world dimensions of at least one element (e.g. 'the building is 62m wide'). Without this, pixel→metre conversion is pure guesswork."
+    },
+    {
+      "requirement": "Higher resolution image",
+      "priority": "high",
+      "explanation": "At least 2000×1200px to reliably detect internal partition walls (which are typically thinner than exterior walls and harder to detect at low resolution)."
+    },
+    {
+      "requirement": "VLM integration for room classification",
+      "priority": "medium",
+      "explanation": "The floorplan/detect.py has a placeholder for VLM-based room classification. Integrating GPT-4V or similar would allow automatic identification of room types (kitchen, bathroom, bedroom, living room) from the image."
+    },
+    {
+      "requirement": "Original CAD/DWG file",
+      "priority": "ideal",
+      "explanation": "If the original architectural drawing is available in DWG/DXF format, all geometry can be extracted exactly without any computer vision. This eliminates all scale, resolution, and detection accuracy issues."
+    },
+    {
+      "requirement": "Fine-tuned YOLO model for architectural element detection",
+      "priority": "future",
+      "explanation": "The codebase has a placeholder for YOLO-based detection (floorplan/detect.py line 324-332). A model trained on architectural floor plans would detect doors, windows, stairs, and room types much more accurately than pure OpenCV edge detection."
+    }
+  ],
+
+  "recommended_next_steps": [
+    "1. Save the floor plan image to workspace/floorplan.png",
+    "2. Run: from floorplan.pipeline import floorplan_to_plan_from_path; plan = floorplan_to_plan_from_path('workspace/floorplan.png')",
+    "3. Review the detected walls and manually correct any errors in the resulting plan JSON",
+    "4. Feed the corrected plan into the build pipeline: from agent.graph import run_pipeline_from_plan; run_pipeline_from_plan(plan)",
+    "5. Validate the output IFC file"
+  ],
+
+  "cv_pipeline_results": {
+    "image_found": "C:\\Users\\Harold NG\\Pictures\\Screenshots\\Screenshot 2026-03-26 140545.png",
+    "copied_to": "workspace/floorplan.png",
+    "image_dimensions": "1397x815 px",
+    "scale_used": "16.0 px/m (estimated, default 1:100@300DPI was wrong for screenshot)",
+    "raw_walls_detected": 103,
+    "after_morphological_filtering": 74,
+    "key_finding": "CV detected wall POSITIONS accurately but produced fragmented segments. Building shape is L with wing on EAST side (x=52..73), not center-right as initially assumed.",
+    "corrected_coordinates": {
+      "building_south": 4.0,
+      "building_north_main": 25.0,
+      "building_west": 6.0,
+      "building_east_main": 62.0,
+      "wing_west": 52.0,
+      "wing_east": 73.0,
+      "wing_north": 48.0,
+      "corridor_south": 10.0,
+      "corridor_north": 13.0,
+      "unit_partitions_x": [19.6, 28.0, 43.0, 55.0]
+    }
+  },
+
+  "output_files": {
+    "v1_ifc": "workspace/12unit_floorplan.ifc",
+    "v1_plan": "workspace/12unit_plan.json",
+    "v1_stats": {"walls": 25, "doors": 13, "windows": 43, "total": 86},
+    "v2_ifc": "workspace/12unit_v2.ifc",
+    "v2_plan": "workspace/12unit_v2_plan.json",
+    "v2_stats": {"walls": 60, "doors": 48, "windows": 33, "total": 146},
+    "cv_raw_ifc": "workspace/12unit_cv2.ifc",
+    "cv_raw_plan": "workspace/cv_plan_v3.json",
+    "cv_raw_stats": {"walls": 74, "doors": 3, "windows": 22, "total": 101},
+    "v3_final_ifc": "workspace/12unit_v3.ifc",
+    "v3_final_plan": "workspace/12unit_v3_plan.json",
+    "v3_final_stats": {
+      "walls": 61,
+      "doors": 48,
+      "windows": 34,
+      "slabs": 1,
+      "roofs": 1,
+      "stairs": 2,
+      "elevators": 1,
+      "openings": 82,
+      "total_elements": 148,
+      "footprint": "67.0m x 44.0m",
+      "footprint_x": [6.0, 73.0],
+      "footprint_y": [4.0, 48.0]
+    },
+    "helper_script": "process_floorplan_image.py"
+  },
+
+  "progression_summary": {
+    "v1": "Gross oversimplification — empty rectangular boxes, wrong building shape, no internal rooms",
+    "v2": "Added internal room partitions (3 per unit) but used wrong building dimensions (guessed)",
+    "cv_raw": "Used OpenCV HoughLinesP to detect 74 walls from actual image pixels — correct positions but fragmented, few openings placed",
+    "v3_final": "HYBRID — CV-derived building coordinates + proper wall structure with internal rooms, doors, windows. Building shape corrected to L with east wing based on CV analysis."
+  },
+
+  "honest_assessment": {
+    "what_v3_gets_right": [
+      "Building footprint matches CV-detected extents (67m x 44m)",
+      "L-shape with wing on east side (corrected from initial center-right assumption)",
+      "Corridor position at y=10..13 matches detected walls",
+      "Unit partition positions from detected vertical walls (x=19.6, 28.0, 43.0, 55.0)",
+      "Each unit has 3 internal room partitions creating 4 rooms",
+      "48 doors (12 corridor entries + 36 internal)",
+      "34 windows distributed across all exterior walls",
+      "Core area with stairs and elevator"
+    ],
+    "what_v3_still_gets_wrong": [
+      "Internal room layouts are TEMPLATE-based (55%/28% splits) not traced from actual image",
+      "Room types not differentiated (all rooms look the same)",
+      "Building perimeter is simplified 8-point L — actual has many protrusions and setbacks",
+      "No balcony protrusions visible in original floor plan",
+      "Window/door positions are approximate, not pixel-matched",
+      "Scale is estimated (16 px/m) not measured from a scale bar",
+      "Some unit dimensions may be off — CV detected fragmented walls, not continuous ones"
+    ]
+  }
+}

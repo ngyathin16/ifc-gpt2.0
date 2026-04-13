@@ -75,7 +75,7 @@ cd web && npm run dev
 uv run pytest tests/ -v
 ```
 
-All 187 tests should pass. No external services needed for tests.
+All 249 tests should pass. No external services needed for tests.
 
 ---
 

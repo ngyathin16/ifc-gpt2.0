@@ -1,0 +1,52 @@
+{
+  "MiC_TYPE 3.1_LK1L": {
+    "width": 814461.0,
+    "depth": 854125.2,
+    "height": 28570.0
+  },
+  "MiC_TYPE 3.2_LK2L": {
+    "width": 805360.5,
+    "depth": 861442.8,
+    "height": 28580.0
+  },
+  "MiC_TYPE 3.3_LK2R": {
+    "width": 838588.9,
+    "depth": 841170.5,
+    "height": 28570.0
+  },
+  "MiC_TYPE 3.4_LK1L": {
+    "width": 833963.2,
+    "depth": 839312.6,
+    "height": 28570.0
+  },
+  "MiC_TYPE 3_LK1L": {
+    "width": 818650.8,
+    "depth": 843697.8,
+    "height": 28570.0
+  },
+  "MiC_TYPE 3A1_LK1R": {
+    "width": 823802.5,
+    "depth": 833020.5,
+    "height": 28570.0
+  },
+  "MiC_TYPE 3A2_LD1L": {
+    "width": 831123.9,
+    "depth": 835961.6,
+    "height": 28570.0
+  },
+  "MiC_TYPE 3A3_LD2R": {
+    "width": 835230.7,
+    "depth": 843587.0,
+    "height": 28560.9
+  },
+  "MiC_TYPE 3B1_LD2L": {
+    "width": 805263.4,
+    "depth": 858144.4,
+    "height": 28570.0
+  },
+  "MiC_TYPE 3B2_LD1L & LD2R": {
+    "width": 813949.0,
+    "depth": 837294.1,
+    "height": 28580.0
+  }
+}

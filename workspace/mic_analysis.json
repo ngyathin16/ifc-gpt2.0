@@ -1,0 +1,4107 @@
+[
+  {
+    "filename": "MiC_TPYE_1_3_MB1L_MB1R_MiC_TPYE_1_3_MB1L_MB1R_57187604_2b5qABg3z8xAsQnY6YndAj.ifc",
+    "file_size_mb": 1.728327751159668,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10337,
+      "IfcFace": 10290,
+      "IfcFaceOuterBound": 10290,
+      "IfcCartesianPoint": 7211,
+      "IfcStyledItem": 89,
+      "IfcClosedShell": 80,
+      "IfcFacetedBrep": 80,
+      "IfcFaceBound": 47,
+      "IfcMaterialConstituent": 22,
+      "IfcShapeRepresentation": 14,
+      "IfcShapeAspect": 12,
+      "IfcColourRgb": 12,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcMaterial": 10,
+      "IfcDirection": 9,
+      "IfcSurfaceStyle": 9,
+      "IfcStyledRepresentation": 9,
+      "IfcMaterialDefinitionRepresentation": 9,
+      "IfcSurfaceStyleRendering": 9
+    },
+    "original_name": "MiC_TPYE 1.3_MB1L & MB1R:MiC_TPYE 1.3_MB1L & MB1R:57187604",
+    "global_id": "2b5qABg3z8xAsQnY6YndAj",
+    "type_info": {
+      "family": "MiC_TPYE 1.3_MB1L & MB1R",
+      "type_number": "1.3",
+      "code": "MB1L",
+      "category": "master_bedroom"
+    },
+    "bbox": {
+      "min": [
+        -0.0,
+        -0.00048023095621943,
+        -45.0000014132711
+      ],
+      "max": [
+        2385.0,
+        3994.99985546241,
+        3099.99999853651
+      ],
+      "width": 2385.0,
+      "depth": 3995.000335693366,
+      "height": 3144.999999949781
+    },
+    "dimensions_m": {
+      "width": 2385.0,
+      "depth": 3995.0,
+      "height": 3145.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TPYE 1.3_MB1L & MB1R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TPYE 1.3_MB1L & MB1R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TPYE_1_3_MB1L_MB1R_MiC_TPYE_1_3_MB1L_MB1R_57188162_2b5qABg3z8xAsQnY6Ynd3x.ifc",
+    "file_size_mb": 1.7353811264038086,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10339,
+      "IfcFaceOuterBound": 10292,
+      "IfcFace": 10292,
+      "IfcCartesianPoint": 7211,
+      "IfcStyledItem": 89,
+      "IfcClosedShell": 80,
+      "IfcFacetedBrep": 80,
+      "IfcFaceBound": 47,
+      "IfcMaterialConstituent": 22,
+      "IfcShapeRepresentation": 14,
+      "IfcShapeAspect": 12,
+      "IfcColourRgb": 12,
+      "IfcPropertySet": 11,
+      "IfcRelDefinesByProperties": 11,
+      "IfcMaterial": 10,
+      "IfcDirection": 9,
+      "IfcStyledRepresentation": 9,
+      "IfcMaterialDefinitionRepresentation": 9,
+      "IfcSurfaceStyleRendering": 9,
+      "IfcSurfaceStyle": 9
+    },
+    "original_name": "MiC_TPYE 1.3_MB1L & MB1R:MiC_TPYE 1.3_MB1L & MB1R:57188162",
+    "global_id": "2b5qABg3z8xAsQnY6Ynd3x",
+    "type_info": {
+      "family": "MiC_TPYE 1.3_MB1L & MB1R",
+      "type_number": "1.3",
+      "code": "MB1L",
+      "category": "master_bedroom"
+    },
+    "bbox": {
+      "min": [
+        -0.0,
+        -3994.99985546241,
+        -45.0000014132711
+      ],
+      "max": [
+        2385.0,
+        0.00048023095621943,
+        3099.99999853651
+      ],
+      "width": 2385.0,
+      "depth": 3995.000335693366,
+      "height": 3144.999999949781
+    },
+    "dimensions_m": {
+      "width": 2385.0,
+      "depth": 3995.0,
+      "height": 3145.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TPYE 1.3_MB1L & MB1R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TPYE 1.3_MB1L & MB1R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TPYE_1_3_MB1L_MB1R_MiC_TPYE_1_3_MB1L_MB1R_57324230_0Py65SNEj1KOkc3USpbolr.ifc",
+    "file_size_mb": 1.735398292541504,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10339,
+      "IfcFaceOuterBound": 10292,
+      "IfcFace": 10292,
+      "IfcCartesianPoint": 7211,
+      "IfcStyledItem": 89,
+      "IfcClosedShell": 80,
+      "IfcFacetedBrep": 80,
+      "IfcFaceBound": 47,
+      "IfcMaterialConstituent": 22,
+      "IfcShapeRepresentation": 14,
+      "IfcShapeAspect": 12,
+      "IfcColourRgb": 12,
+      "IfcPropertySet": 11,
+      "IfcRelDefinesByProperties": 11,
+      "IfcMaterial": 10,
+      "IfcDirection": 9,
+      "IfcSurfaceStyle": 9,
+      "IfcStyledRepresentation": 9,
+      "IfcMaterialDefinitionRepresentation": 9,
+      "IfcSurfaceStyleRendering": 9
+    },
+    "original_name": "MiC_TPYE 1.3_MB1L & MB1R:MiC_TPYE 1.3_MB1L & MB1R:57324230",
+    "global_id": "0Py65SNEj1KOkc3USpbolr",
+    "type_info": {
+      "family": "MiC_TPYE 1.3_MB1L & MB1R",
+      "type_number": "1.3",
+      "code": "MB1L",
+      "category": "master_bedroom"
+    },
+    "bbox": {
+      "min": [
+        -0.0,
+        -3994.99985546241,
+        -45.0000014132711
+      ],
+      "max": [
+        2385.0,
+        0.00048023095621943,
+        3099.99999853651
+      ],
+      "width": 2385.0,
+      "depth": 3995.000335693366,
+      "height": 3144.999999949781
+    },
+    "dimensions_m": {
+      "width": 2385.0,
+      "depth": 3995.0,
+      "height": 3145.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TPYE 1.3_MB1L & MB1R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TPYE 1.3_MB1L & MB1R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_10_WMC_MiC_TYPE_10_WMC_57321153_3gEg7mW$z7yAlWKjenXNwY.ifc",
+    "file_size_mb": 0.585789680480957,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 3546,
+      "IfcFaceOuterBound": 3530,
+      "IfcFace": 3530,
+      "IfcCartesianPoint": 2601,
+      "IfcStyledItem": 33,
+      "IfcClosedShell": 31,
+      "IfcFacetedBrep": 31,
+      "IfcFaceBound": 16,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9,
+      "IfcOwnerHistory": 7,
+      "IfcPropertySingleValue": 7,
+      "IfcAxis2Placement3D": 6,
+      "IfcSIUnit": 6,
+      "IfcLocalPlacement": 4,
+      "IfcShapeRepresentation": 4,
+      "IfcMaterialConstituent": 4,
+      "IfcOrganization": 4,
+      "IfcRelAggregates": 3
+    },
+    "original_name": "MiC_TYPE 10_WMC:MiC_TYPE 10_WMC:57321153",
+    "global_id": "3gEg7mW$z7yAlWKjenXNwY",
+    "type_info": {
+      "family": "MiC_TYPE 10_WMC",
+      "type_number": "10",
+      "code": "WMC",
+      "category": "utility_wmc"
+    },
+    "bbox": {
+      "min": [
+        -955.0,
+        -2254.50000000003,
+        -28165.0
+      ],
+      "max": [
+        195.0,
+        -0.0,
+        -25164.9993957522
+      ],
+      "width": 1150.0,
+      "depth": 2254.50000000003,
+      "height": 3000.0006042478017
+    },
+    "dimensions_m": {
+      "width": 1150.0,
+      "depth": 2254.5,
+      "height": 3000.001
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 10_WMC"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 10_WMC"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "Concrete, Cast-in-Place - C15",
+      "HSK1A_Stainless - Brushed"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_1_1_MB3R_MiC_TYPE_1_1_MB3R_57131994_1DsuNIs$bADP4N2gjHGkoS.ifc",
+    "file_size_mb": 1.7155113220214844,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10284,
+      "IfcFaceOuterBound": 10234,
+      "IfcFace": 10234,
+      "IfcCartesianPoint": 7236,
+      "IfcStyledItem": 95,
+      "IfcClosedShell": 86,
+      "IfcFacetedBrep": 86,
+      "IfcFaceBound": 50,
+      "IfcMaterialConstituent": 22,
+      "IfcShapeRepresentation": 14,
+      "IfcShapeAspect": 12,
+      "IfcColourRgb": 12,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcMaterial": 10,
+      "IfcDirection": 9,
+      "IfcSurfaceStyleRendering": 9,
+      "IfcSurfaceStyle": 9,
+      "IfcStyledRepresentation": 9,
+      "IfcMaterialDefinitionRepresentation": 9
+    },
+    "original_name": "MiC_TYPE 1.1_MB3R:MiC_TYPE 1.1_MB3R:57131994",
+    "global_id": "1DsuNIs$bADP4N2gjHGkoS",
+    "type_info": {
+      "family": "MiC_TYPE 1.1_MB3R",
+      "type_number": "1.1",
+      "code": "MB3R",
+      "category": "master_bedroom"
+    },
+    "bbox": {
+      "min": [
+        -0.322913552826395,
+        -0.0,
+        -45.0
+      ],
+      "max": [
+        2385.0,
+        4025.17858340304,
+        3100.0
+      ],
+      "width": 2385.3229135528263,
+      "depth": 4025.17858340304,
+      "height": 3145.0
+    },
+    "dimensions_m": {
+      "width": 2385.323,
+      "depth": 4025.179,
+      "height": 3145.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 1.1_MB3R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 1.1_MB3R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_1_2_MB2L_MB2R_MiC_TYPE_1_2_MB2L_MB2R_57130784_1DsuNIs$bADP4N2gjHGf1c.ifc",
+    "file_size_mb": 1.718337059020996,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10280,
+      "IfcFaceOuterBound": 10230,
+      "IfcFace": 10230,
+      "IfcCartesianPoint": 7152,
+      "IfcStyledItem": 90,
+      "IfcClosedShell": 81,
+      "IfcFacetedBrep": 81,
+      "IfcFaceBound": 50,
+      "IfcMaterialConstituent": 22,
+      "IfcShapeRepresentation": 14,
+      "IfcShapeAspect": 12,
+      "IfcColourRgb": 12,
+      "IfcPropertySet": 11,
+      "IfcRelDefinesByProperties": 11,
+      "IfcMaterial": 10,
+      "IfcDirection": 9,
+      "IfcStyledRepresentation": 9,
+      "IfcMaterialDefinitionRepresentation": 9,
+      "IfcSurfaceStyleRendering": 9,
+      "IfcSurfaceStyle": 9
+    },
+    "original_name": "MiC_TYPE 1.2_MB2L & MB2R:MiC_TYPE 1.2_MB2L & MB2R:57130784",
+    "global_id": "1DsuNIs$bADP4N2gjHGf1c",
+    "type_info": {
+      "family": "MiC_TYPE 1.2_MB2L & MB2R",
+      "type_number": "1.2",
+      "code": "MB2L",
+      "category": "master_bedroom"
+    },
+    "bbox": {
+      "min": [
+        0.0,
+        0.0,
+        -45.0
+      ],
+      "max": [
+        2384.98465576177,
+        4025.00315551758,
+        3100.09185126918
+      ],
+      "width": 2384.98465576177,
+      "depth": 4025.00315551758,
+      "height": 3145.09185126918
+    },
+    "dimensions_m": {
+      "width": 2384.985,
+      "depth": 4025.003,
+      "height": 3145.092
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 1.2_MB2L & MB2R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 1.2_MB2L & MB2R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_1_2_MB2L_MB2R_MiC_TYPE_1_2_MB2L_MB2R_57318743_3gEg7mW$z7yAlWKjenXKKq.ifc",
+    "file_size_mb": 1.7258987426757812,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10287,
+      "IfcFace": 10237,
+      "IfcFaceOuterBound": 10237,
+      "IfcCartesianPoint": 7152,
+      "IfcStyledItem": 90,
+      "IfcClosedShell": 81,
+      "IfcFacetedBrep": 81,
+      "IfcFaceBound": 50,
+      "IfcMaterialConstituent": 22,
+      "IfcShapeRepresentation": 14,
+      "IfcShapeAspect": 12,
+      "IfcColourRgb": 12,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcMaterial": 10,
+      "IfcDirection": 9,
+      "IfcMaterialDefinitionRepresentation": 9,
+      "IfcSurfaceStyleRendering": 9,
+      "IfcSurfaceStyle": 9,
+      "IfcStyledRepresentation": 9
+    },
+    "original_name": "MiC_TYPE 1.2_MB2L & MB2R:MiC_TYPE 1.2_MB2L & MB2R:57318743",
+    "global_id": "3gEg7mW$z7yAlWKjenXKKq",
+    "type_info": {
+      "family": "MiC_TYPE 1.2_MB2L & MB2R",
+      "type_number": "1.2",
+      "code": "MB2L",
+      "category": "master_bedroom"
+    },
+    "bbox": {
+      "min": [
+        0.0,
+        -4025.00315551758,
+        -45.0
+      ],
+      "max": [
+        2384.98465576177,
+        -0.0,
+        3100.09185126918
+      ],
+      "width": 2384.98465576177,
+      "depth": 4025.00315551758,
+      "height": 3145.09185126918
+    },
+    "dimensions_m": {
+      "width": 2384.985,
+      "depth": 4025.003,
+      "height": 3145.092
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 1.2_MB2L & MB2R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 1.2_MB2L & MB2R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_1_2_MB2L_MB2R_MiC_TYPE_1_2_MB2L_MB2R_57321672_2D9tLpdgX7xBHbZ3peNV6v.ifc",
+    "file_size_mb": 1.7183570861816406,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10280,
+      "IfcFaceOuterBound": 10230,
+      "IfcFace": 10230,
+      "IfcCartesianPoint": 7152,
+      "IfcStyledItem": 90,
+      "IfcFacetedBrep": 81,
+      "IfcClosedShell": 81,
+      "IfcFaceBound": 50,
+      "IfcMaterialConstituent": 22,
+      "IfcShapeRepresentation": 14,
+      "IfcShapeAspect": 12,
+      "IfcColourRgb": 12,
+      "IfcPropertySet": 11,
+      "IfcRelDefinesByProperties": 11,
+      "IfcMaterial": 10,
+      "IfcDirection": 9,
+      "IfcSurfaceStyleRendering": 9,
+      "IfcSurfaceStyle": 9,
+      "IfcStyledRepresentation": 9,
+      "IfcMaterialDefinitionRepresentation": 9
+    },
+    "original_name": "MiC_TYPE 1.2_MB2L & MB2R:MiC_TYPE 1.2_MB2L & MB2R:57321672",
+    "global_id": "2D9tLpdgX7xBHbZ3peNV6v",
+    "type_info": {
+      "family": "MiC_TYPE 1.2_MB2L & MB2R",
+      "type_number": "1.2",
+      "code": "MB2L",
+      "category": "master_bedroom"
+    },
+    "bbox": {
+      "min": [
+        0.0,
+        0.0,
+        -45.0
+      ],
+      "max": [
+        2384.98465576177,
+        4025.00315551758,
+        3100.09185126918
+      ],
+      "width": 2384.98465576177,
+      "depth": 4025.00315551758,
+      "height": 3145.09185126918
+    },
+    "dimensions_m": {
+      "width": 2384.985,
+      "depth": 4025.003,
+      "height": 3145.092
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 1.2_MB2L & MB2R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 1.2_MB2L & MB2R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_1_2_MB2L_MB2R_MiC_TYPE_1_2_MB2L_MB2R_57400482_1l3UJlBpv8gAcMTJLavryg.ifc",
+    "file_size_mb": 1.7183561325073242,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10280,
+      "IfcFaceOuterBound": 10230,
+      "IfcFace": 10230,
+      "IfcCartesianPoint": 7152,
+      "IfcStyledItem": 90,
+      "IfcFacetedBrep": 81,
+      "IfcClosedShell": 81,
+      "IfcFaceBound": 50,
+      "IfcMaterialConstituent": 22,
+      "IfcShapeRepresentation": 14,
+      "IfcShapeAspect": 12,
+      "IfcColourRgb": 12,
+      "IfcPropertySet": 11,
+      "IfcRelDefinesByProperties": 11,
+      "IfcMaterial": 10,
+      "IfcDirection": 9,
+      "IfcSurfaceStyleRendering": 9,
+      "IfcSurfaceStyle": 9,
+      "IfcStyledRepresentation": 9,
+      "IfcMaterialDefinitionRepresentation": 9
+    },
+    "original_name": "MiC_TYPE 1.2_MB2L & MB2R:MiC_TYPE 1.2_MB2L & MB2R:57400482",
+    "global_id": "1l3UJlBpv8gAcMTJLavryg",
+    "type_info": {
+      "family": "MiC_TYPE 1.2_MB2L & MB2R",
+      "type_number": "1.2",
+      "code": "MB2L",
+      "category": "master_bedroom"
+    },
+    "bbox": {
+      "min": [
+        0.0,
+        0.0,
+        -45.0
+      ],
+      "max": [
+        2384.98465576177,
+        4025.00315551758,
+        3100.09185126918
+      ],
+      "width": 2384.98465576177,
+      "depth": 4025.00315551758,
+      "height": 3145.09185126918
+    },
+    "dimensions_m": {
+      "width": 2384.985,
+      "depth": 4025.003,
+      "height": 3145.092
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 1.2_MB2L & MB2R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 1.2_MB2L & MB2R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_1_2_MB3_MiC_TYPE_1_2_MB3_57161344_2b5qABg3z8xAsQnY6Ynjav.ifc",
+    "file_size_mb": 1.7299070358276367,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10317,
+      "IfcFaceOuterBound": 10267,
+      "IfcFace": 10267,
+      "IfcCartesianPoint": 7162,
+      "IfcStyledItem": 90,
+      "IfcClosedShell": 81,
+      "IfcFacetedBrep": 81,
+      "IfcFaceBound": 50,
+      "IfcMaterialConstituent": 22,
+      "IfcShapeRepresentation": 14,
+      "IfcShapeAspect": 12,
+      "IfcColourRgb": 12,
+      "IfcPropertySet": 11,
+      "IfcRelDefinesByProperties": 11,
+      "IfcMaterial": 10,
+      "IfcDirection": 9,
+      "IfcStyledRepresentation": 9,
+      "IfcMaterialDefinitionRepresentation": 9,
+      "IfcSurfaceStyleRendering": 9,
+      "IfcSurfaceStyle": 9
+    },
+    "original_name": "MiC_TYPE 1.2_MB3:MiC_TYPE 1.2_MB3:57161344",
+    "global_id": "2b5qABg3z8xAsQnY6Ynjav",
+    "type_info": {
+      "family": "MiC_TYPE 1.2_MB3",
+      "type_number": "1.2",
+      "code": "MB3",
+      "category": "master_bedroom"
+    },
+    "bbox": {
+      "min": [
+        0.0,
+        -4025.00315551758,
+        -45.0
+      ],
+      "max": [
+        2384.98465576177,
+        -0.0,
+        3100.09185126918
+      ],
+      "width": 2384.98465576177,
+      "depth": 4025.00315551758,
+      "height": 3145.09185126918
+    },
+    "dimensions_m": {
+      "width": 2384.985,
+      "depth": 4025.003,
+      "height": 3145.092
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 1.2_MB3"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 1.2_MB3"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_1_4R_MB3L_MiC_TYPE_1_4R_MB3L_57320183_3gEg7mW$z7yAlWKjenXNgK.ifc",
+    "file_size_mb": 1.7105207443237305,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10167,
+      "IfcFace": 10127,
+      "IfcFaceOuterBound": 10127,
+      "IfcCartesianPoint": 7035,
+      "IfcStyledItem": 73,
+      "IfcClosedShell": 63,
+      "IfcFacetedBrep": 63,
+      "IfcFaceBound": 40,
+      "IfcMaterialConstituent": 24,
+      "IfcShapeRepresentation": 15,
+      "IfcShapeAspect": 13,
+      "IfcColourRgb": 13,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcMaterial": 11,
+      "IfcStyledRepresentation": 10,
+      "IfcMaterialDefinitionRepresentation": 10,
+      "IfcSurfaceStyleRendering": 10,
+      "IfcSurfaceStyle": 10,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 1.4R_MB3L:MiC_TYPE 1.4R_MB3L:57320183",
+    "global_id": "3gEg7mW$z7yAlWKjenXNgK",
+    "type_info": {
+      "family": "MiC_TYPE 1.4R_MB3L",
+      "type_number": "1.4R",
+      "code": "MB3L",
+      "category": "master_bedroom"
+    },
+    "bbox": {
+      "min": [
+        -2390.00062866211,
+        -3990.01691894531,
+        -45.0012939453126
+      ],
+      "max": [
+        0.0,
+        0.0,
+        3100.00060424805
+      ],
+      "width": 2390.00062866211,
+      "depth": 3990.01691894531,
+      "height": 3145.0018981933626
+    },
+    "dimensions_m": {
+      "width": 2390.001,
+      "depth": 3990.017,
+      "height": 3145.002
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 1.4R_MB3L"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 1.4R_MB3L"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Porcelain",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_1_5R_MB2L_MiC_TYPE_1_5R_MB2L_57398423_3BFhSQmaT6vhr1swgQJcSN.ifc",
+    "file_size_mb": 1.6490602493286133,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 9786,
+      "IfcFaceOuterBound": 9743,
+      "IfcFace": 9743,
+      "IfcCartesianPoint": 6866,
+      "IfcStyledItem": 76,
+      "IfcClosedShell": 67,
+      "IfcFacetedBrep": 67,
+      "IfcFaceBound": 43,
+      "IfcMaterialConstituent": 22,
+      "IfcShapeRepresentation": 14,
+      "IfcShapeAspect": 12,
+      "IfcColourRgb": 12,
+      "IfcPropertySet": 11,
+      "IfcRelDefinesByProperties": 11,
+      "IfcMaterial": 10,
+      "IfcDirection": 9,
+      "IfcStyledRepresentation": 9,
+      "IfcMaterialDefinitionRepresentation": 9,
+      "IfcSurfaceStyleRendering": 9,
+      "IfcSurfaceStyle": 9
+    },
+    "original_name": "MiC_TYPE 1.5R_MB2L:MiC_TYPE 1.5R_MB2L:57398423",
+    "global_id": "3BFhSQmaT6vhr1swgQJcSN",
+    "type_info": {
+      "family": "MiC_TYPE 1.5R_MB2L",
+      "type_number": "1.5R",
+      "code": "MB2L",
+      "category": "master_bedroom"
+    },
+    "bbox": {
+      "min": [
+        -2385.0,
+        -4024.99985546243,
+        -45.0012939453125
+      ],
+      "max": [
+        -0.0,
+        0.0,
+        3100.00060424805
+      ],
+      "width": 2385.0,
+      "depth": 4024.99985546243,
+      "height": 3145.0018981933626
+    },
+    "dimensions_m": {
+      "width": 2385.0,
+      "depth": 4025.0,
+      "height": 3145.002
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 1.5R_MB2L"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 1.5R_MB2L"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_1_MB1R_MiC_TYPE_1_MB1R_57133768_1DsuNIs$bADP4N2gjHGkME.ifc",
+    "file_size_mb": 1.7239189147949219,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10273,
+      "IfcFaceOuterBound": 10234,
+      "IfcFace": 10234,
+      "IfcCartesianPoint": 7161,
+      "IfcStyledItem": 77,
+      "IfcClosedShell": 68,
+      "IfcFacetedBrep": 68,
+      "IfcFaceBound": 39,
+      "IfcMaterialConstituent": 22,
+      "IfcShapeRepresentation": 14,
+      "IfcShapeAspect": 12,
+      "IfcColourRgb": 12,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcMaterial": 10,
+      "IfcDirection": 9,
+      "IfcStyledRepresentation": 9,
+      "IfcMaterialDefinitionRepresentation": 9,
+      "IfcSurfaceStyleRendering": 9,
+      "IfcSurfaceStyle": 9
+    },
+    "original_name": "MiC_TYPE 1_MB1R:MiC_TYPE 1_MB1R:57133768",
+    "global_id": "1DsuNIs$bADP4N2gjHGkME",
+    "type_info": {
+      "family": "MiC_TYPE 1_MB1R",
+      "type_number": "1",
+      "code": "MB1R",
+      "category": "master_bedroom"
+    },
+    "bbox": {
+      "min": [
+        -2385.0,
+        -3999.99985546236,
+        -45.0012939453127
+      ],
+      "max": [
+        -0.0,
+        0.0,
+        3100.00060424807
+      ],
+      "width": 2385.0,
+      "depth": 3999.99985546236,
+      "height": 3145.0018981933827
+    },
+    "dimensions_m": {
+      "width": 2385.0,
+      "depth": 4000.0,
+      "height": 3145.002
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 1_MB1R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 1_MB1R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "Porcelain",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_2_1_BT4_MiC_TYPE_2_1_BT4_57185519_2b5qABg3z8xAsQnY6YndjM.ifc",
+    "file_size_mb": 17.360182762145996,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 107224,
+      "IfcFaceOuterBound": 107107,
+      "IfcFace": 107107,
+      "IfcCartesianPoint": 60615,
+      "IfcStyledItem": 181,
+      "IfcClosedShell": 164,
+      "IfcFacetedBrep": 164,
+      "IfcFaceBound": 117,
+      "IfcMaterialConstituent": 38,
+      "IfcShapeRepresentation": 22,
+      "IfcShapeAspect": 20,
+      "IfcColourRgb": 20,
+      "IfcMaterial": 18,
+      "IfcStyledRepresentation": 17,
+      "IfcMaterialDefinitionRepresentation": 17,
+      "IfcSurfaceStyleRendering": 17,
+      "IfcSurfaceStyle": 17,
+      "IfcPropertySet": 11,
+      "IfcRelDefinesByProperties": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 2.1_BT4:MiC_TYPE 2.1_BT4:57185519",
+    "global_id": "2b5qABg3z8xAsQnY6YndjM",
+    "type_info": {
+      "family": "MiC_TYPE 2.1_BT4",
+      "type_number": "2.1",
+      "code": "BT4",
+      "category": "bathroom"
+    },
+    "bbox": {
+      "min": [
+        -0.00053710939925864,
+        -149.999534025998,
+        -45.0
+      ],
+      "max": [
+        2385.0,
+        5600.00062408448,
+        3100.04426879892
+      ],
+      "width": 2385.0005371093994,
+      "depth": 5750.000158110478,
+      "height": 3145.04426879892
+    },
+    "dimensions_m": {
+      "width": 2385.001,
+      "depth": 5750.0,
+      "height": 3145.044
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 2.1_BT4"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 2.1_BT4"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Ceramic White",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Metal - Aluminium",
+      "Porcelain",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_2_2_BT3R_MiC_TYPE_2_2_BT3R_57185898_2b5qABg3z8xAsQnY6YnddJ.ifc",
+    "file_size_mb": 19.210001945495605,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 117696,
+      "IfcFaceOuterBound": 117589,
+      "IfcFace": 117589,
+      "IfcCartesianPoint": 67778,
+      "IfcStyledItem": 190,
+      "IfcClosedShell": 174,
+      "IfcFacetedBrep": 174,
+      "IfcFaceBound": 107,
+      "IfcMaterialConstituent": 36,
+      "IfcShapeRepresentation": 21,
+      "IfcShapeAspect": 19,
+      "IfcColourRgb": 19,
+      "IfcMaterial": 17,
+      "IfcSurfaceStyleRendering": 16,
+      "IfcSurfaceStyle": 16,
+      "IfcStyledRepresentation": 16,
+      "IfcMaterialDefinitionRepresentation": 16,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 2.2_BT3R:MiC_TYPE 2.2_BT3R:57185898",
+    "global_id": "2b5qABg3z8xAsQnY6YnddJ",
+    "type_info": {
+      "family": "MiC_TYPE 2.2_BT3R",
+      "type_number": "2.2",
+      "code": "BT3R",
+      "category": "bathroom"
+    },
+    "bbox": {
+      "min": [
+        -0.0,
+        -149.999534025998,
+        -45.0
+      ],
+      "max": [
+        2390.0,
+        5600.00062408448,
+        3100.0
+      ],
+      "width": 2390.0,
+      "depth": 5750.000158110478,
+      "height": 3145.0
+    },
+    "dimensions_m": {
+      "width": 2390.0,
+      "depth": 5750.0,
+      "height": 3145.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 2.2_BT3R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 2.2_BT3R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Aluminum",
+      "Ceramic White",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_2_BT3L_BT3R_MiC_TYPE_2_BT3L_BT3R_57131005_1DsuNIs$bADP4N2gjHGf2x.ifc",
+    "file_size_mb": 16.51036834716797,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 101891,
+      "IfcFace": 101782,
+      "IfcFaceOuterBound": 101782,
+      "IfcCartesianPoint": 56932,
+      "IfcStyledItem": 155,
+      "IfcClosedShell": 142,
+      "IfcFacetedBrep": 142,
+      "IfcFaceBound": 109,
+      "IfcShapeRepresentation": 34,
+      "IfcShapeAspect": 32,
+      "IfcMaterialConstituent": 32,
+      "IfcColourRgb": 16,
+      "IfcMaterial": 14,
+      "IfcStyledRepresentation": 13,
+      "IfcMaterialDefinitionRepresentation": 13,
+      "IfcSurfaceStyleRendering": 13,
+      "IfcSurfaceStyle": 13,
+      "IfcPropertySet": 11,
+      "IfcRelDefinesByProperties": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 2_BT3L & BT3R:MiC_TYPE 2_BT3L & BT3R:57131005",
+    "global_id": "1DsuNIs$bADP4N2gjHGf2x",
+    "type_info": {
+      "family": "MiC_TYPE 2_BT3L & BT3R",
+      "type_number": "2",
+      "code": "BT3L",
+      "category": "bathroom"
+    },
+    "bbox": {
+      "min": [
+        -47742.503540039,
+        17199.7954712493,
+        -45.001293945239
+      ],
+      "max": [
+        -45347.5008911133,
+        22949.3813061337,
+        3100.00060424813
+      ],
+      "width": 2395.0026489256998,
+      "depth": 5749.585834884398,
+      "height": 3145.001898193369
+    },
+    "dimensions_m": {
+      "width": 2395.003,
+      "depth": 5749.586,
+      "height": 3145.002
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 2_BT3L & BT3R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 2_BT3L & BT3R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Ceramic White",
+      "Concrete, Cast-in-Place - C15",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Porcelain",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_2_BT3L_BT3R_MiC_TYPE_2_BT3L_BT3R_57319033_3gEg7mW$z7yAlWKjenXKOQ.ifc",
+    "file_size_mb": 16.49238109588623,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 102053,
+      "IfcFaceOuterBound": 101944,
+      "IfcFace": 101944,
+      "IfcCartesianPoint": 56902,
+      "IfcStyledItem": 155,
+      "IfcClosedShell": 142,
+      "IfcFacetedBrep": 142,
+      "IfcFaceBound": 109,
+      "IfcMaterialConstituent": 30,
+      "IfcShapeRepresentation": 18,
+      "IfcShapeAspect": 16,
+      "IfcColourRgb": 16,
+      "IfcMaterial": 14,
+      "IfcSurfaceStyleRendering": 13,
+      "IfcSurfaceStyle": 13,
+      "IfcStyledRepresentation": 13,
+      "IfcMaterialDefinitionRepresentation": 13,
+      "IfcPropertySet": 11,
+      "IfcRelDefinesByProperties": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 2_BT3L & BT3R:MiC_TYPE 2_BT3L & BT3R:57319033",
+    "global_id": "3gEg7mW$z7yAlWKjenXKOQ",
+    "type_info": {
+      "family": "MiC_TYPE 2_BT3L & BT3R",
+      "type_number": "2",
+      "code": "BT3L",
+      "category": "bathroom"
+    },
+    "bbox": {
+      "min": [
+        -4.99969482414647,
+        -5599.58611450195,
+        -45.0012939452412
+      ],
+      "max": [
+        2390.00295410156,
+        149.999720382382,
+        3100.00060424812
+      ],
+      "width": 2395.0026489257066,
+      "depth": 5749.585834884332,
+      "height": 3145.0018981933613
+    },
+    "dimensions_m": {
+      "width": 2395.003,
+      "depth": 5749.586,
+      "height": 3145.002
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 2_BT3L & BT3R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 2_BT3L & BT3R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Ceramic White",
+      "Concrete, Cast-in-Place - C15",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Porcelain",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_2_BT3L_BT3R_MiC_TYPE_2_BT3L_BT3R_57321861_2D9tLpdgX7xBHbZ3peNV3q.ifc",
+    "file_size_mb": 16.43773365020752,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 102049,
+      "IfcFace": 101940,
+      "IfcFaceOuterBound": 101940,
+      "IfcCartesianPoint": 56902,
+      "IfcStyledItem": 155,
+      "IfcFacetedBrep": 142,
+      "IfcClosedShell": 142,
+      "IfcFaceBound": 109,
+      "IfcMaterialConstituent": 30,
+      "IfcShapeRepresentation": 18,
+      "IfcShapeAspect": 16,
+      "IfcColourRgb": 16,
+      "IfcMaterial": 14,
+      "IfcSurfaceStyleRendering": 13,
+      "IfcSurfaceStyle": 13,
+      "IfcStyledRepresentation": 13,
+      "IfcMaterialDefinitionRepresentation": 13,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 2_BT3L & BT3R:MiC_TYPE 2_BT3L & BT3R:57321861",
+    "global_id": "2D9tLpdgX7xBHbZ3peNV3q",
+    "type_info": {
+      "family": "MiC_TYPE 2_BT3L & BT3R",
+      "type_number": "2",
+      "code": "BT3L",
+      "category": "bathroom"
+    },
+    "bbox": {
+      "min": [
+        -4.99969482414647,
+        -149.999720382382,
+        -45.0012939452412
+      ],
+      "max": [
+        2390.00295410156,
+        5599.58611450195,
+        3100.00060424812
+      ],
+      "width": 2395.0026489257066,
+      "depth": 5749.585834884332,
+      "height": 3145.0018981933613
+    },
+    "dimensions_m": {
+      "width": 2395.003,
+      "depth": 5749.586,
+      "height": 3145.002
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 2_BT3L & BT3R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 2_BT3L & BT3R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Ceramic White",
+      "Concrete, Cast-in-Place - C15",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Porcelain",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_2B-P1_BT1R_MiC_TYPE_2B-P1_BT1R_57189389_2bLgnfup549QUJ7rbe_qsz.ifc",
+    "file_size_mb": 19.10651206970215,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 116481,
+      "IfcFaceOuterBound": 116396,
+      "IfcFace": 116396,
+      "IfcCartesianPoint": 67035,
+      "IfcStyledItem": 185,
+      "IfcClosedShell": 168,
+      "IfcFacetedBrep": 168,
+      "IfcFaceBound": 85,
+      "IfcMaterialConstituent": 38,
+      "IfcShapeRepresentation": 22,
+      "IfcCurveStyleFontPattern": 21,
+      "IfcColourRgb": 21,
+      "IfcShapeAspect": 20,
+      "IfcMaterial": 18,
+      "IfcSurfaceStyleRendering": 17,
+      "IfcSurfaceStyle": 17,
+      "IfcStyledRepresentation": 17,
+      "IfcMaterialDefinitionRepresentation": 17,
+      "IfcCurveStyle": 16,
+      "IfcFillAreaStyleHatching": 16
+    },
+    "original_name": "MiC_TYPE 2B-P1_BT1R:MiC_TYPE 2B-P1_BT1R:57189389",
+    "global_id": "2bLgnfup549QUJ7rbe_qsz",
+    "type_info": {
+      "family": "MiC_TYPE 2B-P1_BT1R",
+      "type_number": "2B-P1",
+      "code": "BT1R",
+      "category": "bathroom"
+    },
+    "bbox": {
+      "min": [
+        -2390.00062866211,
+        -6490.0,
+        -45.0000068514904
+      ],
+      "max": [
+        0.000421142636384531,
+        195.0,
+        3100.00060424805
+      ],
+      "width": 2390.0010498047463,
+      "depth": 6685.0,
+      "height": 3145.0006110995405
+    },
+    "dimensions_m": {
+      "width": 2390.001,
+      "depth": 6685.0,
+      "height": 3145.001
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 2B-P1_BT1R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 2B-P1_BT1R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Ceramic White",
+      "Concrete, Cast-in-Place - C15",
+      "Concrete, Cast-in-Place gray",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Porcelain",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_2B-P1_BT1R_MiC_TYPE_2B-P1_BT1R_57323846_0Py65SNEj1KOkc3USpboXr.ifc",
+    "file_size_mb": 19.10653781890869,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 116481,
+      "IfcFaceOuterBound": 116396,
+      "IfcFace": 116396,
+      "IfcCartesianPoint": 67035,
+      "IfcStyledItem": 185,
+      "IfcClosedShell": 168,
+      "IfcFacetedBrep": 168,
+      "IfcFaceBound": 85,
+      "IfcMaterialConstituent": 38,
+      "IfcShapeRepresentation": 22,
+      "IfcCurveStyleFontPattern": 21,
+      "IfcColourRgb": 21,
+      "IfcShapeAspect": 20,
+      "IfcMaterial": 18,
+      "IfcSurfaceStyleRendering": 17,
+      "IfcSurfaceStyle": 17,
+      "IfcStyledRepresentation": 17,
+      "IfcMaterialDefinitionRepresentation": 17,
+      "IfcFillAreaStyleHatching": 16,
+      "IfcCurveStyle": 16
+    },
+    "original_name": "MiC_TYPE 2B-P1_BT1R:MiC_TYPE 2B-P1_BT1R:57323846",
+    "global_id": "0Py65SNEj1KOkc3USpboXr",
+    "type_info": {
+      "family": "MiC_TYPE 2B-P1_BT1R",
+      "type_number": "2B-P1",
+      "code": "BT1R",
+      "category": "bathroom"
+    },
+    "bbox": {
+      "min": [
+        -2390.00062866211,
+        -6490.0,
+        -45.0000068514904
+      ],
+      "max": [
+        0.000421142636384531,
+        195.0,
+        3100.00060424805
+      ],
+      "width": 2390.0010498047463,
+      "depth": 6685.0,
+      "height": 3145.0006110995405
+    },
+    "dimensions_m": {
+      "width": 2390.001,
+      "depth": 6685.0,
+      "height": 3145.001
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 2B-P1_BT1R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 2B-P1_BT1R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Ceramic White",
+      "Concrete, Cast-in-Place - C15",
+      "Concrete, Cast-in-Place gray",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Porcelain",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_2B-P2__BT2R_MiC_TYPE_2B-P2__BT2R_57369543_3BFhSQmaT6vhr1swgQJj17.ifc",
+    "file_size_mb": 18.549102783203125,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 113572,
+      "IfcFaceOuterBound": 113504,
+      "IfcFace": 113504,
+      "IfcCartesianPoint": 64726,
+      "IfcStyledItem": 190,
+      "IfcClosedShell": 175,
+      "IfcFacetedBrep": 175,
+      "IfcFaceBound": 68,
+      "IfcMaterialConstituent": 34,
+      "IfcShapeRepresentation": 20,
+      "IfcShapeAspect": 18,
+      "IfcColourRgb": 17,
+      "IfcMaterial": 16,
+      "IfcMaterialDefinitionRepresentation": 15,
+      "IfcSurfaceStyleRendering": 15,
+      "IfcSurfaceStyle": 15,
+      "IfcStyledRepresentation": 15,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 2B-P2 _BT2R:MiC_TYPE 2B-P2 _BT2R:57369543",
+    "global_id": "3BFhSQmaT6vhr1swgQJj17",
+    "type_info": {
+      "family": "MiC_TYPE 2B-P2 _BT2R",
+      "type_number": "",
+      "code": "MiC_TYPE 2B-P2 _BT2R",
+      "category": "bathroom"
+    },
+    "bbox": {
+      "min": [
+        -0.0157440186290938,
+        -6490.02599487304,
+        -45.0012939453105
+      ],
+      "max": [
+        2390.00984711062,
+        195.008206359162,
+        3100.00060424805
+      ],
+      "width": 2390.025591129249,
+      "depth": 6685.034201232202,
+      "height": 3145.0018981933604
+    },
+    "dimensions_m": {
+      "width": 2390.026,
+      "depth": 6685.034,
+      "height": 3145.002
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 2B-P2 _BT2R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 2B-P2 _BT2R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Ceramic White",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Porcelain",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_2B-P3_BT1L_MiC_TYPE_2B-P3_BT1L_57187295_2b5qABg3z8xAsQnY6YndHc.ifc",
+    "file_size_mb": 18.277698516845703,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 111858,
+      "IfcFaceOuterBound": 111778,
+      "IfcFace": 111778,
+      "IfcCartesianPoint": 63904,
+      "IfcStyledItem": 172,
+      "IfcClosedShell": 156,
+      "IfcFacetedBrep": 156,
+      "IfcFaceBound": 80,
+      "IfcMaterialConstituent": 36,
+      "IfcShapeRepresentation": 21,
+      "IfcShapeAspect": 19,
+      "IfcColourRgb": 19,
+      "IfcMaterial": 17,
+      "IfcMaterialDefinitionRepresentation": 16,
+      "IfcSurfaceStyleRendering": 16,
+      "IfcSurfaceStyle": 16,
+      "IfcStyledRepresentation": 16,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 2B-P3_BT1L:MiC_TYPE 2B-P3_BT1L:57187295",
+    "global_id": "2b5qABg3z8xAsQnY6YndHc",
+    "type_info": {
+      "family": "MiC_TYPE 2B-P3_BT1L",
+      "type_number": "2B-P3",
+      "code": "BT1L",
+      "category": "bathroom"
+    },
+    "bbox": {
+      "min": [
+        -2390.00062866211,
+        -6490.0,
+        -45.0000068514905
+      ],
+      "max": [
+        0.0,
+        195.008252135545,
+        3100.00060424805
+      ],
+      "width": 2390.00062866211,
+      "depth": 6685.008252135545,
+      "height": 3145.0006110995405
+    },
+    "dimensions_m": {
+      "width": 2390.001,
+      "depth": 6685.008,
+      "height": 3145.001
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 2B-P3_BT1L"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 2B-P3_BT1L"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Ceramic White",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Porcelain",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_2B-P4__BT2L_MiC_TYPE_2B-P4__BT2L_57400044_1l3UJlBpv8gAcMTJLavrba.ifc",
+    "file_size_mb": 18.511353492736816,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 112999,
+      "IfcFace": 112938,
+      "IfcFaceOuterBound": 112938,
+      "IfcCartesianPoint": 64243,
+      "IfcStyledItem": 186,
+      "IfcClosedShell": 170,
+      "IfcFacetedBrep": 170,
+      "IfcFaceBound": 61,
+      "IfcMaterialConstituent": 36,
+      "IfcShapeRepresentation": 21,
+      "IfcShapeAspect": 19,
+      "IfcColourRgb": 19,
+      "IfcMaterial": 17,
+      "IfcStyledRepresentation": 16,
+      "IfcMaterialDefinitionRepresentation": 16,
+      "IfcSurfaceStyleRendering": 16,
+      "IfcSurfaceStyle": 16,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 2B-P4 _BT2L:MiC_TYPE 2B-P4 _BT2L:57400044",
+    "global_id": "1l3UJlBpv8gAcMTJLavrba",
+    "type_info": {
+      "family": "MiC_TYPE 2B-P4 _BT2L",
+      "type_number": "",
+      "code": "MiC_TYPE 2B-P4 _BT2L",
+      "category": "bathroom"
+    },
+    "bbox": {
+      "min": [
+        -2390.3995048159,
+        -6490.02599487304,
+        -45.0012939453104
+      ],
+      "max": [
+        0.0157440186292291,
+        195.008206359156,
+        3100.00060424805
+      ],
+      "width": 2390.4152488345294,
+      "depth": 6685.034201232196,
+      "height": 3145.0018981933604
+    },
+    "dimensions_m": {
+      "width": 2390.415,
+      "depth": 6685.034,
+      "height": 3145.002
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 2B-P4 _BT2L"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 2B-P4 _BT2L"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Ceramic White",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Porcelain",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_3_1_LK1L_MiC_TYPE_3_1_LK1L_57129862_3OJkD8bnr7ZBGamr9ZFQ6h.ifc",
+    "file_size_mb": 2.452219009399414,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 13836,
+      "IfcFaceOuterBound": 13714,
+      "IfcFace": 13714,
+      "IfcCartesianPoint": 11164,
+      "IfcConnectedFaceSet": 225,
+      "IfcFaceBound": 122,
+      "IfcStyledItem": 29,
+      "IfcColourRgb": 17,
+      "IfcMaterial": 15,
+      "IfcMaterialConstituent": 15,
+      "IfcFaceBasedSurfaceModel": 15,
+      "IfcStyledRepresentation": 14,
+      "IfcMaterialDefinitionRepresentation": 14,
+      "IfcSurfaceStyleRendering": 14,
+      "IfcSurfaceStyle": 14,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9,
+      "IfcOwnerHistory": 7,
+      "IfcPropertySingleValue": 7
+    },
+    "original_name": "MiC_TYPE 3.1_LK1L:MiC_TYPE 3.1_LK1L:57129862",
+    "global_id": "3OJkD8bnr7ZBGamr9ZFQ6h",
+    "type_info": {
+      "family": "MiC_TYPE 3.1_LK1L",
+      "type_number": "3.1",
+      "code": "LK1L",
+      "category": "living_kitchen"
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 3.1_LK1L"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 3.1_LK1L"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "Default",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Gypsum Board (CL01)",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Paint - Metallic (Dark Grey)",
+      "Porcelain"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_3_2_LK2L_MiC_TYPE_3_2_LK2L_57129635_3OJkD8bnr7ZBGamr9ZFQ2E.ifc",
+    "file_size_mb": 3.4711151123046875,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 20312,
+      "IfcFaceOuterBound": 20136,
+      "IfcFace": 20136,
+      "IfcCartesianPoint": 15301,
+      "IfcConnectedFaceSet": 178,
+      "IfcFaceBound": 176,
+      "IfcStyledItem": 29,
+      "IfcColourRgb": 17,
+      "IfcFaceBasedSurfaceModel": 15,
+      "IfcMaterial": 15,
+      "IfcMaterialConstituent": 15,
+      "IfcStyledRepresentation": 14,
+      "IfcMaterialDefinitionRepresentation": 14,
+      "IfcSurfaceStyleRendering": 14,
+      "IfcSurfaceStyle": 14,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9,
+      "IfcOwnerHistory": 7,
+      "IfcPropertySingleValue": 7
+    },
+    "original_name": "MiC_TYPE 3.2_LK2L:MiC_TYPE 3.2_LK2L:57129635",
+    "global_id": "3OJkD8bnr7ZBGamr9ZFQ2E",
+    "type_info": {
+      "family": "MiC_TYPE 3.2_LK2L",
+      "type_number": "3.2",
+      "code": "LK2L",
+      "category": "living_kitchen"
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 3.2_LK2L"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 3.2_LK2L"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Gypsum Board (CL01)",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Paint - Metallic (Dark Grey)"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_3_3_LK2R_MiC_TYPE_3_3_LK2R_57317685_3s9BSYdKbDIPApKchzDEiA.ifc",
+    "file_size_mb": 3.6949024200439453,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 21327,
+      "IfcFaceOuterBound": 21224,
+      "IfcFace": 21224,
+      "IfcCartesianPoint": 16105,
+      "IfcConnectedFaceSet": 232,
+      "IfcFaceBound": 103,
+      "IfcStyledItem": 35,
+      "IfcColourRgb": 20,
+      "IfcFaceBasedSurfaceModel": 18,
+      "IfcMaterial": 18,
+      "IfcMaterialConstituent": 18,
+      "IfcStyledRepresentation": 17,
+      "IfcMaterialDefinitionRepresentation": 17,
+      "IfcSurfaceStyleRendering": 17,
+      "IfcSurfaceStyle": 17,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9,
+      "IfcOwnerHistory": 7,
+      "IfcPropertySingleValue": 7
+    },
+    "original_name": "MiC_TYPE 3.3_LK2R:MiC_TYPE 3.3_LK2R:57317685",
+    "global_id": "3s9BSYdKbDIPApKchzDEiA",
+    "type_info": {
+      "family": "MiC_TYPE 3.3_LK2R",
+      "type_number": "3.3",
+      "code": "LK2R",
+      "category": "living_kitchen"
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 3.3_LK2R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 3.3_LK2R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "Default",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Gypsum Board (CL01)",
+      "HSK1A_Gypsum Board (CL02)",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Paint - Metallic (Dark Grey)",
+      "Porcelain"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_3_4_LK1L_MiC_TYPE_3_4_LK1L_57317769_3s9BSYdKbDIPApKchzDEks.ifc",
+    "file_size_mb": 5.462993621826172,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 31227,
+      "IfcFaceOuterBound": 31105,
+      "IfcFace": 31105,
+      "IfcCartesianPoint": 23314,
+      "IfcConnectedFaceSet": 246,
+      "IfcFaceBound": 122,
+      "IfcStyledItem": 35,
+      "IfcColourRgb": 21,
+      "IfcCurveStyleFontPattern": 18,
+      "IfcMaterial": 18,
+      "IfcMaterialConstituent": 18,
+      "IfcFaceBasedSurfaceModel": 18,
+      "IfcMaterialDefinitionRepresentation": 17,
+      "IfcSurfaceStyleRendering": 17,
+      "IfcSurfaceStyle": 17,
+      "IfcStyledRepresentation": 17,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9,
+      "IfcOwnerHistory": 7
+    },
+    "original_name": "MiC_TYPE 3.4_LK1L:MiC_TYPE 3.4_LK1L:57317769",
+    "global_id": "3s9BSYdKbDIPApKchzDEks",
+    "type_info": {
+      "family": "MiC_TYPE 3.4_LK1L",
+      "type_number": "3.4",
+      "code": "LK1L",
+      "category": "living_kitchen"
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 3.4_LK1L"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 3.4_LK1L"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "Default",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "Gypsum Wall Board",
+      "HSK1A_Gypsum Board (CL01)",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Paint - Metallic (Dark Grey)",
+      "Porcelain"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_3_LK1L_MiC_TYPE_3_LK1L_57130029_3OJkD8bnr7ZBGamr9ZFQO0.ifc",
+    "file_size_mb": 4.100743293762207,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 23401,
+      "IfcFaceOuterBound": 23278,
+      "IfcFace": 23278,
+      "IfcCartesianPoint": 18042,
+      "IfcConnectedFaceSet": 250,
+      "IfcFaceBound": 123,
+      "IfcStyledItem": 33,
+      "IfcColourRgb": 19,
+      "IfcMaterialConstituent": 17,
+      "IfcMaterial": 17,
+      "IfcFaceBasedSurfaceModel": 17,
+      "IfcStyledRepresentation": 16,
+      "IfcMaterialDefinitionRepresentation": 16,
+      "IfcSurfaceStyleRendering": 16,
+      "IfcSurfaceStyle": 16,
+      "IfcPropertySet": 11,
+      "IfcRelDefinesByProperties": 11,
+      "IfcDirection": 9,
+      "IfcPropertySingleValue": 7,
+      "IfcOwnerHistory": 7
+    },
+    "original_name": "MiC_TYPE 3_LK1L:MiC_TYPE 3_LK1L:57130029",
+    "global_id": "3OJkD8bnr7ZBGamr9ZFQO0",
+    "type_info": {
+      "family": "MiC_TYPE 3_LK1L",
+      "type_number": "3",
+      "code": "LK1L",
+      "category": "living_kitchen"
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 3_LK1L"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 3_LK1L"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "Default",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Gypsum Board (CL01)",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Paint - Metallic (Dark Grey)",
+      "Porcelain"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_3A1_LK1R_MiC_TYPE_3A1_LK1R_57317917_3s9BSYdKbDIPApKchzDEWY.ifc",
+    "file_size_mb": 4.275200843811035,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 24291,
+      "IfcFaceOuterBound": 24175,
+      "IfcFace": 24175,
+      "IfcCartesianPoint": 18914,
+      "IfcConnectedFaceSet": 203,
+      "IfcFaceBound": 116,
+      "IfcStyledItem": 37,
+      "IfcColourRgb": 22,
+      "IfcMaterial": 19,
+      "IfcMaterialConstituent": 19,
+      "IfcFaceBasedSurfaceModel": 19,
+      "IfcStyledRepresentation": 18,
+      "IfcMaterialDefinitionRepresentation": 18,
+      "IfcSurfaceStyleRendering": 18,
+      "IfcSurfaceStyle": 18,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9,
+      "IfcOwnerHistory": 7,
+      "IfcPropertySingleValue": 7
+    },
+    "original_name": "MiC_TYPE 3A1_LK1R:MiC_TYPE 3A1_LK1R:57317917",
+    "global_id": "3s9BSYdKbDIPApKchzDEWY",
+    "type_info": {
+      "family": "MiC_TYPE 3A1_LK1R",
+      "type_number": "3A1",
+      "code": "LK1R",
+      "category": "living_kitchen"
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 3A1_LK1R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 3A1_LK1R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "Default",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Gypsum Board (CL01)",
+      "HSK1A_Gypsum Board (CL02)",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Paint - Metallic (Dark Grey)",
+      "Porcelain",
+      "Steel, 45-345"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_3A2_LD1L_MiC_TYPE_3A2_LD1L_57317852_3s9BSYdKbDIPApKchzDElZ.ifc",
+    "file_size_mb": 3.423868179321289,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 19555,
+      "IfcFaceOuterBound": 19445,
+      "IfcFace": 19445,
+      "IfcCartesianPoint": 15109,
+      "IfcConnectedFaceSet": 170,
+      "IfcFaceBound": 110,
+      "IfcStyledItem": 25,
+      "IfcColourRgb": 15,
+      "IfcMaterial": 13,
+      "IfcMaterialConstituent": 13,
+      "IfcFaceBasedSurfaceModel": 13,
+      "IfcStyledRepresentation": 12,
+      "IfcMaterialDefinitionRepresentation": 12,
+      "IfcSurfaceStyleRendering": 12,
+      "IfcSurfaceStyle": 12,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9,
+      "IfcPropertySingleValue": 7,
+      "IfcOwnerHistory": 7
+    },
+    "original_name": "MiC_TYPE 3A2_LD1L:MiC_TYPE 3A2_LD1L:57317852",
+    "global_id": "3s9BSYdKbDIPApKchzDElZ",
+    "type_info": {
+      "family": "MiC_TYPE 3A2_LD1L",
+      "type_number": "3A2",
+      "code": "LD1L",
+      "category": "living_dining"
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 3A2_LD1L"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 3A2_LD1L"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Gypsum Board (CL01)",
+      "HSK1A_Gypsum Board (CL02)",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Paint - Metallic (Dark Grey)",
+      "Porcelain",
+      "Steel, 45-345"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_3A3_LD2R_MiC_TYPE_3A3_LD2R_57317720_3s9BSYdKbDIPApKchzDEjd.ifc",
+    "file_size_mb": 3.268071174621582,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 18536,
+      "IfcFaceOuterBound": 18416,
+      "IfcFace": 18416,
+      "IfcCartesianPoint": 14543,
+      "IfcConnectedFaceSet": 175,
+      "IfcFaceBound": 120,
+      "IfcStyledItem": 17,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcColourRgb": 11,
+      "IfcDirection": 9,
+      "IfcMaterial": 9,
+      "IfcMaterialConstituent": 9,
+      "IfcFaceBasedSurfaceModel": 9,
+      "IfcSurfaceStyleRendering": 8,
+      "IfcSurfaceStyle": 8,
+      "IfcStyledRepresentation": 8,
+      "IfcMaterialDefinitionRepresentation": 8,
+      "IfcOwnerHistory": 7,
+      "IfcPropertySingleValue": 7
+    },
+    "original_name": "MiC_TYPE 3A3_LD2R:MiC_TYPE 3A3_LD2R:57317720",
+    "global_id": "3s9BSYdKbDIPApKchzDEjd",
+    "type_info": {
+      "family": "MiC_TYPE 3A3_LD2R",
+      "type_number": "3A3",
+      "code": "LD2R",
+      "category": "living_dining"
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 3A3_LD2R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 3A3_LD2R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "Paint - Metallic (Dark Grey)",
+      "Steel, 45-345"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_3B1_LD2L_MiC_TYPE_3B1_LD2L_57130471_3OJkD8bnr7ZBGamr9ZFQVA.ifc",
+    "file_size_mb": 2.960071563720703,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 17249,
+      "IfcFaceOuterBound": 17094,
+      "IfcFace": 17094,
+      "IfcCartesianPoint": 13220,
+      "IfcConnectedFaceSet": 164,
+      "IfcFaceBound": 155,
+      "IfcStyledItem": 23,
+      "IfcColourRgb": 14,
+      "IfcFaceBasedSurfaceModel": 12,
+      "IfcMaterial": 12,
+      "IfcMaterialConstituent": 12,
+      "IfcPropertySet": 11,
+      "IfcRelDefinesByProperties": 11,
+      "IfcSurfaceStyleRendering": 11,
+      "IfcSurfaceStyle": 11,
+      "IfcStyledRepresentation": 11,
+      "IfcMaterialDefinitionRepresentation": 11,
+      "IfcDirection": 9,
+      "IfcOwnerHistory": 7,
+      "IfcPropertySingleValue": 7
+    },
+    "original_name": "MiC_TYPE 3B1_LD2L:MiC_TYPE 3B1_LD2L:57130471",
+    "global_id": "3OJkD8bnr7ZBGamr9ZFQVA",
+    "type_info": {
+      "family": "MiC_TYPE 3B1_LD2L",
+      "type_number": "3B1",
+      "code": "LD2L",
+      "category": "living_dining"
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 3B1_LD2L"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 3B1_LD2L"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Gypsum Board (CL01)",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Paint - Metallic (Dark Grey)"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_3B2_LD1L_LD2R_MiC_TYPE_3B2_LD1L_LD2R_57130561_3OJkD8bnr7ZBGamr9ZFQHi.ifc",
+    "file_size_mb": 3.054995536804199,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 17690,
+      "IfcFaceOuterBound": 17595,
+      "IfcFace": 17595,
+      "IfcCartesianPoint": 13344,
+      "IfcConnectedFaceSet": 186,
+      "IfcFaceBound": 95,
+      "IfcStyledItem": 25,
+      "IfcCurveStyleFontPattern": 18,
+      "IfcColourRgb": 17,
+      "IfcMaterial": 13,
+      "IfcMaterialConstituent": 13,
+      "IfcFaceBasedSurfaceModel": 13,
+      "IfcStyledRepresentation": 12,
+      "IfcMaterialDefinitionRepresentation": 12,
+      "IfcSurfaceStyleRendering": 12,
+      "IfcSurfaceStyle": 12,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9,
+      "IfcCurveStyle": 8
+    },
+    "original_name": "MiC_TYPE 3B2_LD1L & LD2R:MiC_TYPE 3B2_LD1L & LD2R:57130561",
+    "global_id": "3OJkD8bnr7ZBGamr9ZFQHi",
+    "type_info": {
+      "family": "MiC_TYPE 3B2_LD1L & LD2R",
+      "type_number": "3B2",
+      "code": "LD1L",
+      "category": "living_dining"
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 3B2_LD1L & LD2R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 3B2_LD1L & LD2R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "Gypsum Wall Board",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Paint - Metallic (Dark Grey)",
+      "Porcelain",
+      "Steel, 45-345"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_3B2_LD1L_LD2R_MiC_TYPE_3B2_LD1L_LD2R_57130577_3OJkD8bnr7ZBGamr9ZFQHy.ifc",
+    "file_size_mb": 3.067708969116211,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 17696,
+      "IfcFaceOuterBound": 17601,
+      "IfcFace": 17601,
+      "IfcCartesianPoint": 13344,
+      "IfcConnectedFaceSet": 186,
+      "IfcFaceBound": 95,
+      "IfcStyledItem": 25,
+      "IfcCurveStyleFontPattern": 18,
+      "IfcColourRgb": 17,
+      "IfcFaceBasedSurfaceModel": 13,
+      "IfcMaterial": 13,
+      "IfcMaterialConstituent": 13,
+      "IfcMaterialDefinitionRepresentation": 12,
+      "IfcSurfaceStyleRendering": 12,
+      "IfcSurfaceStyle": 12,
+      "IfcStyledRepresentation": 12,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9,
+      "IfcCurveStyle": 8
+    },
+    "original_name": "MiC_TYPE 3B2_LD1L & LD2R:MiC_TYPE 3B2_LD1L & LD2R:57130577",
+    "global_id": "3OJkD8bnr7ZBGamr9ZFQHy",
+    "type_info": {
+      "family": "MiC_TYPE 3B2_LD1L & LD2R",
+      "type_number": "3B2",
+      "code": "LD1L",
+      "category": "living_dining"
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 3B2_LD1L & LD2R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 3B2_LD1L & LD2R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "Gypsum Wall Board",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Paint - Metallic (Dark Grey)",
+      "Porcelain",
+      "Steel, 45-345"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_3B2_LD1L_LD2R_MiC_TYPE_3B2_LD1L_LD2R_57318114_3s9BSYdKbDIPApKchzDEZT.ifc",
+    "file_size_mb": 3.054995536804199,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 17690,
+      "IfcFaceOuterBound": 17595,
+      "IfcFace": 17595,
+      "IfcCartesianPoint": 13344,
+      "IfcConnectedFaceSet": 186,
+      "IfcFaceBound": 95,
+      "IfcStyledItem": 25,
+      "IfcCurveStyleFontPattern": 18,
+      "IfcColourRgb": 17,
+      "IfcMaterial": 13,
+      "IfcMaterialConstituent": 13,
+      "IfcFaceBasedSurfaceModel": 13,
+      "IfcStyledRepresentation": 12,
+      "IfcMaterialDefinitionRepresentation": 12,
+      "IfcSurfaceStyleRendering": 12,
+      "IfcSurfaceStyle": 12,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9,
+      "IfcCurveStyle": 8
+    },
+    "original_name": "MiC_TYPE 3B2_LD1L & LD2R:MiC_TYPE 3B2_LD1L & LD2R:57318114",
+    "global_id": "3s9BSYdKbDIPApKchzDEZT",
+    "type_info": {
+      "family": "MiC_TYPE 3B2_LD1L & LD2R",
+      "type_number": "3B2",
+      "code": "LD1L",
+      "category": "living_dining"
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 3B2_LD1L & LD2R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 3B2_LD1L & LD2R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "Gypsum Wall Board",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Paint - Metallic (Dark Grey)",
+      "Porcelain",
+      "Steel, 45-345"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_4_1_KTL_KTR_4_1_57186426_2b5qABg3z8xAsQnY6YndV3.ifc",
+    "file_size_mb": 1.8314313888549805,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10608,
+      "IfcFaceOuterBound": 10539,
+      "IfcFace": 10539,
+      "IfcCartesianPoint": 8005,
+      "IfcStyledItem": 100,
+      "IfcClosedShell": 88,
+      "IfcFacetedBrep": 88,
+      "IfcFaceBound": 69,
+      "IfcMaterialConstituent": 26,
+      "IfcShapeRepresentation": 15,
+      "IfcShapeAspect": 13,
+      "IfcColourRgb": 13,
+      "IfcMaterial": 13,
+      "IfcSurfaceStyle": 12,
+      "IfcStyledRepresentation": 12,
+      "IfcMaterialDefinitionRepresentation": 12,
+      "IfcSurfaceStyleRendering": 12,
+      "IfcPropertySet": 11,
+      "IfcRelDefinesByProperties": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 4.1_KTL & KTR:4.1:57186426",
+    "global_id": "2b5qABg3z8xAsQnY6YndV3",
+    "type_info": {
+      "family": "MiC_TYPE 4.1_KTL & KTR",
+      "type_number": "4.1",
+      "code": "KTL",
+      "category": "kitchen"
+    },
+    "bbox": {
+      "min": [
+        -1732.50000000001,
+        -3074.99805581019,
+        -28165.0
+      ],
+      "max": [
+        -0.0,
+        195.0,
+        -25075.0
+      ],
+      "width": 1732.50000000001,
+      "depth": 3269.99805581019,
+      "height": 3090.0
+    },
+    "dimensions_m": {
+      "width": 1732.5,
+      "depth": 3269.998,
+      "height": 3090.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "4.1"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "4.1"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Gypsum Board (CL02)",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Stainless - Brushed",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_4_1_KTL_KTR_4_1R_57186783_2b5qABg3z8xAsQnY6YndPc.ifc",
+    "file_size_mb": 1.824995994567871,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10609,
+      "IfcFaceOuterBound": 10540,
+      "IfcFace": 10540,
+      "IfcCartesianPoint": 8007,
+      "IfcStyledItem": 100,
+      "IfcClosedShell": 88,
+      "IfcFacetedBrep": 88,
+      "IfcFaceBound": 69,
+      "IfcMaterialConstituent": 26,
+      "IfcShapeRepresentation": 15,
+      "IfcShapeAspect": 13,
+      "IfcColourRgb": 13,
+      "IfcMaterial": 13,
+      "IfcSurfaceStyleRendering": 12,
+      "IfcSurfaceStyle": 12,
+      "IfcStyledRepresentation": 12,
+      "IfcMaterialDefinitionRepresentation": 12,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 4.1_KTL & KTR:4.1R:57186783",
+    "global_id": "2b5qABg3z8xAsQnY6YndPc",
+    "type_info": {
+      "family": "MiC_TYPE 4.1_KTL & KTR",
+      "type_number": "4.1",
+      "code": "KTL",
+      "category": "kitchen"
+    },
+    "bbox": {
+      "min": [
+        -1732.50000000001,
+        -195.0,
+        -28165.0
+      ],
+      "max": [
+        -0.0,
+        3074.99805581019,
+        -25075.0
+      ],
+      "width": 1732.50000000001,
+      "depth": 3269.99805581019,
+      "height": 3090.0
+    },
+    "dimensions_m": {
+      "width": 1732.5,
+      "depth": 3269.998,
+      "height": 3090.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "4.1R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "4.1R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Gypsum Board (CL02)",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Stainless - Brushed",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_4_KTL_KTR_4_57190001_2bLgnfup549QUJ7rbe_q$1.ifc",
+    "file_size_mb": 1.8470354080200195,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10733,
+      "IfcFace": 10666,
+      "IfcFaceOuterBound": 10666,
+      "IfcCartesianPoint": 8017,
+      "IfcStyledItem": 103,
+      "IfcClosedShell": 91,
+      "IfcFacetedBrep": 91,
+      "IfcFaceBound": 67,
+      "IfcMaterialConstituent": 27,
+      "IfcShapeRepresentation": 16,
+      "IfcShapeAspect": 14,
+      "IfcColourRgb": 13,
+      "IfcMaterial": 13,
+      "IfcStyledRepresentation": 12,
+      "IfcMaterialDefinitionRepresentation": 12,
+      "IfcSurfaceStyleRendering": 12,
+      "IfcSurfaceStyle": 12,
+      "IfcPropertySet": 11,
+      "IfcRelDefinesByProperties": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 4_KTL & KTR:4:57190001",
+    "global_id": "2bLgnfup549QUJ7rbe_q$1",
+    "type_info": {
+      "family": "MiC_TYPE 4_KTL & KTR",
+      "type_number": "4",
+      "code": "KTL",
+      "category": "kitchen"
+    },
+    "bbox": {
+      "min": [
+        -1732.50000000001,
+        -3074.99805581019,
+        -28165.0
+      ],
+      "max": [
+        -0.0,
+        195.0,
+        -25075.0
+      ],
+      "width": 1732.50000000001,
+      "depth": 3269.99805581019,
+      "height": 3090.0
+    },
+    "dimensions_m": {
+      "width": 1732.5,
+      "depth": 3269.998,
+      "height": 3090.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "4"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "4"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Gypsum Board (CL02)",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Stainless - Brushed",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_4_KTL_KTR_4_57322549_0Py65SNEj1KOkc3USpbpK6.ifc",
+    "file_size_mb": 1.8405866622924805,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10734,
+      "IfcFaceOuterBound": 10667,
+      "IfcFace": 10667,
+      "IfcCartesianPoint": 8019,
+      "IfcStyledItem": 103,
+      "IfcClosedShell": 91,
+      "IfcFacetedBrep": 91,
+      "IfcFaceBound": 67,
+      "IfcMaterialConstituent": 27,
+      "IfcShapeRepresentation": 16,
+      "IfcShapeAspect": 14,
+      "IfcColourRgb": 13,
+      "IfcMaterial": 13,
+      "IfcSurfaceStyle": 12,
+      "IfcStyledRepresentation": 12,
+      "IfcMaterialDefinitionRepresentation": 12,
+      "IfcSurfaceStyleRendering": 12,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 4_KTL & KTR:4:57322549",
+    "global_id": "0Py65SNEj1KOkc3USpbpK6",
+    "type_info": {
+      "family": "MiC_TYPE 4_KTL & KTR",
+      "type_number": "4",
+      "code": "KTL",
+      "category": "kitchen"
+    },
+    "bbox": {
+      "min": [
+        -1732.50000000001,
+        -195.0,
+        -28165.0
+      ],
+      "max": [
+        -0.0,
+        3074.99805581019,
+        -25075.0
+      ],
+      "width": 1732.50000000001,
+      "depth": 3269.99805581019,
+      "height": 3090.0
+    },
+    "dimensions_m": {
+      "width": 1732.5,
+      "depth": 3269.998,
+      "height": 3090.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "4"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "4"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Gypsum Board (CL02)",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Stainless - Brushed",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_4_KTL_KTR_4R_57322959_0Py65SNEj1KOkc3USpbpJy.ifc",
+    "file_size_mb": 1.8470592498779297,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10733,
+      "IfcFaceOuterBound": 10666,
+      "IfcFace": 10666,
+      "IfcCartesianPoint": 8017,
+      "IfcStyledItem": 103,
+      "IfcClosedShell": 91,
+      "IfcFacetedBrep": 91,
+      "IfcFaceBound": 67,
+      "IfcMaterialConstituent": 27,
+      "IfcShapeRepresentation": 16,
+      "IfcShapeAspect": 14,
+      "IfcColourRgb": 13,
+      "IfcMaterial": 13,
+      "IfcSurfaceStyleRendering": 12,
+      "IfcSurfaceStyle": 12,
+      "IfcStyledRepresentation": 12,
+      "IfcMaterialDefinitionRepresentation": 12,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 4_KTL & KTR:4R:57322959",
+    "global_id": "0Py65SNEj1KOkc3USpbpJy",
+    "type_info": {
+      "family": "MiC_TYPE 4_KTL & KTR",
+      "type_number": "4",
+      "code": "KTL",
+      "category": "kitchen"
+    },
+    "bbox": {
+      "min": [
+        -1732.50000000001,
+        -3074.99805581019,
+        -28165.0
+      ],
+      "max": [
+        -0.0,
+        195.0,
+        -25075.0
+      ],
+      "width": 1732.50000000001,
+      "depth": 3269.99805581019,
+      "height": 3090.0
+    },
+    "dimensions_m": {
+      "width": 1732.5,
+      "depth": 3269.998,
+      "height": 3090.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "4R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "4R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Gypsum Board (CL02)",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Stainless - Brushed",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_4_KTL_KTR_4R_57399178_3BFhSQmaT6vhr1swgQJcGA.ifc",
+    "file_size_mb": 1.8405876159667969,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10734,
+      "IfcFaceOuterBound": 10667,
+      "IfcFace": 10667,
+      "IfcCartesianPoint": 8019,
+      "IfcStyledItem": 103,
+      "IfcClosedShell": 91,
+      "IfcFacetedBrep": 91,
+      "IfcFaceBound": 67,
+      "IfcMaterialConstituent": 27,
+      "IfcShapeRepresentation": 16,
+      "IfcShapeAspect": 14,
+      "IfcColourRgb": 13,
+      "IfcMaterial": 13,
+      "IfcSurfaceStyle": 12,
+      "IfcStyledRepresentation": 12,
+      "IfcMaterialDefinitionRepresentation": 12,
+      "IfcSurfaceStyleRendering": 12,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 4_KTL & KTR:4R:57399178",
+    "global_id": "3BFhSQmaT6vhr1swgQJcGA",
+    "type_info": {
+      "family": "MiC_TYPE 4_KTL & KTR",
+      "type_number": "4",
+      "code": "KTL",
+      "category": "kitchen"
+    },
+    "bbox": {
+      "min": [
+        -1732.50000000001,
+        -195.0,
+        -28165.0
+      ],
+      "max": [
+        -0.0,
+        3074.99805581019,
+        -25075.0
+      ],
+      "width": 1732.50000000001,
+      "depth": 3269.99805581019,
+      "height": 3090.0
+    },
+    "dimensions_m": {
+      "width": 1732.5,
+      "depth": 3269.998,
+      "height": 3090.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "4R"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "4R"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Gypsum Board (CL02)",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Stainless - Brushed",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_5_1_BR2_MiC_TYPE_5_1_BR2_57132416_1DsuNIs$bADP4N2gjHGkh6.ifc",
+    "file_size_mb": 0.7040510177612305,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 4240,
+      "IfcFace": 4193,
+      "IfcFaceOuterBound": 4193,
+      "IfcCartesianPoint": 3214,
+      "IfcStyledItem": 80,
+      "IfcClosedShell": 72,
+      "IfcFacetedBrep": 72,
+      "IfcFaceBound": 47,
+      "IfcMaterialConstituent": 20,
+      "IfcShapeRepresentation": 13,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcShapeAspect": 11,
+      "IfcColourRgb": 11,
+      "IfcDirection": 9,
+      "IfcMaterial": 9,
+      "IfcStyledRepresentation": 8,
+      "IfcMaterialDefinitionRepresentation": 8,
+      "IfcSurfaceStyleRendering": 8,
+      "IfcSurfaceStyle": 8
+    },
+    "original_name": "MiC_TYPE 5.1_BR2:MiC_TYPE 5.1_BR2:57132416",
+    "global_id": "1DsuNIs$bADP4N2gjHGkh6",
+    "type_info": {
+      "family": "MiC_TYPE 5.1_BR2",
+      "type_number": "5.1",
+      "code": "BR2",
+      "category": "bedroom"
+    },
+    "bbox": {
+      "min": [
+        -0.0,
+        0.0,
+        -45.0000013033264
+      ],
+      "max": [
+        2390.0,
+        4025.0,
+        3099.99999870287
+      ],
+      "width": 2390.0,
+      "depth": 4025.0,
+      "height": 3145.0000000061964
+    },
+    "dimensions_m": {
+      "width": 2390.0,
+      "depth": 4025.0,
+      "height": 3145.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 5.1_BR2"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 5.1_BR2"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "Glass",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_5_BR1_MiC_TYPE_5_BR1_57133952_1DsuNIs$bADP4N2gjHGkJ6.ifc",
+    "file_size_mb": 1.5794572830200195,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 9377,
+      "IfcFaceOuterBound": 9323,
+      "IfcFace": 9323,
+      "IfcCartesianPoint": 6754,
+      "IfcStyledItem": 87,
+      "IfcClosedShell": 77,
+      "IfcFacetedBrep": 77,
+      "IfcFaceBound": 54,
+      "IfcMaterialConstituent": 24,
+      "IfcShapeRepresentation": 15,
+      "IfcShapeAspect": 13,
+      "IfcColourRgb": 13,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcMaterial": 11,
+      "IfcSurfaceStyleRendering": 10,
+      "IfcSurfaceStyle": 10,
+      "IfcStyledRepresentation": 10,
+      "IfcMaterialDefinitionRepresentation": 10,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 5_BR1:MiC_TYPE 5_BR1:57133952",
+    "global_id": "1DsuNIs$bADP4N2gjHGkJ6",
+    "type_info": {
+      "family": "MiC_TYPE 5_BR1",
+      "type_number": "5",
+      "code": "BR1",
+      "category": "bedroom"
+    },
+    "bbox": {
+      "min": [
+        -2390.0,
+        -4000.0,
+        -45.0000013033281
+      ],
+      "max": [
+        -0.0,
+        -0.0,
+        3099.99999864212
+      ],
+      "width": 2390.0,
+      "depth": 4000.0,
+      "height": 3144.999999945448
+    },
+    "dimensions_m": {
+      "width": 2390.0,
+      "depth": 4000.0,
+      "height": 3145.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 5_BR1"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 5_BR1"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Concrete, Cast-in-Place - C15",
+      "DetaElectrical_White",
+      "Glass",
+      "HSK1A_Gypsum Board (CL02)",
+      "HSK1A_Non Slip Homogeneous Skirting Tiles",
+      "HSK1A_Non Slip Homogeneous Tiles_600x600 (FL01,SK01,WL01)",
+      "HSK1A_Stainless - Brushed",
+      "HSK1A_White Paint",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_6_TL_MiC_TYPE_6_TL_57133352_1DsuNIs$bADP4N2gjHGkPk.ifc",
+    "file_size_mb": 15.955777168273926,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 97782,
+      "IfcFaceOuterBound": 97748,
+      "IfcFace": 97748,
+      "IfcCartesianPoint": 54045,
+      "IfcStyledItem": 144,
+      "IfcClosedShell": 131,
+      "IfcFacetedBrep": 131,
+      "IfcFaceBound": 34,
+      "IfcMaterialConstituent": 29,
+      "IfcShapeRepresentation": 17,
+      "IfcShapeAspect": 15,
+      "IfcColourRgb": 14,
+      "IfcMaterial": 14,
+      "IfcStyledRepresentation": 13,
+      "IfcMaterialDefinitionRepresentation": 13,
+      "IfcSurfaceStyleRendering": 13,
+      "IfcSurfaceStyle": 13,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 6_TL:MiC_TYPE 6_TL:57133352",
+    "global_id": "1DsuNIs$bADP4N2gjHGkPk",
+    "type_info": {
+      "family": "MiC_TYPE 6_TL",
+      "type_number": "6",
+      "code": "TL",
+      "category": "toilet"
+    },
+    "bbox": {
+      "min": [
+        -2880.0,
+        -1885.0,
+        -28165.0
+      ],
+      "max": [
+        195.0,
+        0.0,
+        -25075.0
+      ],
+      "width": 3075.0,
+      "depth": 1885.0,
+      "height": 3090.0
+    },
+    "dimensions_m": {
+      "width": 3075.0,
+      "depth": 1885.0,
+      "height": 3090.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 6_TL"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 6_TL"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Ceramic White",
+      "Concrete, Cast-in-Place - C15",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Gypsum Board (CL02)",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Stainless - Brushed",
+      "Porcelain",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_6_TL_MiC_TYPE_6_TL_57160681_1DsuNIs$bADP4N2gjHJHol.ifc",
+    "file_size_mb": 15.955777168273926,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 97782,
+      "IfcFaceOuterBound": 97748,
+      "IfcFace": 97748,
+      "IfcCartesianPoint": 54045,
+      "IfcStyledItem": 144,
+      "IfcClosedShell": 131,
+      "IfcFacetedBrep": 131,
+      "IfcFaceBound": 34,
+      "IfcMaterialConstituent": 29,
+      "IfcShapeRepresentation": 17,
+      "IfcShapeAspect": 15,
+      "IfcColourRgb": 14,
+      "IfcMaterial": 14,
+      "IfcStyledRepresentation": 13,
+      "IfcMaterialDefinitionRepresentation": 13,
+      "IfcSurfaceStyleRendering": 13,
+      "IfcSurfaceStyle": 13,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 6_TL:MiC_TYPE 6_TL:57160681",
+    "global_id": "1DsuNIs$bADP4N2gjHJHol",
+    "type_info": {
+      "family": "MiC_TYPE 6_TL",
+      "type_number": "6",
+      "code": "TL",
+      "category": "toilet"
+    },
+    "bbox": {
+      "min": [
+        -2880.0,
+        -1885.0,
+        -28165.0
+      ],
+      "max": [
+        195.0,
+        0.0,
+        -25075.0
+      ],
+      "width": 3075.0,
+      "depth": 1885.0,
+      "height": 3090.0
+    },
+    "dimensions_m": {
+      "width": 3075.0,
+      "depth": 1885.0,
+      "height": 3090.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 6_TL"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 6_TL"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Ceramic White",
+      "Concrete, Cast-in-Place - C15",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Gypsum Board (CL02)",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Stainless - Brushed",
+      "Porcelain",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_6_TL_MiC_TYPE_6_TL_57319599_3gEg7mW$z7yAlWKjenXNZC.ifc",
+    "file_size_mb": 15.955754280090332,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 97782,
+      "IfcFace": 97748,
+      "IfcFaceOuterBound": 97748,
+      "IfcCartesianPoint": 54045,
+      "IfcStyledItem": 144,
+      "IfcClosedShell": 131,
+      "IfcFacetedBrep": 131,
+      "IfcFaceBound": 34,
+      "IfcMaterialConstituent": 29,
+      "IfcShapeRepresentation": 17,
+      "IfcShapeAspect": 15,
+      "IfcColourRgb": 14,
+      "IfcMaterial": 14,
+      "IfcStyledRepresentation": 13,
+      "IfcSurfaceStyleRendering": 13,
+      "IfcSurfaceStyle": 13,
+      "IfcMaterialDefinitionRepresentation": 13,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9
+    },
+    "original_name": "MiC_TYPE 6_TL:MiC_TYPE 6_TL:57319599",
+    "global_id": "3gEg7mW$z7yAlWKjenXNZC",
+    "type_info": {
+      "family": "MiC_TYPE 6_TL",
+      "type_number": "6",
+      "code": "TL",
+      "category": "toilet"
+    },
+    "bbox": {
+      "min": [
+        -2880.0,
+        -1885.0,
+        -28165.0
+      ],
+      "max": [
+        195.0,
+        0.0,
+        -25075.0
+      ],
+      "width": 3075.0,
+      "depth": 1885.0,
+      "height": 3090.0
+    },
+    "dimensions_m": {
+      "width": 3075.0,
+      "depth": 1885.0,
+      "height": 3090.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 6_TL"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 6_TL"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Aluminium",
+      "Ceramic White",
+      "Concrete, Cast-in-Place - C15",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "Glass",
+      "HSK1A_Aluminium Suspensded Ceiling Tile 200",
+      "HSK1A_Gypsum Board (CL02)",
+      "HSK1A_Non Slip Homogeneous Floor Tiles_300x600",
+      "HSK1A_Non Slip Homogeneous Tiles_300x600 (FL02,WL02)",
+      "HSK1A_Stainless - Brushed",
+      "Porcelain",
+      "Steel Dowel Bar"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_7_0_EMR1_MiC_TYPE_7_0_EMR1_57188312_2b5qABg3z8xAsQnY6Ynd1X.ifc",
+    "file_size_mb": 1.9361391067504883,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 10964,
+      "IfcFaceOuterBound": 10911,
+      "IfcFace": 10911,
+      "IfcCartesianPoint": 9134,
+      "IfcStyledItem": 151,
+      "IfcClosedShell": 145,
+      "IfcFacetedBrep": 145,
+      "IfcFaceBound": 53,
+      "IfcMaterialConstituent": 14,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9,
+      "IfcShapeRepresentation": 9,
+      "IfcOwnerHistory": 7,
+      "IfcPropertySingleValue": 7,
+      "IfcShapeAspect": 7,
+      "IfcMaterial": 7,
+      "IfcAxis2Placement3D": 6,
+      "IfcMaterialDefinitionRepresentation": 6,
+      "IfcColourRgb": 6
+    },
+    "original_name": "MiC_TYPE 7.0_EMR1:MiC_TYPE 7.0_EMR1:57188312",
+    "global_id": "2b5qABg3z8xAsQnY6Ynd1X",
+    "type_info": {
+      "family": "MiC_TYPE 7.0_EMR1",
+      "type_number": "7.0",
+      "code": "EMR1",
+      "category": "utility_emr"
+    },
+    "bbox": {
+      "min": [
+        -4470.0,
+        -2480.0,
+        -28165.0
+      ],
+      "max": [
+        0.0,
+        195.0,
+        -25165.0
+      ],
+      "width": 4470.0,
+      "depth": 2675.0,
+      "height": 3000.0
+    },
+    "dimensions_m": {
+      "width": 4470.0,
+      "depth": 2675.0,
+      "height": 3000.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 7.0_EMR1"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 7.0_EMR1"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Concrete, Cast-in-Place - C15",
+      "Default",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "HSK1A_Stainless - Brushed",
+      "Plastic"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_8_RMSRR_MiC_TYPE_8_RMSRR_57324431_0Py65SNEj1KOkc3USpbogy.ifc",
+    "file_size_mb": 1.439223289489746,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 8141,
+      "IfcFaceOuterBound": 8105,
+      "IfcFace": 8105,
+      "IfcCartesianPoint": 6512,
+      "IfcStyledItem": 95,
+      "IfcClosedShell": 90,
+      "IfcFacetedBrep": 90,
+      "IfcFaceBound": 36,
+      "IfcMaterialConstituent": 12,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9,
+      "IfcShapeRepresentation": 8,
+      "IfcOwnerHistory": 7,
+      "IfcPropertySingleValue": 7,
+      "IfcAxis2Placement3D": 6,
+      "IfcShapeAspect": 6,
+      "IfcMaterial": 6,
+      "IfcSIUnit": 6,
+      "IfcSurfaceStyleRendering": 5
+    },
+    "original_name": "MiC_TYPE 8_RMSRR:MiC_TYPE 8_RMSRR:57324431",
+    "global_id": "0Py65SNEj1KOkc3USpbogy",
+    "type_info": {
+      "family": "MiC_TYPE 8_RMSRR",
+      "type_number": "8",
+      "code": "RMSRR",
+      "category": "utility_refuse"
+    },
+    "bbox": {
+      "min": [
+        -2675.0,
+        -2070.0,
+        -19.9999993205056
+      ],
+      "max": [
+        -0.0,
+        4.45817523313963e-05,
+        3100.00031128429
+      ],
+      "width": 2675.0,
+      "depth": 2070.0000445817523,
+      "height": 3120.0003106047957
+    },
+    "dimensions_m": {
+      "width": 2675.0,
+      "depth": 2070.0,
+      "height": 3120.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 8_RMSRR"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 8_RMSRR"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Concrete, Cast-in-Place - C15",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "HSK1A_Non Slip Homogeneous Tiles_100x100 (FL07)",
+      "HSK1A_Stainless - Brushed"
+    ]
+  },
+  {
+    "filename": "MiC_TYPE_9_EMR2_MiC_TYPE_9_EMR2_57320381_3gEg7mW$z7yAlWKjenXNlU.ifc",
+    "file_size_mb": 1.5793333053588867,
+    "schema": "IFC4X3",
+    "entity_counts": {
+      "IfcPolyLoop": 8749,
+      "IfcFaceOuterBound": 8715,
+      "IfcFace": 8715,
+      "IfcCartesianPoint": 7348,
+      "IfcStyledItem": 147,
+      "IfcClosedShell": 141,
+      "IfcFacetedBrep": 141,
+      "IfcFaceBound": 34,
+      "IfcMaterialConstituent": 14,
+      "IfcRelDefinesByProperties": 11,
+      "IfcPropertySet": 11,
+      "IfcDirection": 9,
+      "IfcShapeRepresentation": 9,
+      "IfcOwnerHistory": 7,
+      "IfcPropertySingleValue": 7,
+      "IfcShapeAspect": 7,
+      "IfcMaterial": 7,
+      "IfcAxis2Placement3D": 6,
+      "IfcMaterialDefinitionRepresentation": 6,
+      "IfcColourRgb": 6
+    },
+    "original_name": "MiC_TYPE 9_EMR2:MiC_TYPE 9_EMR2:57320381",
+    "global_id": "3gEg7mW$z7yAlWKjenXNlU",
+    "type_info": {
+      "family": "MiC_TYPE 9_EMR2",
+      "type_number": "9",
+      "code": "EMR2",
+      "category": "utility_emr"
+    },
+    "bbox": {
+      "min": [
+        -2485.0,
+        -2470.0,
+        -28165.0
+      ],
+      "max": [
+        195.0,
+        0.0,
+        -25075.0002380374
+      ],
+      "width": 2680.0,
+      "depth": 2470.0,
+      "height": 3089.999761962601
+    },
+    "dimensions_m": {
+      "width": 2680.0,
+      "depth": 2470.0,
+      "height": 3090.0
+    },
+    "property_sets": {
+      "Pset_BuildingElementProxyCommon": {
+        "IsExternal": false,
+        "Reference": "MiC_TYPE 9_EMR2"
+      },
+      "Pset_EnvironmentalImpactIndicators": {
+        "Reference": "MiC_TYPE 9_EMR2"
+      }
+    },
+    "sub_elements": {
+      "walls": 0,
+      "doors": 0,
+      "windows": 0,
+      "slabs": 0,
+      "beams": 0,
+      "furniture": 0,
+      "coverings": 0,
+      "openings": 0
+    },
+    "materials": [
+      "<Unnamed>",
+      "Concrete, Cast-in-Place - C15",
+      "Default",
+      "GCL-Plastic White",
+      "GEL-STEEL",
+      "HSK1A_Stainless - Brushed",
+      "Plastic"
+    ]
+  }
+]

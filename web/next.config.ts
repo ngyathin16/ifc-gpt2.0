@@ -1,9 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  webpack: (config) => {
-    config.experiments = { ...config.experiments, asyncWebAssembly: true };
-    return config;
+  async rewrites() {
+    return [
+      {
+        source: "/workspace/:path*",
+        destination: "http://127.0.0.1:8000/workspace/:path*",
+      },
+    ];
   },
 };
 

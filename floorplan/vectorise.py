@@ -14,10 +14,6 @@ import math
 from dataclasses import dataclass, field
 
 from floorplan.detect import (
-    DetectedColumn,
-    DetectedOpening,
-    DetectedRoom,
-    DetectedWall,
     DetectionResult,
 )
 

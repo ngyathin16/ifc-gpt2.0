@@ -13,8 +13,15 @@ import ifcopenshell
 import ifcopenshell.validate
 
 
-def validate_schema(ifc_path: str | Path) -> dict[str, Any]:
+def validate_schema(
+    ifc_path: str | Path,
+    ifc_file: ifcopenshell.file | None = None,
+) -> dict[str, Any]:
     """Validate IFC file against its declared schema.
+
+    Args:
+        ifc_path: Path to IFC file (used only if ifc_file is None).
+        ifc_file: Pre-opened IFC file object to avoid redundant I/O.
 
     Returns:
         {
@@ -26,7 +33,8 @@ def validate_schema(ifc_path: str | Path) -> dict[str, Any]:
             "warning_count": int,
         }
     """
-    ifc_file = ifcopenshell.open(str(ifc_path))
+    if ifc_file is None:
+        ifc_file = ifcopenshell.open(str(ifc_path))
     schema = ifc_file.schema
 
     logger = ifcopenshell.validate.json_logger()

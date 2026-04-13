@@ -31,7 +31,7 @@ class WallPlacement(BaseModel):
 
 class ColumnPlacement(BaseModel):
     element_type: Literal["column"] = "column"
-    column_ref: str
+    column_ref: str = "C"
     storey_ref: str
     position: list[float] = Field(description="[x, y] coordinates")
     base_elevation: float = 0.0
@@ -45,7 +45,7 @@ class ColumnPlacement(BaseModel):
 
 class BeamPlacement(BaseModel):
     element_type: Literal["beam"] = "beam"
-    beam_ref: str
+    beam_ref: str = "B"
     storey_ref: str
     start_point: list[float] = Field(description="[x, y] coordinates")
     end_point: list[float] = Field(description="[x, y] coordinates")
@@ -115,10 +115,54 @@ class ElevatorPlacement(BaseModel):
     name: str = "Elevator"
 
 
+class CoveringPlacement(BaseModel):
+    element_type: Literal["covering"] = "covering"
+    storey_ref: str
+    boundary_points: list[list[float]] = Field(description="List of [x, y] coordinates")
+    thickness: float = 0.02
+    elevation: float = 0.0
+    covering_type: Literal["CEILING", "FLOORING", "CLADDING", "ROOFING"] = "CEILING"
+    name: str = "Covering"
+
+
+class FootingPlacement(BaseModel):
+    element_type: Literal["footing"] = "footing"
+    storey_ref: str
+    position: list[float] = Field(description="[x, y] centre of footing")
+    width: float = 1.0
+    length: float = 1.0
+    depth: float = 0.5
+    elevation: float = 0.0
+    name: str = "Footing"
+
+
+class RampPlacement(BaseModel):
+    element_type: Literal["ramp"] = "ramp"
+    storey_ref: str
+    start_point: list[float] = Field(description="[x, y] coordinates")
+    direction: list[float] = Field(default=[1.0, 0.0], description="[dx, dy] unit vector")
+    width: float = 1.5
+    length: float = 6.0
+    rise: float = 0.5
+    name: str = "Ramp"
+
+
+class BalconyPlacement(BaseModel):
+    element_type: Literal["balcony"] = "balcony"
+    storey_ref: str
+    boundary_points: list[list[float]] = Field(description="List of [x, y] slab outline")
+    depth: float = 0.15
+    elevation: float = 0.0
+    railing_height: float = 1.1
+    railing_path: list[list[float]] = Field(default_factory=list, description="[x, y, z] railing path")
+    name: str = "Balcony"
+
+
 ElementPlacement = (
     WallPlacement | ColumnPlacement | BeamPlacement | SlabPlacement |
     OpeningPlacement | RoofPlacement | StairPlacement | RailingPlacement |
-    ElevatorPlacement
+    ElevatorPlacement | CoveringPlacement | FootingPlacement |
+    RampPlacement | BalconyPlacement
 )
 
 

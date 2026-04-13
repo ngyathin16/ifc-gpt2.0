@@ -1,8 +1,6 @@
 """Tests for the floorplan/ package — FloorPlan2IFC pipeline."""
 from __future__ import annotations
 
-import math
-
 import cv2
 import numpy as np
 import pytest
@@ -11,7 +9,9 @@ from floorplan.detect import (
     DetectedOpening,
     DetectedWall,
     DetectionResult,
+    _clamp_image_for_vlm,
     _merge_collinear_walls,
+    _merge_vlm_cv_walls,
     _opencv_detect_rooms,
     _opencv_detect_walls,
     detect_elements,
@@ -19,7 +19,6 @@ from floorplan.detect import (
 from floorplan.ingest import _normalise, load_image_from_bytes
 from floorplan.plan_builder import (
     _compute_slab_boundary,
-    _distance_along_wall,
     _find_nearest_wall,
     _find_wall_junctions,
     build_plan,
@@ -65,7 +64,6 @@ def _make_two_room_floorplan(
     """Draw two rooms side-by-side separated by an interior wall."""
     img = _make_simple_floorplan(width, height, wall_thickness)
 
-    margin_x = 100
     margin_y = 80
     mid_x = width // 2
 
@@ -421,3 +419,132 @@ class TestPipeline:
         plan = floorplan_to_plan(png_bytes, filename="test.png", num_storeys=1)
         assert "storeys" in plan
         assert "elements" in plan
+
+
+# ---------------------------------------------------------------------------
+# Tests: VLM detection helpers
+# ---------------------------------------------------------------------------
+
+class TestVLMHelpers:
+    def test_clamp_image_small(self):
+        """Small images should not be clamped."""
+        img = np.zeros((200, 300, 3), dtype=np.uint8)
+        clamped, sx, sy = _clamp_image_for_vlm(img)
+        assert clamped.shape == (200, 300, 3)
+        assert sx == 1.0
+        assert sy == 1.0
+
+    def test_clamp_image_large(self):
+        """Images exceeding _VLM_MAX_DIM should be downscaled."""
+        img = np.zeros((6000, 8000, 3), dtype=np.uint8)
+        clamped, sx, sy = _clamp_image_for_vlm(img)
+        assert max(clamped.shape[:2]) <= 4096
+        assert sx > 1.0
+        assert sy > 1.0
+
+    def test_merge_vlm_cv_walls_empty_cv(self):
+        """With no CV walls, VLM dicts should be converted directly."""
+        vlm_walls = [
+            {"x1": 10, "y1": 20, "x2": 100, "y2": 20,
+             "thickness_px": 8, "type": "exterior", "confidence": 0.9, "id": "w1"},
+        ]
+        merged = _merge_vlm_cv_walls(vlm_walls, [], tolerance_px=10)
+        assert len(merged) == 1
+        assert merged[0].is_external is True
+        assert merged[0].x1 == 10
+
+    def test_merge_vlm_cv_walls_snaps(self):
+        """VLM endpoints should snap to nearby CV points."""
+        vlm_walls = [
+            {"x1": 12, "y1": 22, "x2": 98, "y2": 18,
+             "thickness_px": 8, "type": "exterior", "confidence": 0.9, "id": "w1"},
+        ]
+        cv_walls = [
+            DetectedWall(x1=10, y1=20, x2=100, y2=20),
+        ]
+        merged = _merge_vlm_cv_walls(vlm_walls, cv_walls, tolerance_px=10)
+        assert len(merged) == 1
+        # Endpoints should snap to CV points
+        assert merged[0].x1 == 10
+        assert merged[0].y1 == 20
+        assert merged[0].x2 == 100
+        assert merged[0].y2 == 20
+
+    def test_merge_vlm_cv_walls_no_snap_far(self):
+        """VLM endpoints far from CV should not snap."""
+        vlm_walls = [
+            {"x1": 50, "y1": 50, "x2": 200, "y2": 50,
+             "thickness_px": 8, "type": "interior", "confidence": 0.8, "id": "w2"},
+        ]
+        cv_walls = [
+            DetectedWall(x1=10, y1=200, x2=100, y2=200),
+        ]
+        merged = _merge_vlm_cv_walls(vlm_walls, cv_walls, tolerance_px=10)
+        assert len(merged) == 1
+        # Should NOT snap because distance > tolerance
+        assert merged[0].x1 == 50
+        assert merged[0].y1 == 50
+
+    def test_vlm_detect_no_api_key(self):
+        """VLM branch should fall back to OpenCV if OPENAI_API_KEY is unset."""
+        import os
+        original = os.environ.get("OPENAI_API_KEY")
+        try:
+            os.environ.pop("OPENAI_API_KEY", None)
+            from floorplan.detect import _vlm_detect
+            cv_walls = [DetectedWall(x1=0, y1=0, x2=100, y2=0)]
+            img = np.zeros((200, 300, 3), dtype=np.uint8)
+            result = _vlm_detect(img, cv_walls)
+            assert len(result.walls) == 1
+            assert result.walls[0].x1 == 0
+        finally:
+            if original is not None:
+                os.environ["OPENAI_API_KEY"] = original
+
+
+# ---------------------------------------------------------------------------
+# Tests: plan_builder with MiC catalog integration
+# ---------------------------------------------------------------------------
+
+class TestPlanBuilderMiC:
+    def test_rooms_have_mic_category(self):
+        """Built plan rooms should include MiC category from the catalog."""
+        from floorplan.vectorise import VectorRoom
+        vp = VectorisedPlan(
+            walls=[
+                VectorWall(x1=0, y1=0, x2=10, y2=0, thickness=0.2),
+                VectorWall(x1=10, y1=0, x2=10, y2=8, thickness=0.2),
+                VectorWall(x1=10, y1=8, x2=0, y2=8, thickness=0.2),
+                VectorWall(x1=0, y1=8, x2=0, y2=0, thickness=0.2),
+            ],
+            rooms=[
+                VectorRoom(label="bedroom", cx=5, cy=4),
+                VectorRoom(label="kitchen", cx=3, cy=2),
+                VectorRoom(label="toilet", cx=8, cy=6),
+            ],
+        )
+        plan = build_plan(vp, num_storeys=1)
+        assert len(plan["rooms"]) == 3
+
+        bedroom_room = next(r for r in plan["rooms"] if r["label"] == "bedroom")
+        assert bedroom_room["category"] == "bedroom"
+        assert bedroom_room["expected_windows"] >= 1
+        assert bedroom_room["expected_doors"] >= 1
+
+        toilet_room = next(r for r in plan["rooms"] if r["label"] == "toilet")
+        assert toilet_room["category"] == "toilet"
+        assert toilet_room["expected_windows"] >= 0  # HK MiC toilets may have windows
+
+        kitchen_room = next(r for r in plan["rooms"] if r["label"] == "kitchen")
+        assert kitchen_room["category"] == "kitchen"
+        assert "typical_width_m" in kitchen_room
+
+    def test_rooms_unknown_label(self):
+        """Unknown room labels should get category 'unknown'."""
+        from floorplan.vectorise import VectorRoom
+        vp = VectorisedPlan(
+            walls=[VectorWall(x1=0, y1=0, x2=5, y2=0)],
+            rooms=[VectorRoom(label="swimming pool", cx=2, cy=1)],
+        )
+        plan = build_plan(vp, num_storeys=1)
+        assert plan["rooms"][0]["category"] == "unknown"

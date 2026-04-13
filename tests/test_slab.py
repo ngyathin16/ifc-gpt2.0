@@ -19,3 +19,22 @@ def test_create_slab(ifc_setup):
 
     slabs = ifc.by_type("IfcSlab")
     assert len(slabs) == 1
+
+
+def test_create_slab_with_type(ifc_setup):
+    """Cover the slab_type assignment branch (line 64)."""
+    import ifcopenshell.api.root
+    ifc, contexts, storey = ifc_setup
+    slab_type = ifcopenshell.api.root.create_entity(
+        ifc, ifc_class="IfcSlabType", name="SLAB-200", predefined_type="FLOOR",
+    )
+    slab = create_slab(
+        ifc, contexts, storey,
+        boundary_points=[(0.0, 0.0), (5.0, 0.0), (5.0, 4.0), (0.0, 4.0)],
+        depth=0.2,
+        slab_type=slab_type,
+        fire_rating="1HR",
+        name="Typed Slab",
+    )
+    assert slab is not None
+    assert slab.is_a("IfcSlab")

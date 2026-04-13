@@ -1,11 +1,49 @@
 const API = "";
 
-export async function generateFromText(message: string) {
-  const res = await fetch(`${API}/api/generate`, {
+export interface FeatureItem {
+  id: string;
+  category: string;
+  label: string;
+  description: string;
+  default_for: string[];
+  conflicts_with?: string[];
+}
+
+export interface InferredDefaults {
+  building_type: string;
+  num_storeys: number;
+  floor_to_floor_height: number;
+  default_features: string[];
+}
+
+async function assertOk(res: Response): Promise<Response> {
+  if (!res.ok) {
+    const body = await res.text().catch(() => "");
+    throw new Error(`API ${res.status}: ${res.statusText}${body ? ` — ${body}` : ""}`);
+  }
+  return res;
+}
+
+export async function getFeatures(): Promise<FeatureItem[]> {
+  const res = await fetch(`${API}/api/features`).then(assertOk);
+  return res.json();
+}
+
+export async function inferFeatures(message: string): Promise<InferredDefaults> {
+  const res = await fetch(`${API}/api/features/infer`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message }),
-  });
+  }).then(assertOk);
+  return res.json();
+}
+
+export async function generateFromText(message: string, selectedFeatures?: string[]) {
+  const res = await fetch(`${API}/api/generate`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message, selected_features: selectedFeatures }),
+  }).then(assertOk);
   return res.json();
 }
 
@@ -14,7 +52,7 @@ export async function buildFromPlan(plan: object) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ plan }),
-  });
+  }).then(assertOk);
   return res.json();
 }
 
@@ -23,7 +61,7 @@ export async function modifyElement(guid: string, instruction: string, ifcUrl: s
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ guid, instruction, ifc_url: ifcUrl }),
-  });
+  }).then(assertOk);
   return res.json();
 }
 
@@ -33,7 +71,7 @@ export async function submitVoice(audioBlob: Blob) {
   const res = await fetch(`${API}/api/voice`, {
     method: "POST",
     body: formData,
-  });
+  }).then(assertOk);
   return res.json();
 }
 
@@ -49,7 +87,7 @@ export async function uploadFloorPlan(
   const res = await fetch(`${API}/api/floorplan`, {
     method: "POST",
     body: formData,
-  });
+  }).then(assertOk);
   return res.json();
 }
 

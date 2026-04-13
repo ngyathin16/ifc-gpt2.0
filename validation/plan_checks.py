@@ -353,7 +353,7 @@ def check_opening_spacing(plan: dict) -> list[dict[str, Any]]:
         n = len(intervals)
 
         # --- Capacity check: can wall fit all openings with gaps? ---
-        total_width = sum(r - l for l, r, _ in intervals)
+        total_width = sum(r - left for left, r, _ in intervals)
         min_required = (
             total_width
             + max(n - 1, 0) * MIN_OPENING_GAP

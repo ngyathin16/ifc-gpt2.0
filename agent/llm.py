@@ -73,7 +73,7 @@ class AzureResponsesChatModel(BaseChatModel):
         converted: List[Dict[str, Any]] = []
         for m in messages:
             if isinstance(m, SystemMessage):
-                converted.append({"role": "system", "content": str(m.content)})
+                converted.append({"role": "developer", "content": str(m.content)})
             elif isinstance(m, HumanMessage):
                 converted.append({"role": "user", "content": str(m.content)})
             elif isinstance(m, AIMessage):
@@ -93,35 +93,71 @@ class AzureResponsesChatModel(BaseChatModel):
         payload: Dict[str, Any] = {
             "model": self.model,
             "input": self._convert_messages(messages),
+            "stream": True,
+            "reasoning": {"effort": "medium"},
         }
+        # "stop" is NOT supported by the Responses API for reasoning models
         if stop:
-            payload["stop"] = stop
+            logger.warning("[llm] Ignoring unsupported 'stop' parameter for Responses API")
 
         headers = {
             "api-key": self.api_key,
             "Content-Type": "application/json",
         }
 
-        logger.info(f"[llm] Responses API → {self.endpoint[:60]}...")
+        logger.info(f"[llm] Responses API (streaming) → {self.endpoint[:60]}...")
+
+        # Use streaming to avoid read-timeout on long generations.
+        # The server sends SSE events as tokens are produced, keeping
+        # the connection alive.  We accumulate the text content.
+        import json as _json
+
         resp = requests.post(
             self.endpoint, json=payload, headers=headers,
-            timeout=self.request_timeout,
+            timeout=(30, self.request_timeout),   # (connect, read-between-chunks)
+            stream=True,
         )
 
         if not resp.ok:
+            error_body = resp.text[:1000]
+            logger.error("[llm] Azure Responses API %s: %s", resp.status_code, error_body)
             raise ValueError(
-                f"Azure Responses API error {resp.status_code}: {resp.text[:400]}"
+                f"Azure Responses API error {resp.status_code}: {error_body}"
             )
 
-        data = resp.json()
         text = ""
-        for item in data.get("output", []):
-            if item.get("type") == "message":
-                for part in item.get("content", []):
-                    if isinstance(part, dict):
-                        text += part.get("text", "")
-                    elif isinstance(part, str):
-                        text += part
+        for line in resp.iter_lines(decode_unicode=True):
+            if not line or not line.startswith("data:"):
+                continue
+            data_str = line[len("data:"):].strip()
+            if data_str == "[DONE]":
+                break
+            try:
+                event = _json.loads(data_str)
+            except _json.JSONDecodeError:
+                continue
+
+            # Responses API stream events have type "response.output_text.delta"
+            # with a "delta" field containing the text chunk.
+            etype = event.get("type", "")
+            if etype == "response.output_text.delta":
+                text += event.get("delta", "")
+            elif etype == "response.completed":
+                # Final event — extract full text if we missed deltas
+                output = event.get("response", {}).get("output", [])
+                if not text and output:
+                    for item in output:
+                        if item.get("type") == "message":
+                            for part in item.get("content", []):
+                                if isinstance(part, dict):
+                                    text += part.get("text", "")
+                                elif isinstance(part, str):
+                                    text += part
+
+        resp.close()
+
+        if not text:
+            raise ValueError("Azure Responses API returned empty response (streaming)")
 
         message = AIMessage(content=text)
         generation = ChatGeneration(message=message)
@@ -178,7 +214,7 @@ def get_llm(temperature: float = 0.2) -> BaseChatModel:
             endpoint=azure_endpoint,
             model=azure_deployment,
             temperature=temperature,
-            request_timeout=300,
+            request_timeout=600,
         )
         return _llm_instance
 

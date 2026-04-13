@@ -32,3 +32,25 @@ def test_create_door(ifc_setup):
     # Verify opening was created
     openings = ifc.by_type("IfcOpeningElement")
     assert len(openings) == 1
+
+
+def test_create_door_with_type_and_fire_rating(ifc_setup):
+    """Cover the door_type assignment branch (line 109) and fire_rating."""
+    from building_blocks.types.door_types import create_single_swing_door_type
+    ifc, contexts, storey = ifc_setup
+    wall = create_wall(
+        ifc, contexts, storey,
+        p1=(0.0, 0.0), p2=(6.0, 0.0),
+        height=3.0, thickness=0.2,
+    )
+    dt = create_single_swing_door_type(ifc, name="DOOR-900x2100")
+    door = create_door(
+        ifc, contexts, storey, wall,
+        distance_along_wall=3.0,
+        width=0.9, height=2.1,
+        door_type=dt,
+        fire_rating="1HR",
+        name="Typed Door",
+    )
+    assert door is not None
+    assert door.is_a("IfcDoor")

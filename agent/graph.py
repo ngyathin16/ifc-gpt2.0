@@ -77,6 +77,7 @@ def _get_graph():
 def run_pipeline(
     user_message: str,
     selected_features: list[str] | None = None,
+    floor_to_floor_height: float | None = None,
 ) -> dict[str, Any]:
     """
     Run the full generation pipeline from a text prompt.
@@ -85,6 +86,8 @@ def run_pipeline(
         user_message: The raw user prompt.
         selected_features: Optional list of feature IDs from the frontend
             feature menu.  Passed to the clarify node.
+        floor_to_floor_height: Optional user-specified floor-to-floor height
+            in metres.  Passed to the clarify node.
 
     Returns the final state dict with keys:
         - final_ifc_path: str
@@ -98,6 +101,8 @@ def run_pipeline(
     }
     if selected_features:
         initial_state["selected_features"] = selected_features
+    if floor_to_floor_height is not None:
+        initial_state["floor_to_floor_height"] = floor_to_floor_height
     return graph.invoke(initial_state)
 
 

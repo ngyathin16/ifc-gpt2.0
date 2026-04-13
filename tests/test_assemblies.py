@@ -1,8 +1,6 @@
 """Tests for building_blocks/assemblies/ — higher-level building kits."""
 from __future__ import annotations
 
-import pytest
-
 from building_blocks.assemblies.structural_grid import create_structural_grid
 from building_blocks.assemblies.stair_core import create_stair_core
 from building_blocks.assemblies.toilet_core import create_toilet_core
@@ -173,6 +171,37 @@ class TestFacadeBay:
             num_windows=0,
         )
         assert len(result["windows"]) == 0
+
+    def test_custom_window_spacing(self, ifc_setup):
+        """Cover the window_spacing override branch (lines 82-84)."""
+        ifc, contexts, storey = ifc_setup
+        result = create_facade_bay(
+            ifc, contexts, storey,
+            p1=(0.0, 0.0),
+            p2=(12.0, 0.0),
+            num_windows=2,
+            window_width=1.5,
+            window_spacing=4.0,
+        )
+        assert result["wall"].is_a("IfcWall")
+        assert len(result["windows"]) == 2
+
+    def test_windows_clipped_at_edges(self, ifc_setup):
+        """Cover window edge-clipping branches (lines 89, 91).
+
+        Use a very short wall with many windows so that some windows
+        are too close to the start or end edge and get skipped.
+        """
+        ifc, contexts, storey = ifc_setup
+        result = create_facade_bay(
+            ifc, contexts, storey,
+            p1=(0.0, 0.0),
+            p2=(3.0, 0.0),
+            num_windows=5,
+            window_width=1.5,
+        )
+        # With a 3m wall and 5 × 1.5m windows, not all will fit
+        assert len(result["windows"]) < 5
 
 
 class TestRoofAssembly:

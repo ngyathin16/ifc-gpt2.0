@@ -12,6 +12,11 @@ import logging
 import math
 from typing import Any
 
+from building_blocks.mic_catalog import (
+    classify_room,
+    get_opening_defaults,
+    get_typical_dims,
+)
 from floorplan.vectorise import VectorisedPlan, VectorWall
 
 logger = logging.getLogger(__name__)
@@ -167,14 +172,24 @@ def build_plan(
                 "thickness": 0.25,
             })
 
-    # 5. Rooms metadata
+    # 5. Rooms metadata — enriched with MiC category and opening defaults
     rooms = []
     for room in vectorised.rooms:
-        rooms.append({
+        category = classify_room(room.label)
+        mic_dims = get_typical_dims(category)
+        opening_defaults = get_opening_defaults(category)
+        room_entry: dict[str, Any] = {
             "label": room.label,
+            "category": category,
             "cx": room.cx,
             "cy": room.cy,
-        })
+            "expected_doors": opening_defaults["doors"],
+            "expected_windows": opening_defaults["windows"],
+        }
+        if mic_dims:
+            room_entry["typical_width_m"] = mic_dims.width_m
+            room_entry["typical_depth_m"] = mic_dims.depth_m
+        rooms.append(room_entry)
 
     plan = {
         "description": description,

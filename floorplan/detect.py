@@ -10,15 +10,24 @@ replace the VLM branch without changing the downstream pipeline.
 """
 from __future__ import annotations
 
+import base64
+import json
 import logging
 import math
+import os
+import time
 from dataclasses import dataclass, field
-from typing import Literal
+from pathlib import Path
+from typing import Any, Literal
 
 import cv2
 import numpy as np
 
 logger = logging.getLogger(__name__)
+
+# VLM configuration
+_PROMPTS_DIR = Path(__file__).parent / "prompts"
+_VLM_MAX_DIM = 4096  # GUARDRAIL G-15: clamp image before VLM
 
 
 # ---------------------------------------------------------------------------
@@ -263,24 +272,267 @@ def _opencv_detect_rooms(image: np.ndarray) -> list[DetectedRoom]:
 
 
 # ---------------------------------------------------------------------------
-# Branch A: VLM semantic detection (placeholder for v1 — uses the LLM)
+# VLM JSON schema for structured output
 # ---------------------------------------------------------------------------
+
+VLM_SCHEMA: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "walls": {"type": "array", "items": {
+            "type": "object",
+            "properties": {
+                "id": {"type": "string"},
+                "x1": {"type": "number"}, "y1": {"type": "number"},
+                "x2": {"type": "number"}, "y2": {"type": "number"},
+                "thickness_px": {"type": "number"},
+                "type": {"type": "string", "enum": ["exterior", "interior"]},
+                "confidence": {"type": "number"},
+            },
+            "required": ["id", "x1", "y1", "x2", "y2", "thickness_px", "confidence"],
+            "additionalProperties": False,
+        }},
+        "openings": {"type": "array", "items": {
+            "type": "object",
+            "properties": {
+                "type": {"type": "string", "enum": ["door", "window"]},
+                "wall_id": {"type": "string"},
+                "x": {"type": "number"}, "y": {"type": "number"},
+                "width_px": {"type": "number"},
+                "confidence": {"type": "number"},
+            },
+            "required": ["type", "wall_id", "x", "y", "width_px", "confidence"],
+            "additionalProperties": False,
+        }},
+        "rooms": {"type": "array", "items": {
+            "type": "object",
+            "properties": {
+                "label": {"type": "string"},
+                "centroid_x": {"type": "number"},
+                "centroid_y": {"type": "number"},
+                "confidence": {"type": "number"},
+            },
+            "required": ["label", "centroid_x", "centroid_y", "confidence"],
+            "additionalProperties": False,
+        }},
+        "columns": {"type": "array", "items": {
+            "type": "object",
+            "properties": {
+                "cx": {"type": "number"}, "cy": {"type": "number"},
+                "width_px": {"type": "number"}, "depth_px": {"type": "number"},
+                "confidence": {"type": "number"},
+            },
+            "required": ["cx", "cy", "confidence"],
+            "additionalProperties": False,
+        }},
+    },
+    "required": ["walls", "openings", "rooms", "columns"],
+    "additionalProperties": False,
+}
+
+
+# ---------------------------------------------------------------------------
+# Branch A: VLM semantic detection
+# ---------------------------------------------------------------------------
+
+def _clamp_image_for_vlm(img: np.ndarray) -> tuple[np.ndarray, float, float]:
+    """Clamp image to _VLM_MAX_DIM and return (clamped, scale_x, scale_y)."""
+    h, w = img.shape[:2]
+    if max(h, w) <= _VLM_MAX_DIM:
+        return img, 1.0, 1.0
+    scale = _VLM_MAX_DIM / max(h, w)
+    new_w, new_h = int(w * scale), int(h * scale)
+    resized = cv2.resize(img, (new_w, new_h), interpolation=cv2.INTER_AREA)
+    return resized, w / new_w, h / new_h
+
+
+def _call_vlm(b64_png: str, img_w: int, img_h: int) -> dict:
+    """Call the VLM API with exponential backoff (GUARDRAIL G-17)."""
+    from openai import OpenAI
+
+    system_prompt = ""
+    user_prompt_tmpl = ""
+    sys_path = _PROMPTS_DIR / "detect_system.txt"
+    usr_path = _PROMPTS_DIR / "detect_user.txt"
+    if sys_path.exists():
+        system_prompt = sys_path.read_text()
+    if usr_path.exists():
+        user_prompt_tmpl = usr_path.read_text()
+
+    user_text = (
+        user_prompt_tmpl
+        .replace("{{W}}", str(img_w))
+        .replace("{{H}}", str(img_h))
+    )
+
+    client = OpenAI()
+    delays = [2, 4, 8]
+    last_err: Exception | None = None
+
+    for attempt in range(3):
+        try:
+            resp = client.chat.completions.create(
+                model="gpt-5.4-pro",
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": [
+                        {"type": "text", "text": user_text},
+                        {"type": "image_url", "image_url": {
+                            "url": f"data:image/png;base64,{b64_png}",
+                            "detail": "high",
+                        }},
+                    ]},
+                ],
+                response_format={"type": "json_schema", "json_schema": {
+                    "name": "FloorPlanDetection",
+                    "schema": VLM_SCHEMA,
+                    "strict": True,
+                }},
+                max_tokens=8192,
+            )
+            return json.loads(resp.choices[0].message.content)
+        except Exception as e:
+            last_err = e
+            logger.warning("VLM call attempt %d failed: %s", attempt + 1, e)
+            if attempt < 2:
+                time.sleep(delays[attempt])
+
+    logger.error("VLM detection failed after 3 retries: %s", last_err)
+    return {"walls": [], "openings": [], "rooms": [], "columns": []}
+
+
+def _merge_vlm_cv_walls(
+    vlm_walls: list[dict],
+    cv_walls: list[DetectedWall],
+    tolerance_px: float = 10.0,
+) -> list[DetectedWall]:
+    """Snap VLM wall endpoints to nearest OpenCV line within tolerance."""
+    if not cv_walls:
+        # Convert VLM dicts to DetectedWall
+        return [
+            DetectedWall(
+                x1=w["x1"], y1=w["y1"], x2=w["x2"], y2=w["y2"],
+                thickness_px=w.get("thickness_px", 8.0),
+                is_external=w.get("type", "interior") == "exterior",
+            )
+            for w in vlm_walls
+        ]
+
+    cv_pts = [(w.x1, w.y1) for w in cv_walls] + [(w.x2, w.y2) for w in cv_walls]
+
+    merged: list[DetectedWall] = []
+    for wall in vlm_walls:
+        x1, y1, x2, y2 = wall["x1"], wall["y1"], wall["x2"], wall["y2"]
+
+        # Snap each endpoint to nearest CV point
+        for px_attr, py_attr in [("x1", "y1"), ("x2", "y2")]:
+            px, py = wall[px_attr], wall[py_attr]
+            dists = [math.hypot(px - cx, py - cy) for cx, cy in cv_pts]
+            min_dist = min(dists)
+            if min_dist <= tolerance_px:
+                idx = dists.index(min_dist)
+                if px_attr == "x1":
+                    x1, y1 = cv_pts[idx]
+                else:
+                    x2, y2 = cv_pts[idx]
+
+        merged.append(DetectedWall(
+            x1=x1, y1=y1, x2=x2, y2=y2,
+            thickness_px=wall.get("thickness_px", 8.0),
+            is_external=wall.get("type", "interior") == "exterior",
+        ))
+
+    return merged
+
 
 def _vlm_detect(
     image: np.ndarray,
     opencv_walls: list[DetectedWall],
 ) -> DetectionResult:
-    """Placeholder for VLM-based semantic detection.
+    """VLM-based semantic detection merged with OpenCV geometry.
 
-    In v1 this is a no-op that returns the OpenCV results directly.
-    In v2 this will call a VLM (e.g. GPT-4V) to classify rooms and openings,
-    then snap VLM wall endpoints to OpenCV-detected lines.
-
-    The VLM detection is intentionally optional — the pipeline works with
-    pure OpenCV results for clean digital floor plans.
+    Calls gpt-5.4-pro vision API to detect walls, openings, rooms, and columns.
+    VLM wall endpoints are snapped to nearest OpenCV-detected lines.
+    Falls back to pure OpenCV results if VLM is unavailable.
     """
-    # For v1: return OpenCV results as-is (no VLM enrichment)
-    return DetectionResult(walls=opencv_walls)
+    h, w = image.shape[:2]
+
+    # Check if VLM is available (needs OPENAI_API_KEY)
+    if not os.environ.get("OPENAI_API_KEY"):
+        logger.warning("OPENAI_API_KEY not set; VLM detection unavailable, using OpenCV only")
+        return DetectionResult(walls=opencv_walls)
+
+    # Clamp image for VLM (GUARDRAIL G-15)
+    vlm_img, scale_x, scale_y = _clamp_image_for_vlm(image)
+    vlm_h, vlm_w = vlm_img.shape[:2]
+
+    # Encode to PNG base64
+    _, buf = cv2.imencode(".png", cv2.cvtColor(vlm_img, cv2.COLOR_RGB2BGR))
+    b64 = base64.b64encode(buf.tobytes()).decode()
+
+    # Call VLM
+    vlm_result = _call_vlm(b64, vlm_w, vlm_h)
+
+    # Scale VLM coordinates back to original image space
+    for vw in vlm_result.get("walls", []):
+        vw["x1"] *= scale_x
+        vw["y1"] *= scale_y
+        vw["x2"] *= scale_x
+        vw["y2"] *= scale_y
+        vw["thickness_px"] *= (scale_x + scale_y) / 2
+    for o in vlm_result.get("openings", []):
+        o["x"] *= scale_x
+        o["y"] *= scale_y
+        o["width_px"] *= scale_x
+    for r in vlm_result.get("rooms", []):
+        r["centroid_x"] *= scale_x
+        r["centroid_y"] *= scale_y
+    for c in vlm_result.get("columns", []):
+        c["cx"] *= scale_x
+        c["cy"] *= scale_y
+
+    # Merge VLM walls with OpenCV walls
+    merged_walls = _merge_vlm_cv_walls(
+        vlm_result.get("walls", []), opencv_walls,
+    )
+
+    # Convert VLM openings
+    openings: list[DetectedOpening] = []
+    for o in vlm_result.get("openings", []):
+        default_h = 210 if o["type"] == "door" else 120
+        openings.append(DetectedOpening(
+            opening_type=o["type"],
+            cx=o["x"],
+            cy=o["y"],
+            width_px=o["width_px"],
+            height_px=o.get("height_px", default_h),
+        ))
+
+    # Convert VLM rooms
+    rooms: list[DetectedRoom] = []
+    for r in vlm_result.get("rooms", []):
+        rooms.append(DetectedRoom(
+            label=r["label"],
+            cx=r["centroid_x"],
+            cy=r["centroid_y"],
+        ))
+
+    # Convert VLM columns
+    columns: list[DetectedColumn] = []
+    for c in vlm_result.get("columns", []):
+        columns.append(DetectedColumn(
+            cx=c["cx"],
+            cy=c["cy"],
+            size_px=c.get("width_px", 6.0),
+        ))
+
+    return DetectionResult(
+        walls=merged_walls if merged_walls else opencv_walls,
+        openings=openings,
+        rooms=rooms,
+        columns=columns,
+        image_height=h,
+        image_width=w,
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -318,7 +570,9 @@ def detect_elements(
         )
     elif backend == "vlm":
         result = _vlm_detect(image, opencv_walls)
-        result.rooms = opencv_rooms
+        # Use VLM rooms if available (they have proper labels); fall back to CV rooms
+        if not result.rooms:
+            result.rooms = opencv_rooms
         result.image_height = h
         result.image_width = w
     elif backend == "yolo":

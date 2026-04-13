@@ -59,7 +59,6 @@ def create_stair_core(
     tread_depth = stair_length / num_risers
 
     # Enclosure dimensions
-    enc_width = stair_width + 2 * wall_thickness
     enc_length = stair_length + wall_thickness
 
     walls = []

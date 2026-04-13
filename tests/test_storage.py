@@ -3,9 +3,6 @@ from __future__ import annotations
 
 import os
 from unittest.mock import patch, MagicMock
-from pathlib import Path
-
-import pytest
 
 
 class TestUploadIfc:
@@ -55,5 +52,26 @@ class TestUploadIfc:
             assert "sign" in result
             mock_bucket.upload.assert_called_once()
             mock_bucket.create_signed_url.assert_called_once_with("jobs/job789.ifc", expires_in=3600)
+        finally:
+            mod._client = None
+
+    def test_returns_none_on_upload_exception(self, tmp_path):
+        """Upload exception returns None (lines 62-63)."""
+        import api.storage as mod
+        mod._client = None
+
+        ifc_file = tmp_path / "upload_err.ifc"
+        ifc_file.write_text("ISO-10303-21; ...")
+
+        mock_bucket = MagicMock()
+        mock_bucket.upload.side_effect = Exception("upload failed")
+
+        mock_client = MagicMock()
+        mock_client.storage.from_.return_value = mock_bucket
+
+        mod._client = mock_client
+        try:
+            result = mod.upload_ifc(str(ifc_file), "job_err")
+            assert result is None
         finally:
             mod._client = None

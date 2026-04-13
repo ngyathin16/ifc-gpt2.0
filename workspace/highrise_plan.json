@@ -1,5 +1,5 @@
 {
-  "description": "20-storey commercial highrise, 50 m \u00d7 100 m footprint, features: beams, columns, core_walls, elevators, entrance_doors, exterior_walls, flat_roof, floor_slabs, lobby, open_plan, railings, stairs",
+  "description": "20-storey commercial highrise, 50 m \u00d7 100 m footprint, features: beams, columns, core_walls, elevators, entrance_doors, exterior_walls, flat_roof, floor_slabs, interior_partitions, lobby, railings, stairs",
   "site": {
     "name": "Central Business District"
   },
@@ -218,6 +218,142 @@
       "thickness": 0.25,
       "is_external": true,
       "wall_type_ref": "ext_wall_250"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX10_F00",
+      "component_id": "interior_partition",
+      "storey_ref": "F00",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F00",
+      "component_id": "interior_partition",
+      "storey_ref": "F00",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F00",
+      "component_id": "interior_partition",
+      "storey_ref": "F00",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F00",
+      "component_id": "interior_partition",
+      "storey_ref": "F00",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F00",
+      "component_id": "interior_partition",
+      "storey_ref": "F00",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F00",
+      "component_id": "interior_partition",
+      "storey_ref": "F00",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F00",
+      "component_id": "interior_partition",
+      "storey_ref": "F00",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F00",
+      "component_id": "interior_partition",
+      "storey_ref": "F00",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
     },
     {
       "element_type": "slab",
@@ -1707,6 +1843,142 @@
       "wall_type_ref": "ext_wall_250"
     },
     {
+      "element_type": "wall",
+      "wall_ref": "PX10_F01",
+      "component_id": "interior_partition",
+      "storey_ref": "F01",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F01",
+      "component_id": "interior_partition",
+      "storey_ref": "F01",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F01",
+      "component_id": "interior_partition",
+      "storey_ref": "F01",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F01",
+      "component_id": "interior_partition",
+      "storey_ref": "F01",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F01",
+      "component_id": "interior_partition",
+      "storey_ref": "F01",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F01",
+      "component_id": "interior_partition",
+      "storey_ref": "F01",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F01",
+      "component_id": "interior_partition",
+      "storey_ref": "F01",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F01",
+      "component_id": "interior_partition",
+      "storey_ref": "F01",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
       "element_type": "slab",
       "storey_ref": "F01",
       "boundary_points": [
@@ -3192,6 +3464,142 @@
       "thickness": 0.25,
       "is_external": true,
       "wall_type_ref": "ext_wall_250"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX10_F02",
+      "component_id": "interior_partition",
+      "storey_ref": "F02",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F02",
+      "component_id": "interior_partition",
+      "storey_ref": "F02",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F02",
+      "component_id": "interior_partition",
+      "storey_ref": "F02",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F02",
+      "component_id": "interior_partition",
+      "storey_ref": "F02",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F02",
+      "component_id": "interior_partition",
+      "storey_ref": "F02",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F02",
+      "component_id": "interior_partition",
+      "storey_ref": "F02",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F02",
+      "component_id": "interior_partition",
+      "storey_ref": "F02",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F02",
+      "component_id": "interior_partition",
+      "storey_ref": "F02",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
     },
     {
       "element_type": "slab",
@@ -4681,6 +5089,142 @@
       "wall_type_ref": "ext_wall_250"
     },
     {
+      "element_type": "wall",
+      "wall_ref": "PX10_F03",
+      "component_id": "interior_partition",
+      "storey_ref": "F03",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F03",
+      "component_id": "interior_partition",
+      "storey_ref": "F03",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F03",
+      "component_id": "interior_partition",
+      "storey_ref": "F03",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F03",
+      "component_id": "interior_partition",
+      "storey_ref": "F03",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F03",
+      "component_id": "interior_partition",
+      "storey_ref": "F03",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F03",
+      "component_id": "interior_partition",
+      "storey_ref": "F03",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F03",
+      "component_id": "interior_partition",
+      "storey_ref": "F03",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F03",
+      "component_id": "interior_partition",
+      "storey_ref": "F03",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
       "element_type": "slab",
       "storey_ref": "F03",
       "boundary_points": [
@@ -6166,6 +6710,142 @@
       "thickness": 0.25,
       "is_external": true,
       "wall_type_ref": "ext_wall_250"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX10_F04",
+      "component_id": "interior_partition",
+      "storey_ref": "F04",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F04",
+      "component_id": "interior_partition",
+      "storey_ref": "F04",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F04",
+      "component_id": "interior_partition",
+      "storey_ref": "F04",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F04",
+      "component_id": "interior_partition",
+      "storey_ref": "F04",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F04",
+      "component_id": "interior_partition",
+      "storey_ref": "F04",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F04",
+      "component_id": "interior_partition",
+      "storey_ref": "F04",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F04",
+      "component_id": "interior_partition",
+      "storey_ref": "F04",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F04",
+      "component_id": "interior_partition",
+      "storey_ref": "F04",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
     },
     {
       "element_type": "slab",
@@ -7655,6 +8335,142 @@
       "wall_type_ref": "ext_wall_250"
     },
     {
+      "element_type": "wall",
+      "wall_ref": "PX10_F05",
+      "component_id": "interior_partition",
+      "storey_ref": "F05",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F05",
+      "component_id": "interior_partition",
+      "storey_ref": "F05",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F05",
+      "component_id": "interior_partition",
+      "storey_ref": "F05",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F05",
+      "component_id": "interior_partition",
+      "storey_ref": "F05",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F05",
+      "component_id": "interior_partition",
+      "storey_ref": "F05",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F05",
+      "component_id": "interior_partition",
+      "storey_ref": "F05",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F05",
+      "component_id": "interior_partition",
+      "storey_ref": "F05",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F05",
+      "component_id": "interior_partition",
+      "storey_ref": "F05",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
       "element_type": "slab",
       "storey_ref": "F05",
       "boundary_points": [
@@ -9140,6 +9956,142 @@
       "thickness": 0.25,
       "is_external": true,
       "wall_type_ref": "ext_wall_250"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX10_F06",
+      "component_id": "interior_partition",
+      "storey_ref": "F06",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F06",
+      "component_id": "interior_partition",
+      "storey_ref": "F06",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F06",
+      "component_id": "interior_partition",
+      "storey_ref": "F06",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F06",
+      "component_id": "interior_partition",
+      "storey_ref": "F06",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F06",
+      "component_id": "interior_partition",
+      "storey_ref": "F06",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F06",
+      "component_id": "interior_partition",
+      "storey_ref": "F06",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F06",
+      "component_id": "interior_partition",
+      "storey_ref": "F06",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F06",
+      "component_id": "interior_partition",
+      "storey_ref": "F06",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
     },
     {
       "element_type": "slab",
@@ -10629,6 +11581,142 @@
       "wall_type_ref": "ext_wall_250"
     },
     {
+      "element_type": "wall",
+      "wall_ref": "PX10_F07",
+      "component_id": "interior_partition",
+      "storey_ref": "F07",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F07",
+      "component_id": "interior_partition",
+      "storey_ref": "F07",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F07",
+      "component_id": "interior_partition",
+      "storey_ref": "F07",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F07",
+      "component_id": "interior_partition",
+      "storey_ref": "F07",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F07",
+      "component_id": "interior_partition",
+      "storey_ref": "F07",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F07",
+      "component_id": "interior_partition",
+      "storey_ref": "F07",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F07",
+      "component_id": "interior_partition",
+      "storey_ref": "F07",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F07",
+      "component_id": "interior_partition",
+      "storey_ref": "F07",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
       "element_type": "slab",
       "storey_ref": "F07",
       "boundary_points": [
@@ -12114,6 +13202,142 @@
       "thickness": 0.25,
       "is_external": true,
       "wall_type_ref": "ext_wall_250"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX10_F08",
+      "component_id": "interior_partition",
+      "storey_ref": "F08",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F08",
+      "component_id": "interior_partition",
+      "storey_ref": "F08",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F08",
+      "component_id": "interior_partition",
+      "storey_ref": "F08",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F08",
+      "component_id": "interior_partition",
+      "storey_ref": "F08",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F08",
+      "component_id": "interior_partition",
+      "storey_ref": "F08",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F08",
+      "component_id": "interior_partition",
+      "storey_ref": "F08",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F08",
+      "component_id": "interior_partition",
+      "storey_ref": "F08",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F08",
+      "component_id": "interior_partition",
+      "storey_ref": "F08",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
     },
     {
       "element_type": "slab",
@@ -13603,6 +14827,142 @@
       "wall_type_ref": "ext_wall_250"
     },
     {
+      "element_type": "wall",
+      "wall_ref": "PX10_F09",
+      "component_id": "interior_partition",
+      "storey_ref": "F09",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F09",
+      "component_id": "interior_partition",
+      "storey_ref": "F09",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F09",
+      "component_id": "interior_partition",
+      "storey_ref": "F09",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F09",
+      "component_id": "interior_partition",
+      "storey_ref": "F09",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F09",
+      "component_id": "interior_partition",
+      "storey_ref": "F09",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F09",
+      "component_id": "interior_partition",
+      "storey_ref": "F09",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F09",
+      "component_id": "interior_partition",
+      "storey_ref": "F09",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F09",
+      "component_id": "interior_partition",
+      "storey_ref": "F09",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
       "element_type": "slab",
       "storey_ref": "F09",
       "boundary_points": [
@@ -15088,6 +16448,142 @@
       "thickness": 0.25,
       "is_external": true,
       "wall_type_ref": "ext_wall_250"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX10_F10",
+      "component_id": "interior_partition",
+      "storey_ref": "F10",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F10",
+      "component_id": "interior_partition",
+      "storey_ref": "F10",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F10",
+      "component_id": "interior_partition",
+      "storey_ref": "F10",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F10",
+      "component_id": "interior_partition",
+      "storey_ref": "F10",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F10",
+      "component_id": "interior_partition",
+      "storey_ref": "F10",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F10",
+      "component_id": "interior_partition",
+      "storey_ref": "F10",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F10",
+      "component_id": "interior_partition",
+      "storey_ref": "F10",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F10",
+      "component_id": "interior_partition",
+      "storey_ref": "F10",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
     },
     {
       "element_type": "slab",
@@ -16577,6 +18073,142 @@
       "wall_type_ref": "ext_wall_250"
     },
     {
+      "element_type": "wall",
+      "wall_ref": "PX10_F11",
+      "component_id": "interior_partition",
+      "storey_ref": "F11",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F11",
+      "component_id": "interior_partition",
+      "storey_ref": "F11",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F11",
+      "component_id": "interior_partition",
+      "storey_ref": "F11",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F11",
+      "component_id": "interior_partition",
+      "storey_ref": "F11",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F11",
+      "component_id": "interior_partition",
+      "storey_ref": "F11",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F11",
+      "component_id": "interior_partition",
+      "storey_ref": "F11",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F11",
+      "component_id": "interior_partition",
+      "storey_ref": "F11",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F11",
+      "component_id": "interior_partition",
+      "storey_ref": "F11",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
       "element_type": "slab",
       "storey_ref": "F11",
       "boundary_points": [
@@ -18062,6 +19694,142 @@
       "thickness": 0.25,
       "is_external": true,
       "wall_type_ref": "ext_wall_250"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX10_F12",
+      "component_id": "interior_partition",
+      "storey_ref": "F12",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F12",
+      "component_id": "interior_partition",
+      "storey_ref": "F12",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F12",
+      "component_id": "interior_partition",
+      "storey_ref": "F12",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F12",
+      "component_id": "interior_partition",
+      "storey_ref": "F12",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F12",
+      "component_id": "interior_partition",
+      "storey_ref": "F12",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F12",
+      "component_id": "interior_partition",
+      "storey_ref": "F12",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F12",
+      "component_id": "interior_partition",
+      "storey_ref": "F12",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F12",
+      "component_id": "interior_partition",
+      "storey_ref": "F12",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
     },
     {
       "element_type": "slab",
@@ -19551,6 +21319,142 @@
       "wall_type_ref": "ext_wall_250"
     },
     {
+      "element_type": "wall",
+      "wall_ref": "PX10_F13",
+      "component_id": "interior_partition",
+      "storey_ref": "F13",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F13",
+      "component_id": "interior_partition",
+      "storey_ref": "F13",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F13",
+      "component_id": "interior_partition",
+      "storey_ref": "F13",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F13",
+      "component_id": "interior_partition",
+      "storey_ref": "F13",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F13",
+      "component_id": "interior_partition",
+      "storey_ref": "F13",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F13",
+      "component_id": "interior_partition",
+      "storey_ref": "F13",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F13",
+      "component_id": "interior_partition",
+      "storey_ref": "F13",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F13",
+      "component_id": "interior_partition",
+      "storey_ref": "F13",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
       "element_type": "slab",
       "storey_ref": "F13",
       "boundary_points": [
@@ -21036,6 +22940,142 @@
       "thickness": 0.25,
       "is_external": true,
       "wall_type_ref": "ext_wall_250"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX10_F14",
+      "component_id": "interior_partition",
+      "storey_ref": "F14",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F14",
+      "component_id": "interior_partition",
+      "storey_ref": "F14",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F14",
+      "component_id": "interior_partition",
+      "storey_ref": "F14",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F14",
+      "component_id": "interior_partition",
+      "storey_ref": "F14",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F14",
+      "component_id": "interior_partition",
+      "storey_ref": "F14",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F14",
+      "component_id": "interior_partition",
+      "storey_ref": "F14",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F14",
+      "component_id": "interior_partition",
+      "storey_ref": "F14",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F14",
+      "component_id": "interior_partition",
+      "storey_ref": "F14",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
     },
     {
       "element_type": "slab",
@@ -22525,6 +24565,142 @@
       "wall_type_ref": "ext_wall_250"
     },
     {
+      "element_type": "wall",
+      "wall_ref": "PX10_F15",
+      "component_id": "interior_partition",
+      "storey_ref": "F15",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F15",
+      "component_id": "interior_partition",
+      "storey_ref": "F15",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F15",
+      "component_id": "interior_partition",
+      "storey_ref": "F15",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F15",
+      "component_id": "interior_partition",
+      "storey_ref": "F15",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F15",
+      "component_id": "interior_partition",
+      "storey_ref": "F15",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F15",
+      "component_id": "interior_partition",
+      "storey_ref": "F15",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F15",
+      "component_id": "interior_partition",
+      "storey_ref": "F15",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F15",
+      "component_id": "interior_partition",
+      "storey_ref": "F15",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
       "element_type": "slab",
       "storey_ref": "F15",
       "boundary_points": [
@@ -24010,6 +26186,142 @@
       "thickness": 0.25,
       "is_external": true,
       "wall_type_ref": "ext_wall_250"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX10_F16",
+      "component_id": "interior_partition",
+      "storey_ref": "F16",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F16",
+      "component_id": "interior_partition",
+      "storey_ref": "F16",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F16",
+      "component_id": "interior_partition",
+      "storey_ref": "F16",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F16",
+      "component_id": "interior_partition",
+      "storey_ref": "F16",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F16",
+      "component_id": "interior_partition",
+      "storey_ref": "F16",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F16",
+      "component_id": "interior_partition",
+      "storey_ref": "F16",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F16",
+      "component_id": "interior_partition",
+      "storey_ref": "F16",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F16",
+      "component_id": "interior_partition",
+      "storey_ref": "F16",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
     },
     {
       "element_type": "slab",
@@ -25499,6 +27811,142 @@
       "wall_type_ref": "ext_wall_250"
     },
     {
+      "element_type": "wall",
+      "wall_ref": "PX10_F17",
+      "component_id": "interior_partition",
+      "storey_ref": "F17",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F17",
+      "component_id": "interior_partition",
+      "storey_ref": "F17",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F17",
+      "component_id": "interior_partition",
+      "storey_ref": "F17",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F17",
+      "component_id": "interior_partition",
+      "storey_ref": "F17",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F17",
+      "component_id": "interior_partition",
+      "storey_ref": "F17",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F17",
+      "component_id": "interior_partition",
+      "storey_ref": "F17",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F17",
+      "component_id": "interior_partition",
+      "storey_ref": "F17",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F17",
+      "component_id": "interior_partition",
+      "storey_ref": "F17",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
       "element_type": "slab",
       "storey_ref": "F17",
       "boundary_points": [
@@ -26986,6 +29434,142 @@
       "wall_type_ref": "ext_wall_250"
     },
     {
+      "element_type": "wall",
+      "wall_ref": "PX10_F18",
+      "component_id": "interior_partition",
+      "storey_ref": "F18",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F18",
+      "component_id": "interior_partition",
+      "storey_ref": "F18",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F18",
+      "component_id": "interior_partition",
+      "storey_ref": "F18",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F18",
+      "component_id": "interior_partition",
+      "storey_ref": "F18",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F18",
+      "component_id": "interior_partition",
+      "storey_ref": "F18",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F18",
+      "component_id": "interior_partition",
+      "storey_ref": "F18",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F18",
+      "component_id": "interior_partition",
+      "storey_ref": "F18",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F18",
+      "component_id": "interior_partition",
+      "storey_ref": "F18",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
       "element_type": "slab",
       "storey_ref": "F18",
       "boundary_points": [
@@ -28471,6 +31055,142 @@
       "thickness": 0.25,
       "is_external": true,
       "wall_type_ref": "ext_wall_250"
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX10_F19",
+      "component_id": "interior_partition",
+      "storey_ref": "F19",
+      "start_point": [
+        10.0,
+        0.25
+      ],
+      "end_point": [
+        10.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX20_F19",
+      "component_id": "interior_partition",
+      "storey_ref": "F19",
+      "start_point": [
+        20.0,
+        0.25
+      ],
+      "end_point": [
+        20.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX30_F19",
+      "component_id": "interior_partition",
+      "storey_ref": "F19",
+      "start_point": [
+        30.0,
+        0.25
+      ],
+      "end_point": [
+        30.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PX40_F19",
+      "component_id": "interior_partition",
+      "storey_ref": "F19",
+      "start_point": [
+        40.0,
+        0.25
+      ],
+      "end_point": [
+        40.0,
+        99.75
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY20_F19",
+      "component_id": "interior_partition",
+      "storey_ref": "F19",
+      "start_point": [
+        0.25,
+        20.0
+      ],
+      "end_point": [
+        49.75,
+        20.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY40_F19",
+      "component_id": "interior_partition",
+      "storey_ref": "F19",
+      "start_point": [
+        0.25,
+        40.0
+      ],
+      "end_point": [
+        49.75,
+        40.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY60_F19",
+      "component_id": "interior_partition",
+      "storey_ref": "F19",
+      "start_point": [
+        0.25,
+        60.0
+      ],
+      "end_point": [
+        49.75,
+        60.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
+    },
+    {
+      "element_type": "wall",
+      "wall_ref": "PY80_F19",
+      "component_id": "interior_partition",
+      "storey_ref": "F19",
+      "start_point": [
+        0.25,
+        80.0
+      ],
+      "end_point": [
+        49.75,
+        80.0
+      ],
+      "height": 3.5,
+      "thickness": 0.15,
+      "is_external": false
     },
     {
       "element_type": "slab",

@@ -55,13 +55,44 @@ export function useJob() {
 
   useEffect(() => {
     if (!job?.job_id || job.status === "complete" || job.status === "error") return;
-    const es = new EventSource(`${API}/api/status/${job.job_id}/stream`);
-    es.onmessage = (e) => {
-      const data = JSON.parse(e.data);
-      setJob((prev) => ({ ...prev!, ...data }));
-      if (data.status === "complete" || data.status === "error") es.close();
+    const jobId = job.job_id;
+    let closed = false;
+
+    const pollFinalStatus = async () => {
+      if (closed) return;
+      try {
+        const res = await fetch(`${API}/api/status/${jobId}`);
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data.status === "complete" || data.status === "error") {
+          setJob((prev) => ({ ...prev!, ...data }));
+        }
+      } catch {
+        /* fallback poll failed — non-fatal */
+      }
     };
-    return () => es.close();
+
+    const es = new EventSource(`${API}/api/status/${jobId}/stream`);
+    es.onmessage = (e) => {
+      try {
+        const data = JSON.parse(e.data);
+        setJob((prev) => ({ ...prev!, ...data }));
+        if (data.status === "complete" || data.status === "error") {
+          closed = true;
+          es.close();
+        }
+      } catch {
+        /* malformed SSE data — ignore */
+      }
+    };
+    es.onerror = () => {
+      es.close();
+      if (!closed) pollFinalStatus();
+    };
+    return () => {
+      closed = true;
+      es.close();
+    };
   }, [job?.job_id]);
 
   return { job, dispatch, dispatchFormData, setJob };

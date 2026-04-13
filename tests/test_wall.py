@@ -29,3 +29,19 @@ def test_create_wall(ifc_setup):
     ]
     pset_names = [p.Name for p in psets if hasattr(p, "Name")]
     assert "Pset_WallCommon" in pset_names
+
+
+def test_create_wall_with_type(ifc_setup):
+    """Cover the wall_type assignment branch (line 70)."""
+    from building_blocks.types.wall_types import create_exterior_wall_type
+    ifc, contexts, storey = ifc_setup
+    wt = create_exterior_wall_type(ifc, name="EXT-200")
+    wall = create_wall(
+        ifc, contexts, storey,
+        p1=(0.0, 0.0), p2=(5.0, 0.0),
+        wall_type=wt,
+        fire_rating="2HR",
+        name="Typed Wall",
+    )
+    assert wall is not None
+    assert wall.is_a("IfcWall")

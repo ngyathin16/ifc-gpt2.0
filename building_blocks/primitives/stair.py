@@ -56,9 +56,6 @@ def create_stair(
     if length > 0:
         dx, dy = dx / length, dy / length
 
-    # Perpendicular direction for width
-    px, py = -dy, dx
-
     # Build stepped mesh: each tread is a box
     vertices = []
     faces = []

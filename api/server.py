@@ -52,4 +52,4 @@ def main():
     import uvicorn
 
     port = int(sys.argv[sys.argv.index("--port") + 1]) if "--port" in sys.argv else 8000
-    uvicorn.run("api.server:app", host="0.0.0.0", port=port, reload=True)
+    uvicorn.run("api.server:app", host="0.0.0.0", port=port, reload=True, timeout_keep_alive=600)

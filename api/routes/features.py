@@ -15,6 +15,7 @@ class FeatureItem(BaseModel):
     label: str
     description: str
     default_for: list[str]
+    conflicts_with: list[str] = []
 
 
 class InferRequest(BaseModel):

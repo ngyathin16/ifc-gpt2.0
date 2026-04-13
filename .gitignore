@@ -43,3 +43,16 @@ htmlcov/
 
 # Reports
 reports/
+
+# Cloned reference repos
+_everything-claude-code/
+
+# Windsurf IDE
+.windsurf/
+
+# Temp directories
+new shit/
+
+# Web build/test artifacts
+web/test-results/
+web/tsconfig.tsbuildinfo

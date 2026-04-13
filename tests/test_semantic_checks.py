@@ -1,9 +1,6 @@
 """Tests for validation/semantic_checks.py — post-build IFC validation."""
 from __future__ import annotations
 
-import tempfile
-from pathlib import Path
-
 import pytest
 
 from building_blocks.context import add_storey, create_ifc_project
@@ -12,9 +9,7 @@ from building_blocks.primitives.slab import create_slab
 from validation.semantic_checks import (
     check_disconnected_storeys,
     check_element_geometry,
-    check_floating_openings,
     check_spatial_containment,
-    check_wall_count,
     run_all_checks,
 )
 

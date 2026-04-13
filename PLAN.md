@@ -1738,7 +1738,85 @@ Work through this list in order:
 
 ---
 
-## 15. Known Constraints
+## 15. FloorPlan2IFC Pipeline (Implemented Mar 27 2026)
+
+This phase upgrades the floor plan ingestion pipeline from a pure-OpenCV placeholder into a production-grade two-branch detection system, adds a MiC (Modular integrated Construction) room dimension catalog, and implements a user-confirmation API workflow.
+
+### 15.1 What was built
+
+| Component | Location | Purpose |
+|---|---|---|
+| VLM detection branch | `floorplan/detect.py` | Calls `gpt-5.4-pro` vision API with structured JSON output to detect walls, doors, windows, rooms, and columns from floor plan images |
+| VLM prompt files | `floorplan/prompts/detect_system.txt`, `detect_user.txt` | Architectural floor plan analysis prompts |
+| VLM/CV merge | `floorplan/detect.py` `_merge_vlm_cv_walls()` | Snaps VLM wall endpoints to nearest OpenCV-detected line within 10px tolerance |
+| MiC room catalog | `building_blocks/mic_catalog.py` | 19 module types with dimensions derived from 49 real Hong Kong MiC IFC modules. Maps room labels → categories, provides typical dimensions and expected opening counts |
+| Room classification | `floorplan/plan_builder.py` | Rooms enriched with MiC category, expected doors/windows, typical dimensions |
+| Confirmation workflow | `api/routes/floorplan.py` | `POST /upload` → `GET /plan` → `POST /confirm` with state machine: detecting → awaiting_confirmation → building → complete |
+
+### 15.2 Pain points addressed
+
+From `workspace/floorplan_learnings.json`:
+
+| Pain Point | Fix |
+|---|---|
+| VLM detection was a no-op placeholder | Real VLM branch calling `gpt-5.4-pro` with structured JSON schema, exponential backoff, image clamping to 4096px |
+| No room type classification | VLM prompts detect rooms with proper labels; MiC catalog classifies into standard categories |
+| No door/window detection from images | VLM branch detects openings with position, width, and host wall assignment |
+| Template-based room layouts (55%/28% splits) | MiC catalog provides real residential dimensions from HK MiC standards |
+| No user review before IFC build | Confirmation API: detection results are exposed for review/edit before triggering build |
+
+### 15.3 Guardrails implemented
+
+Per `new shit/GUARDRAILS.md`:
+
+- **G-01**: File type + size validation (PDF ≤50MB, images ≤25MB)
+- **G-15**: Images clamped to 4096px before VLM (cost control)
+- **G-17**: VLM calls wrapped with 3-retry exponential backoff (2s/4s/8s)
+- **G-23**: All background task exceptions caught, logged, stored in job error
+- **G-24**: Strict state machine: detecting → awaiting_confirmation → building → complete | error
+
+### 15.4 MiC module catalog
+
+Derived from analysis of 49 individual MiC IFC files extracted from `HSK_HSK1A_GVDC_ALL_IFC4x3.ifc` (a real Hong Kong MiC housing project). Module types:
+
+| Code | Room Type | Typical Size (W×D m) |
+|---|---|---|
+| TYPE 1.x (MB) | Master Bedroom | 3.5×4.0 – 3.8×4.5 |
+| TYPE 2.x (BT) | Bathroom | 1.8×2.4 – 2.4×3.2 |
+| TYPE 3.x (LK/LD) | Living/Kitchen, Living/Dining | 3.5×5.5 – 3.8×7.0 |
+| TYPE 4.x (KT) | Kitchen | 2.5×3.5 – 2.8×4.0 |
+| TYPE 5.x (BR) | Bedroom (secondary) | 2.8×3.5 – 3.0×3.8 |
+| TYPE 6 (TL) | Toilet | 1.2×1.8 |
+| TYPE 7/9 (EMR) | E&M Room | 2.0×2.5 |
+| TYPE 8 (RMSRR) | Refuse/Service | 2.0×2.5 |
+| TYPE 10 (WMC) | Water Meter Closet | 1.0×1.5 |
+
+### 15.5 Build experiment results
+
+5-storey L-shaped mixed-use building (30×12m main + 12×18m wing):
+
+| Metric | Value |
+|---|---|
+| Total IFC products | 543 |
+| Walls | 70 (all with geometry) |
+| Windows | 105 (all fill openings) |
+| Columns | 105 (mix of rectangular + circular) |
+| Beams | 80 (mix of steel I-section + concrete rectangular) |
+| Doors | 25 (all fill openings) |
+| Slabs + Stairs + Railings + Elevators + Roof | 21 |
+| Build time | 1.4 seconds |
+| File size | 891 KB |
+| Orphaned elements | 0 |
+
+### 15.6 Test count
+
+222 tests passing (was 187). New tests:
+- `tests/test_mic_catalog.py` — 27 tests for room classification, dimensions, opening defaults, catalog integrity
+- `tests/test_floorplan.py` — 8 new tests for VLM helpers (`_clamp_image_for_vlm`, `_merge_vlm_cv_walls`, VLM fallback) and MiC-enriched plan_builder
+
+---
+
+## 16. Known Constraints
 
 | Constraint | Detail |
 |---|---|

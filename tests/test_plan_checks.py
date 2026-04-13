@@ -1,8 +1,6 @@
 """Tests for validation/plan_checks.py — pre-build plan validation."""
 from __future__ import annotations
 
-import pytest
-
 from validation.plan_checks import (
     check_beam_span_limits,
     check_beam_wider_than_wall,

@@ -21,3 +21,16 @@ def test_create_elevator_shaft(ifc_setup):
 
     elevators = ifc.by_type("IfcTransportElement")
     assert len(elevators) == 1
+
+
+def test_create_elevator_with_fire_rating(ifc_setup):
+    """Cover the fire_rating branch (line 89)."""
+    ifc, contexts, storey = ifc_setup
+    elev = create_elevator_shaft(
+        ifc, contexts, storey,
+        position=(5.0, 5.0),
+        fire_rating="2HR",
+        name="Elevator-FR",
+    )
+    assert elev is not None
+    assert elev.is_a("IfcTransportElement")
